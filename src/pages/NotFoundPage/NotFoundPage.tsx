@@ -1,8 +1,8 @@
 import "./style.scss"
 import "../../Style/font.css"
 
-export const Edit = () => {
+export const NotFoundPage = () => {
    return (
-      <nav>Edit page</nav>
+      <nav>Not found page</nav>
    )
 }
