@@ -1,0 +1,70 @@
+.project-model-container {
+  //padding: 100px 300px; //30px 100px 30px 100px;;
+  background-color: white;
+  border-radius: 10px;
+
+  .details-section {
+    margin: 10px;
+
+    .details-section-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .name-section {
+        width: 520px;
+
+        h2 {
+          font-size: larger;
+          font-weight: bold;
+        }
+      }
+      .action-section {
+        display: flex;
+
+        .edit-icon {
+          .icon {
+            width: 25px;
+            height: 25px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            cursor: pointer;
+            color: rgb(48, 48, 172);
+            transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+          }
+        }
+
+        .delete-icon {
+          .icon {
+            width: 25px;
+            height: 25px;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          &:active {
+            cursor: pointer;
+            color: rgb(231, 40, 40);
+            transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+          }
+        }
+      }
+    }
+
+    .id-section {
+      width: 580px;
+    }
+  }
+
+  .content-section {
+    margin: 10px;
+    width: 580px;
+  }
+}
