@@ -3,6 +3,6 @@ import "../../Style/font.css"
 
 export const NotFoundPage = () => {
    return (
-      <nav>Not found page</nav>
+      <div>Not found page</div>
    )
 }

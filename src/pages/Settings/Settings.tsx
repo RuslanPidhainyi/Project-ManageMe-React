@@ -3,6 +3,6 @@ import "../../Style/font.css"
 
 export const Settings = () => {
    return (
-      <nav>Settings page</nav>
+      <div>Settings page</div>
    )
 }

@@ -1,0 +1,15 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  span {
+    transition: 0.3s;
+    font-weight: 500;
+  }
+}

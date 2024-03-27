@@ -3,6 +3,6 @@ import "../../Style/font.css"
 
 export const Home = () => {
    return (
-      <nav>Home page</nav>
+      <div>Home page</div>
    )
 }

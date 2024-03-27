@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.left-bar {
+  flex: 1.5; //2
+  position: sticky;
+  top: 0px;
+  height: calc(100vh - 0px);
+
+  background-color: white; //delete later
+
+  .container {
+    padding: 20px;
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .left-bar-link {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// #light .left-bar {
+//   background-color: white;
+//   .left-bar-link {
+//     color: black;
+//   }
+// }
+
+// #dark .left-bar {
+//   border-left: 1px rgba(255, 255, 255, 0.248) solid; //mozliwo usune ta linijke
+//   background-color: black;
+//   box-shadow: 0px 0px 22px -12px rgb(255, 255, 255); //mozliwo usune ta linijke
+//   .left-bar-link {
+//     color: white;
+//   }
+// }

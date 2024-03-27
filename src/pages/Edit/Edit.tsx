@@ -3,6 +3,6 @@ import "../../Style/font.css"
 
 export const Edit = () => {
    return (
-      <nav>Edit page</nav>
+      <div>Edit page</div>
    )
 }
