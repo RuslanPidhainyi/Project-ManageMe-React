@@ -1,0 +1,46 @@
+.new-project-model-container {
+  background-color: white;
+  border-radius: 10px;
+  padding: 40px 0 40px 0;
+
+  .common-card {
+    display: flex;
+
+    .main-contener {
+      margin: 0 auto;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .page-name {
+        font-size: 50px;
+        font-weight: 750;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          border: none;
+          border-bottom: 1px solid lightgray;
+          padding: 20px 10px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+      span {
+        font-size: 16px;
+        margin-top: 2.5vh;
+        // &:hover {
+        //   cursor: pointer;
+        //   color: rgb(59, 157, 213);
+        // }
+      }
+    }
+  }
+}

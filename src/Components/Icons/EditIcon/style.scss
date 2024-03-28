@@ -1,0 +1,16 @@
+.edit-icon {
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+    color: rgb(48, 48, 172);
+    transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+  }
+}

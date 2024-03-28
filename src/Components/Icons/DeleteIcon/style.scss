@@ -1,0 +1,16 @@
+.delete-icon {
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    cursor: pointer;
+    color: rgb(231, 40, 40);
+    transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+  }
+}

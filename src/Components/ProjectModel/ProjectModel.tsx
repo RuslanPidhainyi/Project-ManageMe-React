@@ -1,7 +1,9 @@
+import { NavLink } from "react-router-dom";
 import "../../Style/font.css"
+import { DeleteIcon } from "../Icons/DeleteIcon/DeleteIcon";
+import { EditIcon } from "../Icons/EditIcon/EditIcon";
 import "./style.scss"
-import EditNoteRoundedIcon from '@mui/icons-material/EditNoteRounded';
-import DeleteForeverRoundedIcon from '@mui/icons-material/DeleteForeverRounded';
+
 
 // interface ProjectModel {
 //    name: string;
@@ -32,11 +34,10 @@ export const ProjectModel = () => {
                   <h2>Hello</h2>
                </div>
                <div className='action-section'>
-                  <div className="edit-icon">
-                     <EditNoteRoundedIcon className="icon" />
-                  </div>
-                  <div className="delete-icon">                         <DeleteForeverRoundedIcon className="icon" />
-                  </div>
+                  <NavLink to={"/edit"} className="action-icon-link">
+                     <EditIcon />
+                  </NavLink>
+                  <DeleteIcon />
                </div>
             </div>
 

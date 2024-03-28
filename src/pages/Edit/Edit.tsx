@@ -1,8 +1,13 @@
 import "./style.scss"
 import "../../Style/font.css"
+import { EditProjectModel } from "../../Components/EditProjectModel/EditProjectModel"
 
 export const Edit = () => {
    return (
-      <div>Edit page</div>
+      <div className="edit-page">
+         <div className="project-model">
+            <EditProjectModel />
+         </div>
+      </div>
    )
 }

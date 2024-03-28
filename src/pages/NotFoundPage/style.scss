@@ -1,0 +1,35 @@
+.some-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 5vh;
+
+    color: red;
+  }
+
+  h2 {
+    text-align: center;
+    color: black;
+  }
+}
+
+// #light .some-page {
+//   h1 {
+//     color: red;
+//   }
+//   h2 {
+//     color: black;
+//   }
+// }
+
+// #dark .some-page {
+//   h1 {
+//     color: rgb(190, 3, 3);
+//   }
+//   h2 {
+//     color: white;
+//   }
+// }

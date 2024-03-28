@@ -1,0 +1,38 @@
+.edit-btn {
+  width: 15%;
+  padding: 11px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+  font-size: 300;
+  font-weight: bold;
+
+  color: white;
+  background-color: rgb(0, 0, 0);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(59, 108, 213);
+    color: rgb(255, 255, 255);
+  }
+}
+
+// #light .create-btn {
+//   color: white;
+//   background-color: rgb(0, 0, 0);
+
+//   &:hover {
+//     background-color: rgb(59, 213, 85);
+//     color: rgb(255, 255, 255);
+//   }
+// }
+
+// #dark .create-btn {
+//   color: black;
+//   background-color: rgb(255, 255, 255);
+
+//   &:hover {
+//     background-color: rgb(59, 213, 85);
+//     color: black;
+//   }
+// }
