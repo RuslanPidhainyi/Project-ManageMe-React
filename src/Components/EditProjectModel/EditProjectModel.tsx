@@ -3,6 +3,7 @@ import "../../Style/font.css"
 import { EditBtnFromEditPage } from "../Buttons/EditBtnFromEditPage/EditBtnFromEditPage"
 
 export const EditProjectModel = () => {
+
    return (
       <div className="currently-project-model-container">
          <main className='common-card'>
