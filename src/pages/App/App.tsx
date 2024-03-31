@@ -10,17 +10,17 @@ import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 
 function App() {
   return (
-    <div>
+    <main>
       <Routes>
         <Route path="/" element={<LeftBar />}>
           <Route path="/" element={<Home />} />
           <Route path="create" element={<Create />} />
-          <Route path='edit' element={<Edit />} />
+          <Route path='edit/:id' element={<Edit />} />
           <Route path='settings' element={<Settings />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>
-    </div>
+    </main>
   )
 }
 

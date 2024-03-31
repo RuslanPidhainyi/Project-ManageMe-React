@@ -11,6 +11,13 @@ interface ProjectModelProps {
 }
 
 export const ProjectModel = (props: ProjectModelProps) => {
+
+   // const navigate = useNavigate();
+
+   // const handleNavigateToUserPage = (id: number) => {
+   //    navigate(`edit/${props.project.id}`);
+   // }
+
    return (
       // <div className="project-model-container">
       //    <div className="container">
@@ -34,7 +41,7 @@ export const ProjectModel = (props: ProjectModelProps) => {
                   <h2>{props.project.name}</h2>
                </div>
                <div className='action-section'>
-                  <NavLink to={"/edit"} className="action-icon-link">
+                  <NavLink to={`/edit/${props.project.id}`} className="action-icon-link">
                      <EditIcon />
                   </NavLink>
                   <DeleteIcon />
