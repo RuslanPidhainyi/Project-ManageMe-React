@@ -1,6 +1,6 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
 
-const LOCAL_STORAGE_KEY = "manageMe";
+const LOCAL_STORAGE_KEY = "ProjectModel";
 
 export const ProjectModelService = {
   //Create
@@ -36,9 +36,15 @@ export const ProjectModelService = {
   },
 
   //Delete
-  deleteProject: (id: number): void => {
+  // deleteProject: (id: number): void => {
+  //   const projects = ProjectModelService.getProjects();
+  //   const updateProjects = projects.filter((item) => item.id !== id);
+  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
+  // },
+  deleteProject: (id: number): ProjectModelType[] => {
     const projects = ProjectModelService.getProjects();
-    const updateProjects = projects.filter((item) => item.id !== id);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
+    const updatedProjects = projects.filter((project) => project.id !== id);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedProjects));
+    return updatedProjects;
   },
 };

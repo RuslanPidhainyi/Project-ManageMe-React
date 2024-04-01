@@ -4,7 +4,6 @@ import { ProjectModel } from "../../Components/ProjectModel/ProjectModel"
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useEffect, useState } from "react";
-//import { fakeDbProjects } from "../../FakeData/FakeDataProject/FakeDataProject"
 
 export const Home = () => {
    const [projects, setProjects] = useState<ProjectModelType[]>([]);

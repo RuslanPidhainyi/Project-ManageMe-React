@@ -2,12 +2,19 @@ import "./style.scss"
 import "../../Style/font.css"
 import { CreateBtnFromCreatePage } from "../Buttons/CreateBtnFromCreatePage/CreateBtnFromCreatePage"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
+import { useNavigate } from "react-router-dom";
+
 
 export const NewProjectModel = () => {
+
+   const navigate = useNavigate()
+
    const handleCreateProject = (name: string, desc: string) => {
       if (name.trim() !== "" && desc.trim() !== "") {
          ProjectModelService.createProjectModel(name, desc);
       }
+
+      navigate(`/`)
    }
 
    return (
@@ -21,8 +28,8 @@ export const NewProjectModel = () => {
                   const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
                   handleCreateProject(name, desc);
                }}>
-                  <input type="text" name="name" placeholder='Name project' maxLength={30} />
-                  <input type="text" name="desc" placeholder='Description project' maxLength={130} />
+                  <input type="text" name="name" placeholder='Name project' maxLength={70} />
+                  <input type="text" name="desc" placeholder='Description project' maxLength={250} />
                   <CreateBtnFromCreatePage />
                </form>
             </main>

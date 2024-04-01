@@ -4,7 +4,7 @@ import { DeleteIcon } from "../Icons/DeleteIcon/DeleteIcon";
 import { EditIcon } from "../Icons/EditIcon/EditIcon";
 import "./style.scss"
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
-
+import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 
 interface ProjectModelProps {
    project: ProjectModelType;
@@ -12,39 +12,26 @@ interface ProjectModelProps {
 
 export const ProjectModel = (props: ProjectModelProps) => {
 
-   // const navigate = useNavigate();
-
-   // const handleNavigateToUserPage = (id: number) => {
-   //    navigate(`edit/${props.project.id}`);
-   // }
+   const handleDelete = () => {
+      ProjectModelService.deleteProject(props.project.id);
+   };
 
    return (
-      // <div className="project-model-container">
-      //    <div className="container">
-      //       <div className="details-section">
-      //          <div className="name-section">
-      //             <span>NameProject</span>
-      //          </div>
-      //       </div>
-      //       <div className="content-section">
-      //          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam minima necessitatibus tempore, doloribus
-      //       </div>
-      //    </div>
-      // </div>
-
       <div className="project-model-container">
 
          <div className="details-section">
 
             <div className="details-section-top">
                <div className="name-section">
-                  <h2>{props.project.name}</h2>
+                  <h1>{props.project.name}</h1>
                </div>
                <div className='action-section'>
                   <NavLink to={`/edit/${props.project.id}`} className="action-icon-link">
                      <EditIcon />
                   </NavLink>
-                  <DeleteIcon />
+                  <button className="invisible-button" onClick={handleDelete}>
+                     <DeleteIcon />
+                  </button>
                </div>
             </div>
 
