@@ -1,10 +1,10 @@
 import "./style.scss"
-import "../../Style/font.css"
-import { EditBtnFromEditPage } from "../Buttons/EditBtnFromEditPage/EditBtnFromEditPage"
+import "../../../Style/font.css"
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
-import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
+import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
+import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service";
+import { EditBtnFromEditPage } from "../../Button components/EditBtnFromEditPage/EditBtnFromEditPage";
 
 export const EditProjectModel = () => {
 

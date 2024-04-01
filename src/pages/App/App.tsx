@@ -1,4 +1,4 @@
-import { Create } from '../Create/Create'
+import { Create } from "../Create/Create"
 import { Edit } from '../Edit/Edit'
 import { NotFoundPage } from '../NotFoundPage/NotFoundPage'
 import { Settings } from '../Settings/Settings'

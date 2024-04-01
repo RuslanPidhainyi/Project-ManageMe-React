@@ -1,5 +1,5 @@
 export interface ProjectModelType {
-  id: number;
+  id: number; //Temporarily
   name: string;
   desc: string;
 }

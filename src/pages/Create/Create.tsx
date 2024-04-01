@@ -1,6 +1,6 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { NewProjectModel } from "../../Components/NewProjectModel/NewProjectModel"
+import { NewProjectModel } from "../../Components/Сomponents of the project module/NewProjectModel/NewProjectModel"
 
 export const Create = () => {
    return (

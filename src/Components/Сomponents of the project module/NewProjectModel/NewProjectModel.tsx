@@ -1,8 +1,8 @@
 import "./style.scss"
-import "../../Style/font.css"
-import { CreateBtnFromCreatePage } from "../Buttons/CreateBtnFromCreatePage/CreateBtnFromCreatePage"
-import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
+import "../../../Style/font.css"
+import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useNavigate } from "react-router-dom";
+import { CreateBtnFromCreatePage } from "../../Button components/CreateBtnFromCreatePage/CreateBtnFromCreatePage";
 
 
 export const NewProjectModel = () => {

@@ -1,5 +1,8 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
 
+//JOSN.parse(...) - Z JSON w js
+//JSON.stringify(...) - z js w JSON
+
 const LOCAL_STORAGE_KEY = "ProjectModel";
 
 export const ProjectModelService = {
@@ -7,7 +10,7 @@ export const ProjectModelService = {
   createProjectModel: (name: string, desc: string): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
     const newProject: ProjectModelType = {
-      id: projects.length + 1,
+      id: projects.length + 1, //Temporarily
       name,
       desc,
     };

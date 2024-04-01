@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
-import "../../Style/font.css"
-import { DeleteIcon } from "../Icons/DeleteIcon/DeleteIcon";
-import { EditIcon } from "../Icons/EditIcon/EditIcon";
+import "../../../Style/font.css"
+import { DeleteIcon } from "../../Icons/DeleteIcon/DeleteIcon";
+import { EditIcon } from "../../Icons/EditIcon/EditIcon";
 import "./style.scss"
-import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
-import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
+import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
+import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service";
 
 interface ProjectModelProps {
    project: ProjectModelType;

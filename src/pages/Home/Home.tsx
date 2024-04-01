@@ -1,6 +1,6 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { ProjectModel } from "../../Components/ProjectModel/ProjectModel"
+import { ProjectModel } from "../../Components/Сomponents of the project module/ProjectModel/ProjectModel"
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useEffect, useState } from "react";
