@@ -36,15 +36,9 @@ export const ProjectModelService = {
   },
 
   //Delete
-  // deleteProject: (id: number): void => {
-  //   const projects = ProjectModelService.getProjects();
-  //   const updateProjects = projects.filter((item) => item.id !== id);
-  //   localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
-  // },
-  deleteProject: (id: number): ProjectModelType[] => {
+  deleteProject: (id: number): void => {
     const projects = ProjectModelService.getProjects();
-    const updatedProjects = projects.filter((project) => project.id !== id);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updatedProjects));
-    return updatedProjects;
+    const updateProjects = projects.filter((item) => item.id !== id);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
   },
 };
