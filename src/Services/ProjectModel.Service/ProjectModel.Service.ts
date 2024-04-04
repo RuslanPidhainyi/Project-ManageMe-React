@@ -1,4 +1,5 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
+import { v4 as uuid } from "uuid";
 
 //JOSN.parse(...) - Z JSON w js
 //JSON.stringify(...) - z js w JSON
@@ -10,7 +11,7 @@ export const ProjectModelService = {
   createProjectModel: (name: string, desc: string): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
     const newProject: ProjectModelType = {
-      id: projects.length + 1, //Temporarily
+      id: uuid(), // генеруємо новий UUID
       name,
       desc,
     };
@@ -39,7 +40,7 @@ export const ProjectModelService = {
   },
 
   //Delete
-  deleteProject: (id: number): void => {
+  deleteProject: (id: string): void => {
     const projects = ProjectModelService.getProjects();
     const updateProjects = projects.filter((item) => item.id !== id);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));

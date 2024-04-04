@@ -32,6 +32,7 @@ function App() {
     const newMode = displayMode === 'light' ? 'dark' : 'light';
     setDisplayMode(newMode);
   };
+
   return (
     <main>
       <Routes>
