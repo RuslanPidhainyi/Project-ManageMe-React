@@ -7,9 +7,31 @@ import './background-color.scss'
 import "../../Style/font.css"
 import { Routes, Route } from "react-router-dom"
 import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
+import { useEffect, useState } from "react"
 
 
 function App() {
+
+  const [displayMode, setDisplayMode] = useState('light');
+
+  useEffect(() => {
+    const displayedModeData = localStorage.getItem('displayMode');
+
+    if (displayedModeData) {
+      try {
+        const getDisplayedModeData = JSON.parse(displayedModeData);
+        setDisplayMode(getDisplayedModeData);
+      }
+      catch (error) {
+        console.error('Parsing data from local storage error:', error);
+      }
+    }
+  }, []);
+
+  const displayModeSwitch = () => {
+    const newMode = displayMode === 'light' ? 'dark' : 'light';
+    setDisplayMode(newMode);
+  };
   return (
     <main>
       <Routes>
@@ -17,7 +39,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="create" element={<Create />} />
           <Route path='edit/:id' element={<Edit />} />
-          <Route path='settings' element={<Settings />} />
+          <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes>

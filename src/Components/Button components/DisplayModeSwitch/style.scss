@@ -1,0 +1,41 @@
+.display-mode-button {
+  width: 2.2rem;
+  height: 1.2rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+
+  background-color: rgb(184, 184, 184);
+
+  .light-dark-flag {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: 2px;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+
+    background-color: rgb(251, 251, 251);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#light .display-mode-button {
+  background-color: rgb(184, 184, 184);
+
+  .light-dark-flag {
+    background-color: rgb(251, 251, 251);
+  }
+}
+
+#dark .display-mode-button {
+  background-color: rgb(251, 251, 251);
+
+  .light-dark-flag {
+    background-color: rgb(37, 37, 37);
+    transform: translate(0.9rem);
+  }
+}
