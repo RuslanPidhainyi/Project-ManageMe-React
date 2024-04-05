@@ -5,6 +5,7 @@ import { LogoSection } from "../LeftBarSections/LogoSection/LogoSection"
 import { HomeSection } from "../LeftBarSections/ItemsSections/HomeSection/HomeSection"
 import { CreateSection } from "../LeftBarSections/ItemsSections/CreateSection/CreateSection"
 import { SettingsSection } from "../LeftBarSections/ItemsSections/SettingsSection/SettingsSection"
+import { ProfileSection } from "../LeftBarSections/ItemsSections/ProfileSection/ProfileSection"
 
 export const LeftBar = () => {
    return (
@@ -16,6 +17,10 @@ export const LeftBar = () => {
 
                      <NavLink to={"/"} className="left-bar-link">
                         <LogoSection />
+                     </NavLink>
+
+                     <NavLink to={"/profile/:id"} className="left-bar-link">
+                        <ProfileSection />
                      </NavLink>
 
                      <NavLink to={"/"} className="left-bar-link">
