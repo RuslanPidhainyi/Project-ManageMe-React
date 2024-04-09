@@ -1,5 +1,6 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
-import { v4 as uuid } from "uuid";
+import { ulid } from "ulid";
+//import { v4 as uuid } from "uuid";
 
 //JOSN.parse(...) - Z JSON w js
 //JSON.stringify(...) - z js w JSON
@@ -11,7 +12,7 @@ export const ProjectModelService = {
   createProjectModel: (name: string, desc: string): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
     const newProject: ProjectModelType = {
-      id: uuid(), // генеруємо новий UUID
+      id: ulid(), //uuid(), // генеруємо новий UUID
       name,
       desc,
     };
