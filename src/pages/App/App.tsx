@@ -12,29 +12,29 @@ import { useEffect, useState } from "react"
 
 function App() {
 
-  const [displayMode, setDisplayMode] = useState('light');
+  const [displayMode, setDisplayMode] = useState("light");
 
   useEffect(() => {
-    const displayedModeData = localStorage.getItem('displayMode');
+    const displayModeData = localStorage.getItem("displayMode");
 
-    if (displayedModeData) {
+    if (displayModeData) {
       try {
-        const getDisplayedModeData = JSON.parse(displayedModeData);
+        const getDisplayedModeData = JSON.parse(displayModeData);
         setDisplayMode(getDisplayedModeData);
       }
       catch (error) {
-        console.error('Parsing data from local storage error:', error);
+        console.error('Parsing data from local storage error:', error)
       }
     }
   }, []);
 
   const displayModeSwitch = () => {
-    const newMode = displayMode === 'light' ? 'dark' : 'light';
+    const newMode = displayMode === "light" ? "dark" : "light";
     setDisplayMode(newMode);
-  };
+  }
 
   return (
-    <main>
+    <main className="App" id={displayMode}>
       <Routes>
         <Route path="/" element={<LeftBar />}>
           <Route path="/" element={<Home />} />

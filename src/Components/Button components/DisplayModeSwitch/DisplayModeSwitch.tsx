@@ -8,7 +8,7 @@ type DisplayModeSwitchProps = {
 
 export const DisplayModeSwitch = (props: DisplayModeSwitchProps) => {
    return (
-      <div className={`display-mode-button ${props.className}`} onClick={props.onClick}>
+      <div className={`display-mode-button  ${props.className}`} onClick={props.onClick} >
          <div className='light-dark-flag'></div>
       </div>
    )
