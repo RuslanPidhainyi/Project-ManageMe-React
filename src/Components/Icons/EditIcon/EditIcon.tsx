@@ -3,8 +3,8 @@ import EditNoteRoundedIcon from '@mui/icons-material/EditNoteRounded';
 
 export const EditIcon = () => {
    return (
-      <div className="edit-icon">
-         <EditNoteRoundedIcon className="icon" />
+      <div className="edit-icon-section">
+         <EditNoteRoundedIcon className="edit-icon" />
       </div>
    )
 }

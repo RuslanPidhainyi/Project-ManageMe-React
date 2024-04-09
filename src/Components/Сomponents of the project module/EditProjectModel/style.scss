@@ -1,5 +1,4 @@
 .currently-project-model-container {
-  background-color: white;
   border-radius: 10px;
   padding: 40px 0 40px 0;
 
@@ -25,7 +24,6 @@
 
         input {
           border: none;
-          border-bottom: 1px solid lightgray;
           padding: 20px 10px;
 
           &:focus {
@@ -36,11 +34,31 @@
       span {
         font-size: 16px;
         margin-top: 2.5vh;
-        // &:hover {
-        //   cursor: pointer;
-        //   color: rgb(59, 157, 213);
-        // }
       }
     }
+  }
+}
+
+#light .currently-project-model-container {
+  color: black;
+  background-color: white;
+
+  input {
+    color: black;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+#dark .currently-project-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  input {
+    color: white;
+    background-color: black;
+    border-bottom: 1px solid lightgray;
   }
 }

@@ -1,6 +1,5 @@
 .project-model-container {
   //padding: 100px 300px; //30px 100px 30px 100px;;
-  background-color: white;
   border-radius: 10px;
 
   .details-section {
@@ -23,7 +22,7 @@
         display: flex;
 
         .action-icon-link {
-          color: black;
+          // color: black;
           text-decoration: none;
         }
         .invisible-button {
@@ -43,5 +42,33 @@
   .content-section {
     margin: 10px;
     width: 580px;
+  }
+}
+
+#light .project-model-container {
+  color: black;
+  background-color: white;
+
+  .action-icon-link {
+    color: black;
+  }
+
+  .invisible-button {
+    color: black;
+  }
+}
+
+#dark .project-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  .action-icon-link {
+    color: rgb(49, 130, 188);
+  }
+
+  .invisible-button {
+    color: rgb(231, 40, 40);
   }
 }

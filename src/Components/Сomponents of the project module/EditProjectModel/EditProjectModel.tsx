@@ -18,7 +18,7 @@ export const EditProjectModel = () => {
    useEffect(() => {
       if (id) {
          const projects = ProjectModelService.getProjects();
-         const currentProject = projects.find(project => project.id === parseInt(id, 10));
+         const currentProject = projects.find(project => project.id === id);
          if (currentProject) {
             setProject(currentProject);
             setName(currentProject.name);

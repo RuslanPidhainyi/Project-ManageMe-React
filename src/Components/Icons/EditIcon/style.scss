@@ -1,4 +1,4 @@
-.edit-icon {
+.edit-icon-section {
   .icon {
     width: 25px;
     height: 25px;
@@ -10,7 +10,27 @@
 
   &:active {
     cursor: pointer;
+  }
+}
+
+#light .edit-icon {
+  &:hover {
+    color: black;
+  }
+
+  &:active {
     color: rgb(48, 48, 172);
+    transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+  }
+}
+
+#dark .edit-icon {
+  &:hover {
+    color: rgb(49, 130, 188);
+  }
+
+  &:active {
+    color: rgb(60, 216, 237);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }

@@ -1,5 +1,5 @@
-.delete-icon {
-  .icon {
+.delete-icon-section {
+  .delete-icon {
     width: 25px;
     height: 25px;
   }
@@ -10,7 +10,27 @@
 
   &:active {
     cursor: pointer;
+  }
+}
+
+#light .delete-icon {
+  &:hover {
+    color: black;
+  }
+
+  &:active {
     color: rgb(231, 40, 40);
+    transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+  }
+}
+
+#dark .delete-icon {
+  &:hover {
+    color: rgb(231, 40, 40);
+  }
+
+  &:active {
+    color: rgb(255, 48, 120);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }

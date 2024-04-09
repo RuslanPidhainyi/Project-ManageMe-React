@@ -17,22 +17,22 @@
   }
 }
 
-// #light .create-btn {
-//   color: white;
-//   background-color: rgb(0, 0, 0);
+#light .create-btn {
+  color: white;
+  background-color: rgb(0, 0, 0);
 
-//   &:hover {
-//     background-color: rgb(59, 213, 85);
-//     color: rgb(255, 255, 255);
-//   }
-// }
+  &:hover {
+    background-color: rgb(39, 172, 61);
+    color: rgb(255, 255, 255);
+  }
+}
 
-// #dark .create-btn {
-//   color: black;
-//   background-color: rgb(255, 255, 255);
+#dark .create-btn {
+  color: black;
+  background-color: rgb(39, 172, 61);
 
-//   &:hover {
-//     background-color: rgb(59, 213, 85);
-//     color: black;
-//   }
-// }
+  &:hover {
+    background-color: rgb(59, 213, 85);
+    color: black;
+  }
+}
