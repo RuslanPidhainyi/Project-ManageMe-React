@@ -8,6 +8,7 @@ import "../../Style/font.css"
 import { Routes, Route } from "react-router-dom"
 import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
+import { Profile } from "../Profile/Profile"
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LeftBar />}>
           <Route path="/" element={<Home />} />
+          <Route path="profile/:id" element={<Profile />} />
           <Route path="create" element={<Create />} />
           <Route path='edit/:id' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
