@@ -1,11 +1,10 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
 import { ulid } from "ulid";
+import { ApiService } from "../Api.Service/Api.Service";
 //import { v4 as uuid } from "uuid";
 
 //JOSN.parse(...) - Z JSON w js
 //JSON.stringify(...) - z js w JSON
-
-const LOCAL_STORAGE_KEY = "ProjectModel";
 
 export const ProjectModelService = {
   //Create
@@ -18,13 +17,13 @@ export const ProjectModelService = {
     };
 
     const updateProjects = [...projects, newProject];
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
+    ApiService.saveProjectModel(updateProjects);
     return newProject;
   },
 
   //Read (Get)
   getProjects: (): ProjectModelType[] => {
-    const dbProjectModel = localStorage.getItem(LOCAL_STORAGE_KEY);
+    const dbProjectModel = ApiService.getProjectModel();
     return dbProjectModel ? JSON.parse(dbProjectModel) : [];
   },
 
@@ -36,7 +35,7 @@ export const ProjectModelService = {
       item.id === project.id ? project : item
     );
 
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
+    ApiService.saveProjectModel(updateProjects);
     return project;
   },
 
@@ -44,6 +43,6 @@ export const ProjectModelService = {
   deleteProject: (id: string): void => {
     const projects = ProjectModelService.getProjects();
     const updateProjects = projects.filter((item) => item.id !== id);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(updateProjects));
+    ApiService.saveProjectModel(updateProjects);
   },
 };
