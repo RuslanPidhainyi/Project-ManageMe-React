@@ -10,7 +10,7 @@ export const ProfileSection = () => {
    return (
       <div className="item">
          <PersonRoundedIcon className="icon" />
-         <span>{`${name} ${surname}`}</span>
+         <span><b>{`${name} ${surname}`}</b></span>
       </div>
    )
 }

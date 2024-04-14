@@ -20,5 +20,5 @@ import { UserType } from "../../Types/User.type/User.type";
 export const fakeDbUser: UserType = {
   id: "d-2022-h-2024",
   name: "David",
-  surname: "Chemik",
+  surname: "Chimik",
 };

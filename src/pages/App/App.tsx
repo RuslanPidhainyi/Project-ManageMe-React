@@ -15,6 +15,9 @@ function App() {
 
   const [displayMode, setDisplayMode] = useState("light");
 
+
+
+  //TODO: Dark mode
   useEffect(() => {
     const displayModeData = localStorage.getItem("displayMode");
 

@@ -1,17 +1,14 @@
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type";
-import { ulid } from "ulid";
+import { ulid } from "ulid"; // генеруємо новий ULID
 import { ApiService } from "../Api.Service/Api.Service";
-//import { v4 as uuid } from "uuid";
-
-//JOSN.parse(...) - Z JSON w js
-//JSON.stringify(...) - z js w JSON
+//import { v4 as uuid } from "uuid"; // генеруємо новий UUID
 
 export const ProjectModelService = {
   //Create
   createProjectModel: (name: string, desc: string): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
     const newProject: ProjectModelType = {
-      id: ulid(), //uuid(), // генеруємо новий UUID
+      id: ulid(), //uuid(),
       name,
       desc,
     };
