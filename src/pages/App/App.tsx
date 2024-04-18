@@ -9,13 +9,11 @@ import { Routes, Route } from "react-router-dom"
 import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
 import { Profile } from "../Profile/Profile"
+import { DetailedProjectModel } from "../DetailedProjectModel/DetailedProjectModel"
 
 
 function App() {
-
   const [displayMode, setDisplayMode] = useState("light");
-
-
 
   //TODO: Dark mode
   useEffect(() => {
@@ -41,12 +39,19 @@ function App() {
     <main className="App" id={displayMode}>
       <Routes>
         <Route path="/" element={<LeftBar />}>
-          <Route path="/" element={<Home />} />
-          <Route path="profile/:id" element={<Profile />} />
+          <Route path="/" element={<Home />}>
+            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
+          </Route>
+          <Route path="profile" element={<Profile />} >
+            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
+          </Route>
           <Route path="create" element={<Create />} />
           <Route path='edit/:id' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
           <Route path='*' element={<NotFoundPage />} />
+          <Route path='project' element={<DetailedProjectModel />} />
+          {/* <Route path='project/:id' element={<DetailedProjectModel />} /> */}
+          <Route path='project/:name/:id' element={<DetailedProjectModel />} />
         </Route>
       </Routes>
     </main>

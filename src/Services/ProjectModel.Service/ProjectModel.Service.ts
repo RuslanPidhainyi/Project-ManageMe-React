@@ -42,4 +42,10 @@ export const ProjectModelService = {
     const updateProjects = projects.filter((item) => item.id !== id);
     ApiService.saveProjectModel(updateProjects);
   },
+
+  // Get project by ID
+  getProjectById: (id: string): ProjectModelType | undefined => {
+    const projects = ProjectModelService.getProjects();
+    return projects.find((project) => project.id === id);
+  },
 };

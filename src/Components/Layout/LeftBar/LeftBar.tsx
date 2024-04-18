@@ -19,7 +19,7 @@ export const LeftBar = () => {
                         <LogoSection />
                      </NavLink>
 
-                     <NavLink to={"/profile/:id"} className="left-bar-link">
+                     <NavLink to={"/profile"} className="left-bar-link">
                         <ProfileSection />
                      </NavLink>
 

@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../../../Style/font.css"
 import { DeleteIcon } from "../../Icons/DeleteIcon/DeleteIcon";
 import { EditIcon } from "../../Icons/EditIcon/EditIcon";
@@ -23,7 +23,11 @@ export const ProjectModel = (props: ProjectModelProps) => {
 
             <div className="details-section-top">
                <div className="name-section">
-                  <h1>{props.project.name}</h1>
+                  <div className="name-section">
+                     <Link to={`/project/${props.project.name}/${props.project.id}`} className="single-project-model-link">
+                        <h1>{props.project.name}</h1>
+                     </Link>
+                  </div>
                </div>
                <div className='action-section'>
                   <NavLink to={`/edit/${props.project.id}`} className="action-icon-link">
@@ -35,9 +39,9 @@ export const ProjectModel = (props: ProjectModelProps) => {
                </div>
             </div>
 
-            <div className="id-section">
+            {/* <div className="id-section">
                <span><b>ID: </b>{props.project.id}</span>
-            </div>
+            </div> */}
 
          </div>
 

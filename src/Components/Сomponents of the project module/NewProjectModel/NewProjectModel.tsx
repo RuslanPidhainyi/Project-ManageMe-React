@@ -17,17 +17,19 @@ export const NewProjectModel = () => {
       navigate(`/`)
    }
 
+   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      const name = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='name']")!.value;
+      const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
+      handleCreateProject(name, desc);
+   }
+
    return (
       <div className="new-project-model-container">
          <main className='common-card'>
             <main className='main-contener'>
                <h2 className='page-name'>New project</h2>
-               <form onSubmit={(e) => {
-                  e.preventDefault();
-                  const name = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='name']")!.value;
-                  const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
-                  handleCreateProject(name, desc);
-               }}>
+               <form onSubmit={handleOnSubmit}>
                   <input type="text" name="name" placeholder='Name project' maxLength={70} />
                   <input type="text" name="desc" placeholder='Description project' maxLength={250} />
                   <CreateBtnFromCreatePage />

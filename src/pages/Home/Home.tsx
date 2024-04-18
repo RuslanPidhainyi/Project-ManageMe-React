@@ -15,6 +15,24 @@ export const Home = () => {
 
    return (
       <section className="home-page">
+         {/* ******************************************************************************* */}
+
+         {/* 
+         <div className="container-​​search-for-a-city">
+            <div className="​​search-for-a-city">
+               <input
+                  type="text"
+                  className="city-​​search"
+                  placeholder="Search for a city or country"
+               />
+               <button className="btn-add">
+                  <i className="material-symbols-rounded"> add </i>
+               </button>
+
+            </div>
+         </div> */}
+
+         {/* ******************************************************************************* */}
          <div className="project">
             <ol className="a-margin-top d-flex">
                {projects.map((project: ProjectModelType) => (
