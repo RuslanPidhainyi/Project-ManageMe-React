@@ -13,9 +13,13 @@
       .name-section {
         width: 520px;
 
-        h2 {
-          font-size: larger;
-          font-weight: bold;
+        .single-project-model-link {
+          text-decoration: none;
+
+          h1 {
+            font-size: larger;
+            font-weight: bold;
+          }
         }
       }
       .action-section {
@@ -49,6 +53,10 @@
   color: black;
   background-color: white;
 
+  .single-project-model-link {
+    color: black;
+  }
+
   .action-icon-link {
     color: black;
   }
@@ -63,6 +71,10 @@
   border: 1px rgba(255, 255, 255, 0.248) solid;
   background-color: black;
   box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  .single-project-model-link {
+    color: white;
+  }
 
   .action-icon-link {
     color: rgb(49, 130, 188);

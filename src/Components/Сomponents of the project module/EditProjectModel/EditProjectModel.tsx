@@ -51,7 +51,7 @@ export const EditProjectModel = () => {
             <main className='main-contener'>
                <h2 className='page-name'>Edit project</h2>
                <form onSubmit={handleSubmit}>
-                  <input type="text" placeholder='Name project' maxLength={70} value={name} onChange={handleNameChange} />
+                  <input type="text" placeholder='Name project' maxLength={51} value={name} onChange={handleNameChange} />
                   <input type="text" placeholder='Description project' maxLength={250} value={desc} onChange={handleDescChange} />
                   <EditBtnFromEditPage />
                </form>

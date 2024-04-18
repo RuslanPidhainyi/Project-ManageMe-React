@@ -1,0 +1,13 @@
+.single-project-model-page {
+  // line-height: 1.6; /*interwal - medzy divami*/
+  // word-spacing: 1.4px; /*miedzy slowami - space*/
+  display: flex;
+  flex: 0.8;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+
+  .single-project-model {
+    width: 55vw;
+  }
+}

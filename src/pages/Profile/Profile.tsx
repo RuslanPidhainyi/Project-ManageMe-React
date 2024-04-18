@@ -4,9 +4,11 @@ import { ProjectModel } from "../../Components/Сomponents of the project module
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useEffect, useState } from "react";
+//import { useParams } from "react-router-dom";
 
 export const Profile = () => {
    const [projects, setProjects] = useState<ProjectModelType[]>([]);
+   //const { id } = useParams<{ id: string }>();
 
    useEffect(() => {
       const storedProjects = ProjectModelService.getProjects();
