@@ -1,14 +1,16 @@
 import "./style.scss"
 import "../../../Style/font.css"
-//import { useParams } from "react-router-dom"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
+import { CreateBtnFromCreateTask } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateTask";
+import { NavLink } from "react-router-dom";
+
+
 
 interface BaseProjectModelProps {
    project: ProjectModelType;
 }
 
 export const BaseProjectModel = (props: BaseProjectModelProps) => {
-   const { project } = props;
 
    return (
       <div className="base-project-model-container">
@@ -16,19 +18,25 @@ export const BaseProjectModel = (props: BaseProjectModelProps) => {
             <div className="base-project-model-details-section">
                <div className="base-project-model-details-section-top">
                   <div className="base-project-model-name-section">
-                     <h1>{project.name}</h1>
+                     <h1>{props.project.name}</h1>
                   </div>
                </div>
                <div className="base-project-model-id-section">
-                  <span><b>ID: </b>{project.id}</span>
+                  <h3><b>ID: </b>{props.project.id}</h3>
                </div>
             </div>
             <div className="base-project-model-content-section">
-               <p>{project.desc}</p>
+               <h4>{props.project.desc}</h4>
             </div>
          </div>
          <div className="base-project-model-subtask">
-            <p>subtask</p>
+            <form>
+               <NavLink to={`add-story`}>
+                  <CreateBtnFromCreateTask />
+               </NavLink>
+            </form>
+            <div className="base-project-model-subtask-section">
+            </div>
          </div>
       </div>
    );

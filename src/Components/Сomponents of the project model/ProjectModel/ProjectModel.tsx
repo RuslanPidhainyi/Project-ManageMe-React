@@ -5,9 +5,11 @@ import { EditIcon } from "../../Icons/EditIcon/EditIcon";
 import "./style.scss"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
 import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service";
+//import { UserType } from "../../../Types/User.type/User.type";
 
 interface ProjectModelProps {
    project: ProjectModelType;
+   //user: UserType;
 }
 
 export const ProjectModel = (props: ProjectModelProps) => {
@@ -30,7 +32,7 @@ export const ProjectModel = (props: ProjectModelProps) => {
                   </div>
                </div>
                <div className='action-section'>
-                  <NavLink to={`/edit/${props.project.id}`} className="action-icon-link">
+                  <NavLink to={`/edit/${props.project.name}/${props.project.id}`} className="action-icon-link">
                      <EditIcon />
                   </NavLink>
                   <button className="invisible-button" onClick={handleDelete}>

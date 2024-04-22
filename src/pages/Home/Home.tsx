@@ -1,6 +1,6 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { ProjectModel } from "../../Components/Сomponents of the project module/ProjectModel/ProjectModel"
+import { ProjectModel } from "../../Components/Сomponents of the project model/ProjectModel/ProjectModel"
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useEffect, useState } from "react";
@@ -17,8 +17,7 @@ export const Home = () => {
       <section className="home-page">
          {/* ******************************************************************************* */}
 
-         {/* 
-         <div className="container-​​search-for-a-city">
+         {/* <div className="container-​​search-for-a-city">
             <div className="​​search-for-a-city">
                <input
                   type="text"

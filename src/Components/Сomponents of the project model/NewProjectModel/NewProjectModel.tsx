@@ -26,11 +26,11 @@ export const NewProjectModel = () => {
 
    return (
       <div className="new-project-model-container">
-         <main className='common-card'>
-            <main className='main-contener'>
-               <h2 className='page-name'>New project</h2>
+         <main className='common-card-new-project-model-container'>
+            <main className='main-contener-new-project-model-container'>
+               <h2 className='page-name-new-project-model-container'>New project</h2>
                <form onSubmit={handleOnSubmit}>
-                  <input type="text" name="name" placeholder='Name project' maxLength={70} />
+                  <input type="text" name="name" placeholder='Name project' maxLength={51} />
                   <input type="text" name="desc" placeholder='Description project' maxLength={250} />
                   <CreateBtnFromCreatePage />
                </form>

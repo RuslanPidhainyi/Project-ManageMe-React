@@ -46,12 +46,13 @@
 
         .base-project-model-name-section {
           //width: 520px;
+          margin-top: 20px;
           text-align: center;
 
-          h1 {
-            font-size: larger;
-            font-weight: bold;
-          }
+          // h1 {
+          //   font-size: larger;
+          //   font-weight: bold;
+          // }
         }
       }
 
@@ -63,25 +64,31 @@
     }
 
     .base-project-model-content-section {
-      margin: 10px;
+      margin: 20px;
       // width: 580px;
-      text-align: center;
+      text-align: left;
     }
 
-    // border-bottom: 1px solid lightgray;
+    //border-bottom: 1px solid lightgray;
   }
 
   .base-project-model-subtask {
-    p {
+    // p {
+    //   text-align: center;
+    // }
+    form {
       text-align: center;
     }
-    margin-bottom: 10px;
+    .base-project-model-subtask-section {
+    }
+    margin-bottom: 30px;
   }
 }
 
 #light .base-project-model-container {
   color: black;
   background-color: white;
+  border: 1px white solid;
 }
 
 #dark .base-project-model-container {

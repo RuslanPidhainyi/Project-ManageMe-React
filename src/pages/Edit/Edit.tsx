@@ -1,6 +1,6 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { EditProjectModel } from "../../Components/Сomponents of the project module/EditProjectModel/EditProjectModel"
+import { EditProjectModel } from "../../Components/Сomponents of the project model/EditProjectModel/EditProjectModel"
 
 export const Edit = () => {
    return (

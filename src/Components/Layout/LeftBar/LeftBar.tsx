@@ -6,8 +6,12 @@ import { HomeSection } from "../LeftBarSections/ItemsSections/HomeSection/HomeSe
 import { CreateSection } from "../LeftBarSections/ItemsSections/CreateSection/CreateSection"
 import { SettingsSection } from "../LeftBarSections/ItemsSections/SettingsSection/SettingsSection"
 import { ProfileSection } from "../LeftBarSections/ItemsSections/ProfileSection/ProfileSection"
+import { UserType } from "../../../Types/User.type/User.type"
 
-export const LeftBar = () => {
+interface LeftBarProps {
+   profileUser: UserType;
+}
+export const LeftBar = (props: LeftBarProps) => {
    return (
       <div style={{ display: "flex" }}>
          <>
@@ -19,7 +23,7 @@ export const LeftBar = () => {
                         <LogoSection />
                      </NavLink>
 
-                     <NavLink to={"/profile"} className="left-bar-link">
+                     <NavLink to={`/profile/${props.profileUser.fullname}/${props.profileUser.id}`} className="left-bar-link">
                         <ProfileSection />
                      </NavLink>
 

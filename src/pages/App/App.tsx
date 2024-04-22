@@ -10,7 +10,9 @@ import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
 import { Profile } from "../Profile/Profile"
 import { DetailedProjectModel } from "../DetailedProjectModel/DetailedProjectModel"
-
+import { CreateStory } from "../CreateStory/CreateStory"
+import { EditStory } from "../EditStory/EditStory"
+import { UserService } from "../../Services/User.Service/User.Service"
 
 function App() {
   const [displayMode, setDisplayMode] = useState("light");
@@ -35,26 +37,24 @@ function App() {
     setDisplayMode(newMode);
   }
 
+  const profileUser = UserService.getUserById();
+
   return (
     <main className="App" id={displayMode}>
       <Routes>
-        <Route path="/" element={<LeftBar />}>
-          <Route path="/" element={<Home />}>
-            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
-          </Route>
-          <Route path="profile" element={<Profile />} >
-            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
-          </Route>
+        <Route path="/" element={<LeftBar profileUser={profileUser} />}>
+          <Route path="/" element={<Home />} />
+          <Route path="profile/:fullname/:id" element={<Profile />} />
           <Route path="create" element={<Create />} />
-          <Route path='edit/:id' element={<Edit />} />
+          <Route path='edit/:name/:id' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
-          <Route path='*' element={<NotFoundPage />} />
-          <Route path='project' element={<DetailedProjectModel />} />
-          {/* <Route path='project/:id' element={<DetailedProjectModel />} /> */}
           <Route path='project/:name/:id' element={<DetailedProjectModel />} />
+          <Route path="project/:name/:id/add-story" element={<CreateStory />} />
+          <Route path="project/:name/:id/edit-story" element={<EditStory />} />
+          <Route path='*' element={<NotFoundPage />} />
         </Route>
-      </Routes>
-    </main>
+      </Routes >
+    </main >
   )
 }
 

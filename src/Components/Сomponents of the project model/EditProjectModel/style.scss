@@ -1,4 +1,4 @@
-.new-project-model-container {
+.currently-project-model-container {
   border-radius: 10px;
   padding: 40px 0 40px 0;
 
@@ -31,6 +31,11 @@
           }
         }
       }
+
+      .edit-btn {
+        margin-left: 640px;
+      }
+
       span {
         font-size: 16px;
         margin-top: 2.5vh;
@@ -39,7 +44,7 @@
   }
 }
 
-#light .new-project-model-container {
+#light .currently-project-model-container {
   color: black;
   background-color: white;
 
@@ -50,7 +55,7 @@
   }
 }
 
-#dark .new-project-model-container {
+#dark .currently-project-model-container {
   color: white;
   border: 1px rgba(255, 255, 255, 0.248) solid;
   background-color: black;
@@ -59,6 +64,6 @@
   input {
     color: white;
     background-color: black;
-    border-bottom: 1px solid darkgray;
+    border-bottom: 1px solid lightgray;
   }
 }
