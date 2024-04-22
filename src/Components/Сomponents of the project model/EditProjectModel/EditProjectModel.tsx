@@ -8,7 +8,7 @@ import { EditBtnFromEditPage } from "../../Button components/EditBtnFromEditPage
 
 export const EditProjectModel = () => {
 
-   const { id } = useParams<{ id?: string }>();
+   const { projectId } = useParams<{ projectId?: string }>();
    const [project, setProject] = useState<ProjectModelType | null>(null);
    const [name, setName] = useState("");
    const [desc, setDesc] = useState("");
@@ -16,16 +16,16 @@ export const EditProjectModel = () => {
    const navigate = useNavigate()
 
    useEffect(() => {
-      if (id) {
+      if (projectId) {
          const projects = ProjectModelService.getProjects();
-         const currentProject = projects.find(project => project.id === id);
+         const currentProject = projects.find(project => project.projectId === projectId);
          if (currentProject) {
             setProject(currentProject);
-            setName(currentProject.name);
-            setDesc(currentProject.desc);
+            setName(currentProject.projectName);
+            setDesc(currentProject.projectDesc);
          }
       }
-   }, [id]);
+   }, [projectId]);
 
    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       setName(event.target.value);

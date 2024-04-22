@@ -5,12 +5,15 @@ import { ApiService } from "../Api.Service/Api.Service";
 
 export const ProjectModelService = {
   //Create
-  createProjectModel: (name: string, desc: string): ProjectModelType => {
+  createProjectModel: (
+    projectName: string,
+    projectDesc: string
+  ): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
     const newProject: ProjectModelType = {
-      id: ulid(), //uuid(),
-      name,
-      desc,
+      projectId: ulid(), //uuid(),
+      projectName,
+      projectDesc,
     };
 
     const updateProjects = [...projects, newProject];
@@ -29,7 +32,7 @@ export const ProjectModelService = {
     const projects = ProjectModelService.getProjects();
 
     const updateProjects = projects.map((item) =>
-      item.id === project.id ? project : item
+      item.projectId === project.projectId ? project : item
     );
 
     ApiService.saveProjectModel(updateProjects);
@@ -39,13 +42,13 @@ export const ProjectModelService = {
   //Delete
   deleteProject: (id: string): void => {
     const projects = ProjectModelService.getProjects();
-    const updateProjects = projects.filter((item) => item.id !== id);
+    const updateProjects = projects.filter((item) => item.projectId !== id);
     ApiService.saveProjectModel(updateProjects);
   },
 
   // Get project by ID
   getProjectById: (id: string): ProjectModelType | undefined => {
     const projects = ProjectModelService.getProjects();
-    return projects.find((project) => project.id === id);
+    return projects.find((project) => project.projectId === id);
   },
 };

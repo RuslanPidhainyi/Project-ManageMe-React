@@ -9,8 +9,8 @@ import { UserService } from "../../Services/User.Service/User.Service";
 
 export const Profile = () => {
    const [projects, setProjects] = useState<ProjectModelType[]>([]);
-   const { id } = useParams();
-   const profileUser = id ? UserService.getUserById() : undefined;
+   const { userId } = useParams();
+   const profileUser = userId ? UserService.getUserById() : undefined;
 
    useEffect(() => {
       const storedProjects = ProjectModelService.getProjects();
@@ -22,7 +22,7 @@ export const Profile = () => {
          <div className="project">
             <ol className="a-margin-top d-flex">
                {projects.map((project: ProjectModelType) => (
-                  profileUser && <ProjectModel key={project.id} project={project} />
+                  profileUser && <ProjectModel key={project.projectId} project={project} />
                ))}
             </ol>
          </div>

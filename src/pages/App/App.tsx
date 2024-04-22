@@ -44,13 +44,13 @@ function App() {
       <Routes>
         <Route path="/" element={<LeftBar profileUser={profileUser} />}>
           <Route path="/" element={<Home />} />
-          <Route path="profile/:fullname/:id" element={<Profile />} />
+          <Route path="profile/:userFullname/:userId" element={<Profile />} />
           <Route path="create" element={<Create />} />
-          <Route path='edit/:name/:id' element={<Edit />} />
+          <Route path='edit/:projectName/:projectId' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
-          <Route path='project/:name/:id' element={<DetailedProjectModel />} />
-          <Route path="project/:name/:id/add-story" element={<CreateStory />} />
-          <Route path="project/:name/:id/edit-story" element={<EditStory />} />
+          <Route path='project/:projectName/:projectId' element={<DetailedProjectModel />} />
+          <Route path="project/:projectName/:projectId/add-story" element={<CreateStory />} />
+          <Route path="project/:projectName/:projectId/edit-story" element={<EditStory />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes >

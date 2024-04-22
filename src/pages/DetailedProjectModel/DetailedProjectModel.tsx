@@ -5,8 +5,8 @@ import { ProjectModelService } from "../../Services/ProjectModel.Service/Project
 import { useParams } from "react-router-dom";
 
 export const DetailedProjectModel = () => {
-   const { id } = useParams();
-   const project = id ? ProjectModelService.getProjectById(id) : undefined;
+   const { projectId } = useParams();
+   const project = projectId ? ProjectModelService.getProjectById(projectId) : undefined;
 
    return (
       <div className="single-project-model-page">

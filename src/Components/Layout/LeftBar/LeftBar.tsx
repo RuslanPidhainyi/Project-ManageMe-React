@@ -23,7 +23,7 @@ export const LeftBar = (props: LeftBarProps) => {
                         <LogoSection />
                      </NavLink>
 
-                     <NavLink to={`/profile/${props.profileUser.fullname}/${props.profileUser.id}`} className="left-bar-link">
+                     <NavLink to={`/profile/${props.profileUser.userFullname}/${props.profileUser.userId}`} className="left-bar-link">
                         <ProfileSection />
                      </NavLink>
 

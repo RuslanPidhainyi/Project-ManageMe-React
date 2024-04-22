@@ -15,7 +15,7 @@ interface ProjectModelProps {
 export const ProjectModel = (props: ProjectModelProps) => {
 
    const handleDelete = () => {
-      ProjectModelService.deleteProject(props.project.id);
+      ProjectModelService.deleteProject(props.project.projectId);
    };
 
    return (
@@ -26,13 +26,13 @@ export const ProjectModel = (props: ProjectModelProps) => {
             <div className="details-section-top">
                <div className="name-section">
                   <div className="name-section">
-                     <Link to={`/project/${props.project.name}/${props.project.id}`} className="single-project-model-link">
-                        <h1>{props.project.name}</h1>
+                     <Link to={`/project/${props.project.projectName}/${props.project.projectId}`} className="single-project-model-link">
+                        <h1>{props.project.projectName}</h1>
                      </Link>
                   </div>
                </div>
                <div className='action-section'>
-                  <NavLink to={`/edit/${props.project.name}/${props.project.id}`} className="action-icon-link">
+                  <NavLink to={`/edit/${props.project.projectName}/${props.project.projectId}`} className="action-icon-link">
                      <EditIcon />
                   </NavLink>
                   <button className="invisible-button" onClick={handleDelete}>
@@ -48,7 +48,7 @@ export const ProjectModel = (props: ProjectModelProps) => {
          </div>
 
          <div className="content-section">
-            <p>{props.project.desc}</p>
+            <p>{props.project.projectDesc}</p>
          </div>
       </div>
    )

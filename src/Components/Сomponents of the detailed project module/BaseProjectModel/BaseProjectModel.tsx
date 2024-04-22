@@ -18,15 +18,15 @@ export const BaseProjectModel = (props: BaseProjectModelProps) => {
             <div className="base-project-model-details-section">
                <div className="base-project-model-details-section-top">
                   <div className="base-project-model-name-section">
-                     <h1>{props.project.name}</h1>
+                     <h1>{props.project.projectName}</h1>
                   </div>
                </div>
                <div className="base-project-model-id-section">
-                  <h3><b>ID: </b>{props.project.id}</h3>
+                  <h3><b>ID: </b>{props.project.projectId}</h3>
                </div>
             </div>
             <div className="base-project-model-content-section">
-               <h4>{props.project.desc}</h4>
+               <h4>{props.project.projectDesc}</h4>
             </div>
          </div>
          <div className="base-project-model-subtask">

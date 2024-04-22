@@ -5,12 +5,12 @@ import { fakeDbUser } from '../../../../../Data/FakeDataUser/FakeDataUser';
 
 export const ProfileSection = () => {
 
-   const { name, surname } = fakeDbUser;
+   const { userFullname } = fakeDbUser;
 
    return (
       <div className="item">
          <PersonRoundedIcon className="icon" />
-         <span><b>{`${name} ${surname}`}</b></span>
+         <span><b>{`${userFullname}`}</b></span>
       </div>
    )
 }
