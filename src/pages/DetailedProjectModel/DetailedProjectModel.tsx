@@ -12,6 +12,7 @@ export const DetailedProjectModel = () => {
       <div className="single-project-model-page">
          <div className="single-project-model">
             {project && <BaseProjectModel project={project} />}
+
          </div>
       </div>
    );

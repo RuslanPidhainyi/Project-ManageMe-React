@@ -18,9 +18,13 @@ export const NewProjectModel = () => {
    }
 
    const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+
       e.preventDefault();
+
       const name = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='name']")!.value;
+
       const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
+
       handleCreateProject(name, desc);
    }
 

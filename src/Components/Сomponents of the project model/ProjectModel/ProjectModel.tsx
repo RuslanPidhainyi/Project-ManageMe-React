@@ -24,13 +24,13 @@ export const ProjectModel = (props: ProjectModelProps) => {
          <div className="details-section">
 
             <div className="details-section-top">
+
                <div className="name-section">
-                  <div className="name-section">
-                     <Link to={`/project/${props.project.projectName}/${props.project.projectId}`} className="single-project-model-link">
-                        <h1>{props.project.projectName}</h1>
-                     </Link>
-                  </div>
+                  <Link to={`/project/${props.project.projectName}/${props.project.projectId}`} className="single-project-model-link">
+                     <h1>{props.project.projectName}</h1>
+                  </Link>
                </div>
+
                <div className='action-section'>
                   <NavLink to={`/edit/${props.project.projectName}/${props.project.projectId}`} className="action-icon-link">
                      <EditIcon />

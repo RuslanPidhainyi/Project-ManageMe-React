@@ -3,6 +3,7 @@ import "../../../Style/font.css"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
 import { CreateBtnFromCreateTask } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateTask";
 import { NavLink } from "react-router-dom";
+import { StoryModel } from "../StoryModel/StoryModel";
 
 
 
@@ -36,6 +37,9 @@ export const BaseProjectModel = (props: BaseProjectModelProps) => {
                </NavLink>
             </form>
             <div className="base-project-model-subtask-section">
+               <StoryModel />
+               <StoryModel />
+               {/* <StoryModel /> */}
             </div>
          </div>
       </div>

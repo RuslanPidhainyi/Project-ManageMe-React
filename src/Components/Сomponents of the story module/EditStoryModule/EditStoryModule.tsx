@@ -1,5 +1,5 @@
 import "../../../Style/font.css"
-import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
+//import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
 import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 
@@ -34,15 +34,8 @@ export const EditStoryModule = () => {
                         <option value="done">Done</option>
                      </select>
                   </div>
+                  <ConfirmBtnFromNewStoryModule />
                </form>
-               <main className="section-btns-edit-story-module">
-                  <div className="confirm-btn-from-edit-story-module">
-                     <ConfirmBtnFromNewStoryModule />
-                  </div>
-                  <div className="cancel-btn-from-edit-story-module">
-                     <CancelBtnFromNewStoryModule />
-                  </div>
-               </main>
             </main>
          </main>
       </div>
