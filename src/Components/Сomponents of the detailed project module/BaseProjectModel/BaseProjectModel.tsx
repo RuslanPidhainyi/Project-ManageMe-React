@@ -4,6 +4,8 @@ import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.
 import { CreateBtnFromCreateTask } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateTask";
 import { NavLink } from "react-router-dom";
 import { StoryModel } from "../StoryModel/StoryModel";
+// import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type";
+//import { useEffect, useState } from "react";
 
 
 
@@ -12,7 +14,6 @@ interface BaseProjectModelProps {
 }
 
 export const BaseProjectModel = (props: BaseProjectModelProps) => {
-
    return (
       <div className="base-project-model-container">
          <div className="base-project-model-task">
@@ -37,9 +38,8 @@ export const BaseProjectModel = (props: BaseProjectModelProps) => {
                </NavLink>
             </form>
             <div className="base-project-model-subtask-section">
-               <StoryModel />
-               <StoryModel />
-               {/* <StoryModel /> */}
+               {props.project.stories.map(story => (
+                  <StoryModel key={story.storyId} story={story} projectId={props.project.projectId} />))}
             </div>
          </div>
       </div>

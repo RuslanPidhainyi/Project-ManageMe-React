@@ -1,31 +1,49 @@
 import { StoryModelType } from "../../Types/StoryModel.type/StoryModel.type";
-import { ApiService } from "../Api.Service/Api.Service";
 import { ulid } from "ulid"; // генеруємо новий ULID
+import { ProjectModelService } from "../ProjectModel.Service/ProjectModel.Service";
+import { StoryStatus } from "../../Data/Enums/EnumStoryStatus/StoryStatus";
+import { StoryPriority } from "../../Data/Enums/EnumStoryPriority/StoryPriority";
 //import { v4 as uuid } from "uuid"; // генеруємо новий UUID
 
 export const StoryModelService = {
-  //Read ( Get )
-  getStories: (): StoryModelType[] => {
-    const dbStoryModel = ApiService.getStoryModel();
-    return dbStoryModel ? JSON.parse(dbStoryModel) : [];
+  //Create
+  createStoryModel: (
+    projectId: string,
+    storyName: string,
+    storyDesc: string,
+    storyStatus: StoryStatus,
+    storyPriority: StoryPriority
+  ): StoryModelType => {
+    const project = ProjectModelService.getProjectById(projectId);
+
+    if (project) {
+      const newStory: StoryModelType = {
+        storyId: ulid(),
+        storyName,
+        storyDesc,
+        storyStatus,
+        storyPriority,
+        stroryDate: new Date().toLocaleDateString(),
+      };
+
+      project.stories.push(newStory);
+      ProjectModelService.updateProject(project);
+      return newStory;
+    } else {
+      throw new Error("Project not found");
+    }
   },
 
-  //Create
-  createStoryModel: (storyName: string, storyDesc: string): StoryModelType => {
-    const stories = StoryModelService.getStories();
-    const newStory: StoryModelType = {
-      storyId: ulid(),
-      storyName,
-      storyDesc,
-      //storyPriority,
-      //projectName,
-      //storyData,
-      //storyStatus,
-      //userFullname,
-    };
-
-    const updateStories = [...stories, newStory];
-    ApiService.saveStoryModel(updateStories);
-    return newStory;
+  //Delete
+  deleteStoryModel: (projectId: string, storyId: string): void => {
+    const project = ProjectModelService.getProjectById(projectId);
+    if (project) {
+      project.stories = project.stories.filter(
+        (story) => story.storyId !== storyId
+      );
+      ProjectModelService.updateProject(project);
+    } else {
+      throw new Error("Project not found");
+    }
   },
 };

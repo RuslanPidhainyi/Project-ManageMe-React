@@ -10,8 +10,11 @@
       align-items: center;
       justify-content: space-between;
 
+      padding: 15px 0 0 0;
+      margin: 0 0 10px 0;
+
       .story-model-name-section {
-        width: 440px; //width: 520px;
+        width: 620px; //width: 520px;
 
         h2 {
           font-weight: bold;
@@ -19,7 +22,7 @@
       }
       .story-model-action-section {
         display: flex;
-        margin: 15px 0 0;
+        margin: 10px 0 0;
 
         .story-model-action-icon-link {
           text-decoration: none;
@@ -35,7 +38,7 @@
     }
 
     .story-model-story-id-section {
-      margin: 0 0 10px 0;
+      margin: 0 0 15px 0;
       //width: 440px; // width: 580px;
       span {
         b {
@@ -84,8 +87,6 @@
     }
   }
 }
-
-//////////////////////////////////////////////////////////////////
 
 #light .story-model-container {
   color: black;

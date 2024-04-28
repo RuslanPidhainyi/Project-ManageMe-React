@@ -40,11 +40,6 @@ export const ProjectModel = (props: ProjectModelProps) => {
                   </button>
                </div>
             </div>
-
-            {/* <div className="id-section">
-               <span><b>ID: </b>{props.project.id}</span>
-            </div> */}
-
          </div>
 
          <div className="content-section">

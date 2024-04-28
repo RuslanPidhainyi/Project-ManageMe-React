@@ -14,6 +14,7 @@ export const ProjectModelService = {
       projectId: ulid(), //uuid(),
       projectName,
       projectDesc,
+      stories: [],
     };
 
     const updateProjects = [...projects, newProject];

@@ -38,7 +38,7 @@ export const EditProjectModel = () => {
    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (project) {
-         const updatedProject = { ...project, name, desc };
+         const updatedProject = { ...project, projectName: name, projectDesc: desc };
          ProjectModelService.updateProject(updatedProject);
       }
 

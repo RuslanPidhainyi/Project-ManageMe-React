@@ -1,23 +1,27 @@
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
-//import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
 import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
-// import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
-// import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service"
+import { StoryPriority } from "../../../Data/Enums/EnumStoryPriority/StoryPriority"
+import { StoryStatus } from "../../../Data/Enums/EnumStoryStatus/StoryStatus"
 
 export const NewStoryModule = () => {
 
    const navigate = useNavigate()
+   const { projectName, projectId } = useParams()
 
-   const handleCreateStory = (name: string, desc: string) => {
+   const handleCreateStory = (name: string, desc: string, status: StoryStatus, priority: StoryPriority) => {
       if (name.trim() !== "" && desc.trim() !== "") {
-         StoryModelService.createStoryModel(name, desc)
+         if (projectId) {
+            StoryModelService.createStoryModel(projectId, name, desc, status, priority);
+            navigate(`/project/${projectName}/${projectId}`);
+         } else {
+            console.error("projectId is undefined");
+         }
       }
+   };
 
-      navigate(`/`) //Temporarily
-   }
 
    const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
@@ -26,7 +30,11 @@ export const NewStoryModule = () => {
 
       const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
 
-      handleCreateStory(name, desc)
+      const priority = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#priority")!.value as StoryPriority;
+
+      const status = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#status")!.value as StoryStatus;
+
+      handleCreateStory(name, desc, status, priority)
    }
 
    return (
@@ -37,7 +45,7 @@ export const NewStoryModule = () => {
                <form onSubmit={handleOnSubmit}>
                   <div className="form-name-task">
                      <label htmlFor="name">Name:</label>
-                     <input type="text" name="name" maxLength={51} />
+                     <input type="text" name="name" maxLength={53} />
                   </div>
                   <div className="form-desc-task">
                      <label htmlFor="desc">Description:</label>
@@ -47,7 +55,7 @@ export const NewStoryModule = () => {
                      <label htmlFor="priority">Priority:</label>
                      <select id="priority">
                         <option value="low">Low</option>
-                        <option value="medium">Mediun</option>
+                        <option value="medium">Medium</option>
                         <option value="high">High</option>
                      </select>
                   </div>
