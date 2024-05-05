@@ -41,7 +41,7 @@ export const NewStoryModule = () => {
       <div className="new-story-model-container">
          <main className="common-card-new-story-model-container">
             <main className="main-contener-new-story-model-container">
-               <h2 className="page-name-new-story-model-container">Add new task</h2>
+               <h2 className="page-name-new-story-model-container">Add new story</h2>
                <form onSubmit={handleOnSubmit}>
                   <div className="form-name-task">
                      <label htmlFor="name">Name:</label>

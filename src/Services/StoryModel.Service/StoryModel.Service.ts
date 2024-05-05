@@ -23,7 +23,7 @@ export const StoryModelService = {
         storyDesc,
         storyStatus,
         storyPriority,
-        stroryDate: new Date().toLocaleDateString(),
+        stroryDate: new Date().toLocaleString(), //.toLocaleDateString(),
       };
 
       project.stories.push(newStory);
@@ -33,6 +33,12 @@ export const StoryModelService = {
       throw new Error("Project not found");
     }
   },
+
+  //Update
+  // updateStoryModel: (projectId: string, updateStory: StoryModelType): StoryModelType => {
+  //   const project = ProjectModelService.getProjectById(projectId)
+
+  // }
 
   //Delete
   deleteStoryModel: (projectId: string, storyId: string): void => {

@@ -8,7 +8,7 @@ export const EditStoryModule = () => {
       <div className="edit-story-model-container">
          <main className="common-card-edit-story-model-container">
             <main className="main-contener-edit-story-model-container">
-               <h2 className="page-name-edit-story-model-container">Edit task</h2>
+               <h2 className="page-name-edit-story-model-container">Edit story</h2>
                <form>
                   <div className="form-name-task">
                      <label htmlFor="name">Name:</label>

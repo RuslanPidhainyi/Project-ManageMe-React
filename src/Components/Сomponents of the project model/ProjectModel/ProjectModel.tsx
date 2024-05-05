@@ -25,7 +25,7 @@ export const ProjectModel = (props: ProjectModelProps) => {
 
             <div className="details-section-top">
 
-               <div className="name-section">
+               <div className="project-model-name-section">
                   <Link to={`/project/${props.project.projectName}/${props.project.projectId}`} className="single-project-model-link">
                      <h1>{props.project.projectName}</h1>
                   </Link>

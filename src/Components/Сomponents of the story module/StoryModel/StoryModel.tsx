@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import "../../../Style/font.css"
 import { EditIcon } from "../../Icons/EditIcon/EditIcon"
 import "./style.scss"
@@ -25,7 +25,9 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
 
             <div className="story-model-details-section-top">
                <div className="story-model-name-section">
-                  <h2>{story.storyName}</h2>
+                  <Link to={`asd`} className="single-story-model-link">
+                     <h2>{story.storyName}</h2>
+                  </Link>
                </div>
                <div className='story-model-action-section'>
 
@@ -53,6 +55,7 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
             </div>
 
             <div className="story-model-owner-id-section">
+               {/*Temporarily*/}
                <span><b>Owner Id: </b>"01HW66GS2XQ6DYBZQKQR8H98VN"</span>
             </div>
 
@@ -64,6 +67,6 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
          <div className="story-model-date-of-creation-section">
             <span>{story.stroryDate}</span>
          </div>
-      </div>
+      </div >
    )
 }

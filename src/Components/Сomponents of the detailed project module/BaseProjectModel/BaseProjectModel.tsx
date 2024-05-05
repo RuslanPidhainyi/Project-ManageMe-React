@@ -1,9 +1,9 @@
 import "./style.scss"
 import "../../../Style/font.css"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
-import { CreateBtnFromCreateTask } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateTask";
+import { CreateBtnFromCreateStory } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateStory";
 import { NavLink } from "react-router-dom";
-import { StoryModel } from "../StoryModel/StoryModel";
+import { StoryModel } from "../../Сomponents of the story module/StoryModel/StoryModel";
 // import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type";
 //import { useEffect, useState } from "react";
 
@@ -34,7 +34,7 @@ export const BaseProjectModel = (props: BaseProjectModelProps) => {
          <div className="base-project-model-subtask">
             <form>
                <NavLink to={`add-story`}>
-                  <CreateBtnFromCreateTask />
+                  <CreateBtnFromCreateStory />
                </NavLink>
             </form>
             <div className="base-project-model-subtask-section">

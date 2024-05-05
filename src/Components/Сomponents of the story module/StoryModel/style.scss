@@ -16,8 +16,12 @@
       .story-model-name-section {
         width: 620px; //width: 520px;
 
-        h2 {
-          font-weight: bold;
+        .single-story-model-link {
+          text-decoration: none;
+
+          h2 {
+            font-weight: bold;
+          }
         }
       }
       .story-model-action-section {
@@ -81,7 +85,7 @@
 
   .story-model-date-of-creation-section {
     position: relative;
-    left: 670px;
+    left: 570px;
     padding: 0 0 10px 0;
     span {
     }
@@ -92,6 +96,9 @@
   color: black;
   background-color: #f3f0e8;
 
+  .single-story-model-link {
+    color: black;
+  }
   .story-model-action-icon-link {
     color: black;
   }
@@ -104,6 +111,10 @@
 #dark .story-model-container {
   color: white;
   background-color: #141414;
+
+  .single-story-model-link {
+    color: white;
+  }
 
   .story-model-action-icon-link {
     color: rgb(49, 130, 188);
