@@ -1,7 +1,7 @@
 import "./style.scss"
 import "../../../Style/font.css"
 
-export const Task = () => {
+export const TaskModel = () => {
    return (
       <div className="task-container">
          <div className="task">

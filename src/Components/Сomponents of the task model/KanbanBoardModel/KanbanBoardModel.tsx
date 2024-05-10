@@ -1,11 +1,11 @@
 import "./style.scss"
 import "../../../Style/font.css"
-import { Task } from "../Task/Task"
+import { TaskModel } from "../TaskModel/TaskModel"
 // 1. przefiltruj liste taskow - wszystkie todo
 // 2. wyswietl je w kolumnie todo
 // 3. przefiltruj liste taskow - wszystkie doing
 
-export const KanbanBoard = () => {
+export const KanbanBoardModel = () => {
    return (
       <div className="kanban-board-container">
          <div className="kanban-board">
@@ -15,7 +15,7 @@ export const KanbanBoard = () => {
                   <h2>ToDo</h2>
                </div>
                <div className="item">
-                  <Task />
+                  <TaskModel />
                </div>
             </div>
 

@@ -9,11 +9,11 @@ import { Routes, Route } from "react-router-dom"
 import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
 import { Profile } from "../Profile/Profile"
-import { DetailedProjectModel } from "../DetailedProjectModel/DetailedProjectModel"
+import { Story } from "../Story/Story"
 import { CreateStory } from "../CreateStory/CreateStory"
 import { EditStory } from "../EditStory/EditStory"
 import { UserService } from "../../Services/User.Service/User.Service"
-import { DetailedStoryModel } from "../DetailedStoryModel/DetailedStoryModel"
+import { Task } from "../Task/Task"
 import Login from "../Login/Login"
 import Register from "../Register/Register"
 
@@ -53,10 +53,10 @@ function App() {
           <Route path="create" element={<Create />} />
           <Route path='edit/:projectId' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
-          <Route path='project/:projectId' element={<DetailedProjectModel />} />
+          <Route path='project/:projectId' element={<Story />} />
           <Route path="project/:projectId/add-story" element={<CreateStory />} />
           <Route path="project/:projectId/edit-story/:storyId" element={<EditStory />} />
-          <Route path="project/:projectId/:storyId" element={<DetailedStoryModel />} />
+          <Route path="project/:projectId/:storyId" element={<Task />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes >

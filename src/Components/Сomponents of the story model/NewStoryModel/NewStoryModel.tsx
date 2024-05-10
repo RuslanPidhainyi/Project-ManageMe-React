@@ -6,7 +6,7 @@ import { StoryModelService } from "../../../Services/StoryModel.Service/StoryMod
 import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
 import { Status } from "../../../Data/Enums/EnumStatus/Status"
 
-export const NewStoryModule = () => {
+export const NewStoryModel = () => {
 
    const navigate = useNavigate()
    const { projectId } = useParams()

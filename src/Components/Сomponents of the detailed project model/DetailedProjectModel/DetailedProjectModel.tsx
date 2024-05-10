@@ -3,17 +3,17 @@ import "../../../Style/font.css"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
 import { CreateBtnFromCreateStory } from "../../Button components/CreateBtnFromCreateTask/CreateBtnFromCreateStory";
 import { NavLink } from "react-router-dom";
-import { StoryModel } from "../../Сomponents of the story module/StoryModel/StoryModel";
+import { StoryModel } from "../../Сomponents of the story model/StoryModel/StoryModel";
 // import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type";
 //import { useEffect, useState } from "react";
 
 
 
-interface BaseProjectModelProps {
+interface DetailedProjectModelProps {
    project: ProjectModelType;
 }
 
-export const BaseProjectModel = (props: BaseProjectModelProps) => {
+export const DetailedProjectModel = (props: DetailedProjectModelProps) => {
    return (
       <div className="base-project-model-container">
          <div className="base-project-model-task">

@@ -1,13 +1,13 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { NewStoryModule } from "../../Components/Сomponents of the story module/NewStoryModule/NewStoryModule"
+import { NewStoryModel } from "../../Components/Сomponents of the story model/NewStoryModel/NewStoryModel"
 
 
 export const CreateStory = () => {
    return (
       <div className='create-story-page'>
          <div className='new-story-page'>
-            <NewStoryModule />
+            <NewStoryModel />
          </div>
       </div>
    )

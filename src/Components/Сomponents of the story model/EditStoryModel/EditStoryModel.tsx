@@ -6,7 +6,7 @@ import "./style.scss"
 // import { useEffect, useState } from "react"
 // import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type"
 
-export const EditStoryModule = () => {
+export const EditStoryModel = () => {
 
    // const { storyId } = useParams<{ storyId?: string }>();
 
