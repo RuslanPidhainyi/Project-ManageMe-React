@@ -1,0 +1,98 @@
+.project-model-container {
+  //padding: 100px 300px; //30px 100px 30px 100px;;
+  border-radius: 10px;
+
+  .details-section {
+    margin: 10px;
+
+    .details-section-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .project-model-name-section {
+        width: 520px;
+
+        .single-project-model-link {
+          text-decoration: none;
+
+          h1 {
+            font-size: larger;
+            font-weight: bold;
+          }
+        }
+      }
+      .action-section {
+        display: flex;
+
+        .action-icon-link {
+          // color: black;
+          text-decoration: none;
+        }
+        .invisible-button {
+          border: none;
+          background: none;
+          padding: 0;
+          cursor: pointer;
+        }
+      }
+    }
+
+    .id-section {
+      width: 580px;
+    }
+  }
+
+  .content-section {
+    margin: 10px;
+    width: 580px;
+  }
+}
+
+#light .project-model-container {
+  color: black;
+  background-color: white;
+
+  .single-project-model-link {
+    color: black;
+
+    &:active {
+      cursor: pointer;
+      color: rgb(77, 77, 77);
+      transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+    }
+  }
+
+  .action-icon-link {
+    color: black;
+  }
+
+  .invisible-button {
+    color: black;
+  }
+}
+
+#dark .project-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  .single-project-model-link {
+    color: white;
+
+    &:active {
+      cursor: pointer;
+      color: rgb(171, 171, 171);
+      transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+    }
+  }
+
+  .action-icon-link {
+    color: rgb(49, 130, 188);
+  }
+
+  .invisible-button {
+    color: rgb(231, 40, 40);
+  }
+}

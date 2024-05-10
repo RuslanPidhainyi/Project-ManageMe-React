@@ -1,5 +1,6 @@
 export interface UserType {
-  id: string;
-  name: string;
-  surname: string;
+  userId: string;
+  userName: string;
+  userSurname: string;
+  userFullname?: string;
 }

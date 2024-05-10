@@ -10,7 +10,12 @@ import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
 import { Profile } from "../Profile/Profile"
 import { DetailedProjectModel } from "../DetailedProjectModel/DetailedProjectModel"
-
+import { CreateStory } from "../CreateStory/CreateStory"
+import { EditStory } from "../EditStory/EditStory"
+import { UserService } from "../../Services/User.Service/User.Service"
+import { DetailedStoryModel } from "../DetailedStoryModel/DetailedStoryModel"
+import Login from "../Login/Login"
+import Register from "../Register/Register"
 
 function App() {
   const [displayMode, setDisplayMode] = useState("light");
@@ -35,26 +40,27 @@ function App() {
     setDisplayMode(newMode);
   }
 
+  const profileUser = UserService.getUserById();
+
   return (
     <main className="App" id={displayMode}>
       <Routes>
-        <Route path="/" element={<LeftBar />}>
-          <Route path="/" element={<Home />}>
-            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
-          </Route>
-          <Route path="profile" element={<Profile />} >
-            {/* <Route path='project' element={<DetailedProjectModel />} /> */}
-          </Route>
+        <Route path='/' element={<Login />} />
+        <Route path='register' element={<Register />} />
+        <Route path="/" element={<LeftBar profileUser={profileUser} />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="profile/:userFullname/:userId" element={<Profile />} />
           <Route path="create" element={<Create />} />
-          <Route path='edit/:id' element={<Edit />} />
+          <Route path='edit/:projectId' element={<Edit />} />
           <Route path='settings' element={<Settings displayModeSwitch={displayModeSwitch} />} />
+          <Route path='project/:projectId' element={<DetailedProjectModel />} />
+          <Route path="project/:projectId/add-story" element={<CreateStory />} />
+          <Route path="project/:projectId/edit-story/:storyId" element={<EditStory />} />
+          <Route path="project/:projectId/:storyId" element={<DetailedStoryModel />} />
           <Route path='*' element={<NotFoundPage />} />
-          <Route path='project' element={<DetailedProjectModel />} />
-          {/* <Route path='project/:id' element={<DetailedProjectModel />} /> */}
-          <Route path='project/:name/:id' element={<DetailedProjectModel />} />
         </Route>
-      </Routes>
-    </main>
+      </Routes >
+    </main >
   )
 }
 

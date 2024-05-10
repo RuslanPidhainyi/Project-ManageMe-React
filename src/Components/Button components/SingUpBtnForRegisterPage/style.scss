@@ -1,0 +1,33 @@
+.sing-up-btn {
+  width: 15%;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+  font-size: 300;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#light .sing-up-btn {
+  color: white;
+  background-color: rgb(0, 0, 0);
+
+  &:hover {
+    background-color: rgb(39, 172, 61);
+    color: rgb(255, 255, 255);
+  }
+}
+
+#dark .sing-up-btn {
+  color: black;
+  background-color: rgb(39, 172, 61);
+
+  &:hover {
+    background-color: rgb(59, 213, 85);
+    color: black;
+  }
+}

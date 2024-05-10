@@ -1,5 +1,9 @@
+import { StoryModelType } from "../StoryModel.type/StoryModel.type";
+//import { UserType } from "../User.type/User.type";
+
 export interface ProjectModelType {
-  id: string;
-  name: string;
-  desc: string;
+  projectId: string;
+  projectName: string;
+  projectDesc: string;
+  stories: StoryModelType[];
 }

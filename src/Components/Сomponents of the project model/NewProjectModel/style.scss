@@ -1,0 +1,69 @@
+.new-project-model-container {
+  border-radius: 10px;
+  margin: 100px 0 0 0;
+  padding: 40px 0 40px 0;
+
+  .common-card-new-project-model-container {
+    display: flex;
+
+    .main-contener-new-project-model-container {
+      margin: 0 auto;
+      width: 50vw;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      .page-name-new-project-model-container {
+        font-size: 50px;
+        font-weight: 750;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        input {
+          border: none;
+          padding: 20px 10px;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .create-btn {
+          margin-left: 640px;
+        }
+      }
+      span {
+        font-size: 16px;
+        margin-top: 2.5vh;
+      }
+    }
+  }
+}
+
+#light .new-project-model-container {
+  color: black;
+  background-color: white;
+
+  input {
+    color: black;
+    background-color: white;
+    border-bottom: 1px solid lightgray;
+  }
+}
+
+#dark .new-project-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  input {
+    color: white;
+    background-color: black;
+    border-bottom: 1px solid darkgray;
+  }
+}

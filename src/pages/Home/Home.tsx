@@ -1,9 +1,12 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { ProjectModel } from "../../Components/Сomponents of the project module/ProjectModel/ProjectModel"
+import { ProjectModel } from "../../Components/Сomponents of the project model/ProjectModel/ProjectModel"
 import { ProjectModelType } from "../../Types/ProjectModel.type/ProjectModel.type"
 import { ProjectModelService } from "../../Services/ProjectModel.Service/ProjectModel.Service";
 import { useEffect, useState } from "react";
+import { SearchFor } from "../../Components/SearchFor/SearchFor";
+
+
 
 export const Home = () => {
    const [projects, setProjects] = useState<ProjectModelType[]>([]);
@@ -14,32 +17,17 @@ export const Home = () => {
    }, []);
 
    return (
-      <section className="home-page">
-         {/* ******************************************************************************* */}
-
-         {/* 
-         <div className="container-​​search-for-a-city">
-            <div className="​​search-for-a-city">
-               <input
-                  type="text"
-                  className="city-​​search"
-                  placeholder="Search for a city or country"
-               />
-               <button className="btn-add">
-                  <i className="material-symbols-rounded"> add </i>
-               </button>
-
-            </div>
-         </div> */}
-
-         {/* ******************************************************************************* */}
+      <div className="home-page">
+         <div className="search-for-projects">
+            <SearchFor />
+         </div>
          <div className="project">
             <ol className="a-margin-top d-flex">
                {projects.map((project: ProjectModelType) => (
-                  <ProjectModel key={project.id} project={project} />
+                  <ProjectModel key={project.projectId} project={project} />
                ))}
             </ol>
          </div>
-      </section>
+      </div >
    )
 }

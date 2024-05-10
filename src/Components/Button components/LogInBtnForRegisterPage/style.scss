@@ -1,0 +1,33 @@
+.log-in-btn {
+  width: 10%;
+  padding: 5px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(59, 157, 213);
+    color: rgb(255, 255, 255);
+  }
+}
+
+#light .log-in-btn {
+  color: white;
+  background-color: rgb(0, 0, 0);
+
+  &:hover {
+    background-color: rgb(59, 108, 213);
+    color: rgb(255, 255, 255);
+  }
+}
+
+#dark .log-in-btn {
+  color: black;
+  background-color: rgb(59, 108, 213);
+
+  &:hover {
+    background-color: rgb(91, 150, 227);
+    color: black;
+  }
+}

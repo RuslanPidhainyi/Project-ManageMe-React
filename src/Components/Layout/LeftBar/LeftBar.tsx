@@ -6,8 +6,13 @@ import { HomeSection } from "../LeftBarSections/ItemsSections/HomeSection/HomeSe
 import { CreateSection } from "../LeftBarSections/ItemsSections/CreateSection/CreateSection"
 import { SettingsSection } from "../LeftBarSections/ItemsSections/SettingsSection/SettingsSection"
 import { ProfileSection } from "../LeftBarSections/ItemsSections/ProfileSection/ProfileSection"
+import { UserType } from "../../../Types/User.type/User.type"
+import { LogoutSection } from "../LeftBarSections/ItemsSections/LogoutSection/LogoutSection"
 
-export const LeftBar = () => {
+interface LeftBarProps {
+   profileUser: UserType;
+}
+export const LeftBar = (props: LeftBarProps) => {
    return (
       <div style={{ display: "flex" }}>
          <>
@@ -15,24 +20,28 @@ export const LeftBar = () => {
                <div className="container">
                   <div className="menu">
 
-                     <NavLink to={"/"} className="left-bar-link">
+                     <NavLink to={"/home"} className="left-bar-link">
                         <LogoSection />
                      </NavLink>
 
-                     <NavLink to={"/profile"} className="left-bar-link">
+                     <NavLink to={`/profile/${props.profileUser.userFullname}/${props.profileUser.userId}`} className="left-bar-link link-hover">
                         <ProfileSection />
                      </NavLink>
 
-                     <NavLink to={"/"} className="left-bar-link">
+                     <NavLink to={"/home"} className="left-bar-link link-hover">
                         <HomeSection />
                      </NavLink>
 
-                     <NavLink to={"/create"} className="left-bar-link">
+                     <NavLink to={"/create"} className="left-bar-link link-hover">
                         <CreateSection />
                      </NavLink>
 
-                     <NavLink to={"/settings"} className="left-bar-link">
+                     <NavLink to={"/settings"} className="left-bar-link link-hover">
                         <SettingsSection />
+                     </NavLink>
+
+                     <NavLink to={"/"} className="left-bar-link link-hover">
+                        <LogoutSection />
                      </NavLink>
 
                   </div>
