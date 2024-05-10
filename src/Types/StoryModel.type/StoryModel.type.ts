@@ -1,13 +1,14 @@
-import { StoryPriority } from "../../Data/Enums/EnumStoryPriority/StoryPriority";
-import { StoryStatus } from "../../Data/Enums/EnumStoryStatus/StoryStatus";
+import { Priority } from "../../Data/Enums/EnumPriority/Priority";
+import { Status } from "../../Data/Enums/EnumStatus/Status";
+//import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
 
-export interface StoryModelType {
+export type StoryModelType = {
   storyId: string;
   storyName: string;
   storyDesc: string;
-  storyPriority: StoryPriority;
-  storyStatus: StoryStatus;
+  storyPriority: Priority;
+  storyStatus: Status;
   stroryDate: string;
-  //ownerId:
+  ownerId: string;
   //userFullname:
-}
+};

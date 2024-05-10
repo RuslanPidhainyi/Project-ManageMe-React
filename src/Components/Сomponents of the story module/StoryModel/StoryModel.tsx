@@ -25,13 +25,14 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
 
             <div className="story-model-details-section-top">
                <div className="story-model-name-section">
+                  {/*Temperetly */}
                   <Link to={`asd`} className="single-story-model-link">
                      <h2>{story.storyName}</h2>
                   </Link>
                </div>
                <div className='story-model-action-section'>
 
-                  <NavLink to={`/project/:projectName/:projectId/edit-story`} className="story-model-action-icon-link">
+                  <NavLink to={`edit-story/${story.storyId}`} className="story-model-action-icon-link">
                      <EditIcon />
                   </NavLink>
 
@@ -55,8 +56,7 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
             </div>
 
             <div className="story-model-owner-id-section">
-               {/*Temporarily*/}
-               <span><b>Owner Id: </b>"01HW66GS2XQ6DYBZQKQR8H98VN"</span>
+               <span><b>Owner Id: </b>{story.ownerId}</span>
             </div>
 
          </div>

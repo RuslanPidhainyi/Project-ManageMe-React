@@ -1,0 +1,52 @@
+.kanban-board-container {
+  margin: 100px 0 0 0;
+
+  .kanban-board {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    .board {
+      border-radius: 10px;
+      padding: 0px 140px 460px 0px;
+
+      .board-title {
+        margin: 10px 100px 0 0;
+        padding: 10px 25px;
+        //background-color: yellow;
+
+        h2 {
+        }
+      }
+
+      .item {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+#light .kanban-board-container {
+  .kanban-board {
+    .board {
+      background-color: white;
+      color: black;
+      .board-title {
+      }
+    }
+  }
+}
+
+#dark .kanban-board-container {
+  .kanban-board {
+    .board {
+      border: 1px rgba(255, 255, 255, 0.248) solid;
+      background-color: black;
+      color: white;
+      box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+      .board-title {
+      }
+    }
+  }
+}

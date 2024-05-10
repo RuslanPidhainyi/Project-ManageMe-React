@@ -42,7 +42,7 @@ export const EditProjectModel = () => {
          ProjectModelService.updateProject(updatedProject);
       }
 
-      navigate(`/`)
+      navigate(`/home`)
    };
 
    return (

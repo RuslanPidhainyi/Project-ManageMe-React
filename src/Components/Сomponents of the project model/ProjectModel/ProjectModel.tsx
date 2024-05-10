@@ -5,11 +5,9 @@ import { EditIcon } from "../../Icons/EditIcon/EditIcon";
 import "./style.scss"
 import { ProjectModelType } from "../../../Types/ProjectModel.type/ProjectModel.type";
 import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service";
-//import { UserType } from "../../../Types/User.type/User.type";
 
 interface ProjectModelProps {
    project: ProjectModelType;
-   //user: UserType;
 }
 
 export const ProjectModel = (props: ProjectModelProps) => {
@@ -26,13 +24,13 @@ export const ProjectModel = (props: ProjectModelProps) => {
             <div className="details-section-top">
 
                <div className="project-model-name-section">
-                  <Link to={`/project/${props.project.projectName}/${props.project.projectId}`} className="single-project-model-link">
+                  <Link to={`/project/${props.project.projectId}`} className="single-project-model-link">
                      <h1>{props.project.projectName}</h1>
                   </Link>
                </div>
 
                <div className='action-section'>
-                  <NavLink to={`/edit/${props.project.projectName}/${props.project.projectId}`} className="action-icon-link">
+                  <NavLink to={`/edit/${props.project.projectId}`} className="action-icon-link">
                      <EditIcon />
                   </NavLink>
                   <button className="invisible-button" onClick={handleDelete}>

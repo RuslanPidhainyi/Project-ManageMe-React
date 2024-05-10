@@ -3,19 +3,19 @@ import "../../../Style/font.css"
 import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service"
-import { StoryPriority } from "../../../Data/Enums/EnumStoryPriority/StoryPriority"
-import { StoryStatus } from "../../../Data/Enums/EnumStoryStatus/StoryStatus"
+import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
+import { Status } from "../../../Data/Enums/EnumStatus/Status"
 
 export const NewStoryModule = () => {
 
    const navigate = useNavigate()
-   const { projectName, projectId } = useParams()
+   const { projectId } = useParams()
 
-   const handleCreateStory = (name: string, desc: string, status: StoryStatus, priority: StoryPriority) => {
+   const handleCreateStory = (name: string, desc: string, status: Status, priority: Priority) => {
       if (name.trim() !== "" && desc.trim() !== "") {
          if (projectId) {
             StoryModelService.createStoryModel(projectId, name, desc, status, priority);
-            navigate(`/project/${projectName}/${projectId}`);
+            navigate(`/project/${projectId}`);
          } else {
             console.error("projectId is undefined");
          }
@@ -30,9 +30,9 @@ export const NewStoryModule = () => {
 
       const desc = (e.target as HTMLFormElement).querySelector<HTMLInputElement>("input[name='desc']")!.value;
 
-      const priority = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#priority")!.value as StoryPriority;
+      const priority = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#priority")!.value as Priority;
 
-      const status = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#status")!.value as StoryStatus;
+      const status = (e.target as HTMLFormElement).querySelector<HTMLSelectElement>("#status")!.value as Status;
 
       handleCreateStory(name, desc, status, priority)
    }

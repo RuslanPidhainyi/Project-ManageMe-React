@@ -1,9 +1,27 @@
+//import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
 //import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
 import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
+// import { useEffect, useState } from "react"
+// import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type"
 
 export const EditStoryModule = () => {
+
+   // const { storyId } = useParams<{ storyId?: string }>();
+
+   // const [story, setStory] = useState<StoryModelType | null>(null);
+   // const [name, setName] = useState("");
+   // const [desc, setDesc] = useState("");
+
+   // const navigate = useNavigate()
+
+   // useEffect(() => {
+   //    if (storyId) {
+   //       console.log("")
+   //    }
+   // }, [storyId])
+
    return (
       <div className="edit-story-model-container">
          <main className="common-card-edit-story-model-container">

@@ -1,8 +1,9 @@
 import { StoryModelType } from "../../Types/StoryModel.type/StoryModel.type";
 import { ulid } from "ulid"; // генеруємо новий ULID
 import { ProjectModelService } from "../ProjectModel.Service/ProjectModel.Service";
-import { StoryStatus } from "../../Data/Enums/EnumStoryStatus/StoryStatus";
-import { StoryPriority } from "../../Data/Enums/EnumStoryPriority/StoryPriority";
+import { Status } from "../../Data/Enums/EnumStatus/Status";
+import { Priority } from "../../Data/Enums/EnumPriority/Priority";
+import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
 //import { v4 as uuid } from "uuid"; // генеруємо новий UUID
 
 export const StoryModelService = {
@@ -11,8 +12,8 @@ export const StoryModelService = {
     projectId: string,
     storyName: string,
     storyDesc: string,
-    storyStatus: StoryStatus,
-    storyPriority: StoryPriority
+    storyStatus: Status,
+    storyPriority: Priority
   ): StoryModelType => {
     const project = ProjectModelService.getProjectById(projectId);
 
@@ -23,6 +24,7 @@ export const StoryModelService = {
         storyDesc,
         storyStatus,
         storyPriority,
+        ownerId: fakeDbUser.userId,
         stroryDate: new Date().toLocaleString(), //.toLocaleDateString(),
       };
 
@@ -35,10 +37,23 @@ export const StoryModelService = {
   },
 
   //Update
-  // updateStoryModel: (projectId: string, updateStory: StoryModelType): StoryModelType => {
-  //   const project = ProjectModelService.getProjectById(projectId)
+  // updateStoryModel: (
+  //   projectId: string,
+  //   story: StoryModelType
+  // ): StoryModelType => {
+  //   const project = ProjectModelService.getProjectById(projectId);
 
-  // }
+  //   if (project) {
+  //     const updateStory = project.stories.map((item) =>
+  //       item.storyId === story.storyId ? story : item
+  //     );
+
+  //     ProjectModelService.updateProject(updateStory);
+  //     return story;
+  //   } else {
+  //     throw new Error("Project not found");
+  //   }
+  // },
 
   //Delete
   deleteStoryModel: (projectId: string, storyId: string): void => {

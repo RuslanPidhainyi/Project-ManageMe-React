@@ -1,0 +1,31 @@
+.sing-up-btn-for-login-page {
+  width: 30%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#light .sing-up-btn-for-login-page {
+  color: white;
+  background-color: rgb(0, 0, 0);
+
+  &:hover {
+    background-color: rgb(39, 172, 61);
+    color: rgb(255, 255, 255);
+  }
+}
+
+#dark .sing-up-btn-for-login-page {
+  color: black;
+  background-color: rgb(39, 172, 61);
+
+  &:hover {
+    background-color: rgb(59, 213, 85);
+    color: black;
+  }
+}

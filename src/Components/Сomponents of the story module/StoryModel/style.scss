@@ -98,6 +98,12 @@
 
   .single-story-model-link {
     color: black;
+
+    &:active {
+      cursor: pointer;
+      color: rgb(77, 77, 77);
+      transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+    }
   }
   .story-model-action-icon-link {
     color: black;
@@ -114,6 +120,12 @@
 
   .single-story-model-link {
     color: white;
+
+    &:active {
+      cursor: pointer;
+      color: rgb(171, 171, 171);
+      transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
+    }
   }
 
   .story-model-action-icon-link {
