@@ -54,17 +54,17 @@ export const NewStoryModel = () => {
                   <div className="form-priority-task">
                      <label htmlFor="priority">Priority:</label>
                      <select id="priority">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
                      </select>
                   </div>
                   <div className="form-status-task">
                      <label htmlFor="status">Status:</label>
                      <select id="status" >
-                        <option value="todo">Todo</option>
-                        <option value="doing">Doing</option>
-                        <option value="done">Done</option>
+                        <option value="Todo">Todo</option>
+                        <option value="Doing">Doing</option>
+                        <option value="Done">Done</option>
                      </select>
                   </div>
                   <ConfirmBtnFromNewStoryModule />

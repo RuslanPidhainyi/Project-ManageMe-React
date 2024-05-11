@@ -16,6 +16,7 @@ export const KanbanBoardModel = () => {
                </div>
                <div className="item">
                   <TaskModel />
+                  <TaskModel />
                </div>
             </div>
 

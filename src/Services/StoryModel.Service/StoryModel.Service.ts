@@ -25,7 +25,8 @@ export const StoryModelService = {
         storyStatus,
         storyPriority,
         ownerId: fakeDbUser.userId,
-        stroryDate: new Date().toLocaleString(), //.toLocaleDateString(),
+        stroryDate: new Date().toLocaleString(),
+        tasks: [],
       };
 
       project.stories.push(newStory);
@@ -37,23 +38,24 @@ export const StoryModelService = {
   },
 
   //Update
-  // updateStoryModel: (
-  //   projectId: string,
-  //   story: StoryModelType
-  // ): StoryModelType => {
-  //   const project = ProjectModelService.getProjectById(projectId);
+  updateStoryModel: (
+    projectId: string,
+    updatedStory: StoryModelType
+  ): StoryModelType => {
+    const project = ProjectModelService.getProjectById(projectId);
 
-  //   if (project) {
-  //     const updateStory = project.stories.map((item) =>
-  //       item.storyId === story.storyId ? story : item
-  //     );
+    if (project) {
+      const updatedStories = project.stories.map((story) =>
+        story.storyId === updatedStory.storyId ? updatedStory : story
+      );
 
-  //     ProjectModelService.updateProject(updateStory);
-  //     return story;
-  //   } else {
-  //     throw new Error("Project not found");
-  //   }
-  // },
+      project.stories = updatedStories;
+      ProjectModelService.updateProject(project);
+      return updatedStory;
+    } else {
+      throw new Error("Project not found");
+    }
+  },
 
   //Delete
   deleteStoryModel: (projectId: string, storyId: string): void => {
@@ -63,6 +65,20 @@ export const StoryModelService = {
         (story) => story.storyId !== storyId
       );
       ProjectModelService.updateProject(project);
+    } else {
+      throw new Error("Project not found");
+    }
+  },
+
+  // Get story by ID
+  getStoryById: (
+    projectId: string,
+    storyId: string
+  ): StoryModelType | undefined => {
+    const project = ProjectModelService.getProjectById(projectId);
+
+    if (project) {
+      return project.stories.find((story) => story.storyId === storyId);
     } else {
       throw new Error("Project not found");
     }

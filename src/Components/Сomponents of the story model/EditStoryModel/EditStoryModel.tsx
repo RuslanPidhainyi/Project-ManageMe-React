@@ -1,55 +1,102 @@
-//import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
-//import { CancelBtnFromNewStoryModule } from "../../Button components/CancelBtnFromNewStoryModule/CancelBtnFromNewStoryModule"
 import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
-// import { useEffect, useState } from "react"
-// import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type"
+import React, { useEffect, useState } from "react"
+import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type"
+import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service"
+import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service"
+import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
+import { Status } from "../../../Data/Enums/EnumStatus/Status"
 
 export const EditStoryModel = () => {
 
-   // const { storyId } = useParams<{ storyId?: string }>();
+   const { projectId, storyId } = useParams<{ storyId?: string, projectId?: string }>();
 
-   // const [story, setStory] = useState<StoryModelType | null>(null);
-   // const [name, setName] = useState("");
-   // const [desc, setDesc] = useState("");
+   const [story, setStory] = useState<StoryModelType | null>(null);
 
-   // const navigate = useNavigate()
+   const [name, setName] = useState("");
+   const [desc, setDesc] = useState("");
+   const [priority, setPriority] = useState<Priority>(Priority.LOW)
+   const [status, setStatus] = useState<Status>(Status.TODO)
 
-   // useEffect(() => {
-   //    if (storyId) {
-   //       console.log("")
-   //    }
-   // }, [storyId])
+   const navigate = useNavigate();
 
+
+   useEffect(() => {
+      if (projectId) {
+         const projects = ProjectModelService.getProjects();
+         const currentProject = projects.find(project => project.projectId === projectId);
+
+         if (currentProject) {
+            const currentStory = currentProject.stories.find(story => story.storyId === storyId)
+
+            if (currentStory) {
+               setStory(currentStory)
+               setName(currentStory.storyName)
+               setDesc(currentStory.storyDesc)
+            }
+         }
+      }
+   }, [projectId, storyId]);
+
+
+   const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setName(event.target.value)
+   }
+
+   const handleDescChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+      setDesc(event.target.value)
+   }
+
+   const handlePriorityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setPriority(event.target.value as Priority)
+   }
+
+   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setStatus(event.target.value as Status)
+   }
+
+   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      if (story && projectId) {
+         const updateStory = { ...story, storyName: name, storyDesc: desc, storyPriority: priority, storyStatus: status };
+         StoryModelService.updateStoryModel(projectId, updateStory);
+         navigate(`/project/${projectId}`)
+      } else {
+         console.error("projectId is undefined");
+      }
+
+
+   }
    return (
       <div className="edit-story-model-container">
          <main className="common-card-edit-story-model-container">
             <main className="main-contener-edit-story-model-container">
                <h2 className="page-name-edit-story-model-container">Edit story</h2>
-               <form>
+               <form onSubmit={handleSubmit}>
                   <div className="form-name-task">
                      <label htmlFor="name">Name:</label>
-                     <input type="text" name="name" maxLength={51} />
+                     <input type="text" name="name" maxLength={51} value={name} onChange={handleNameChange} />
                   </div>
                   <div className="form-desc-task">
                      <label htmlFor="desc">Description:</label>
-                     <input type="text" name="desc" maxLength={250} />
+                     <input type="text" name="desc" maxLength={250} value={desc} onChange={handleDescChange} />
                   </div>
                   <div className="form-priority-task">
                      <label htmlFor="priority">Priority:</label>
-                     <select id="priority">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
+                     <select id="priority" value={priority} onChange={handlePriorityChange}>
+                        <option value={Priority.LOW}>{Priority.LOW}</option>
+                        <option value={Priority.MEDIUM}>{Priority.MEDIUM}</option>
+                        <option value={Priority.HIGH}>{Priority.HIGH}</option>
                      </select>
                   </div>
                   <div className="form-status-task">
                      <label htmlFor="status">Status:</label>
-                     <select id="status" >
-                        <option value="todo">Todo</option>
-                        <option value="doing">Doing</option>
-                        <option value="done">Done</option>
+                     <select id="status" value={status} onChange={handleStatusChange}>
+                        <option value={Status.TODO}>{Status.TODO}</option>
+                        <option value={Status.DOING}>{Status.DOING}</option>
+                        <option value={Status.DONE}>{Status.DONE}</option>
                      </select>
                   </div>
                   <ConfirmBtnFromNewStoryModule />
