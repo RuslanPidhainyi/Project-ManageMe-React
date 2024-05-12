@@ -1,0 +1,18 @@
+/*Cancel-btn*/
+:root {
+  /*light*/
+  --light-color-for-cancel-btn: white;
+  --light-background-color-for-cancel-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-cancel-btn: white;
+  --light-background-color-hover-for-cancel-btn: rgb(231, 40, 40);
+
+  /*dark*/
+  --dark-color-for-cancel-btn: black;
+  --dark-background-color-for-cancel-btn: rgb(231, 40, 40);
+
+  /*dark-hover*/
+  --dark-color-hover-for-cancel-btn: black;
+  --dark-background-color-hover-for-cancel-btn: rgb(255, 48, 120);
+}

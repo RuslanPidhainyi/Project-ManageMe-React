@@ -1,0 +1,18 @@
+/*Confirm-btn*/
+:root {
+  /*light*/
+  --light-color-for-confirm-btn: white;
+  --light-background-color-for-confirm-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-confirm-btn: white;
+  --light-background-color-hover-for-confirm-btn: rgb(39, 172, 61);
+
+  /*dark*/
+  --dark-color-for-confirm-btn: black;
+  --dark-background-color-for-confirm-btn: rgb(39, 172, 61);
+
+  /*dark-hover*/
+  --dark-color-hover-for-confirm-btn: black;
+  --dark--background-color-hover-for-confirm-btn: rgb(59, 213, 85);
+}

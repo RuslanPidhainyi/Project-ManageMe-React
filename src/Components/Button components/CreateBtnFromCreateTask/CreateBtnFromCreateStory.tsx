@@ -3,6 +3,6 @@ import "./style.scss"
 
 export const CreateBtnFromCreateStory = () => {
    return (
-      <button className='create-btn-story'>Add Story</button>
+      <button className='create-btn-story-for-story-page'>Add Story</button>
    )
 }

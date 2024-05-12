@@ -1,4 +1,6 @@
-.edit-btn {
+@import url("../../../Style/RootStyle/RootButton/RootEditButton/RootEditButton.css");
+
+.edit-btn-for-edit-page {
   width: 15%;
   padding: 11px;
   border-radius: 6px;
@@ -12,22 +14,22 @@
   }
 }
 
-#light .edit-btn {
-  color: white;
-  background-color: rgb(0, 0, 0);
+#light .eedit-btn-for-edit-page {
+  color: var(--light-color-for-edit-btn);
+  background-color: var(--light-background-color-for-edit-btn);
 
   &:hover {
-    background-color: rgb(59, 108, 213);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-edit-btn);
+    background-color: var(--light-background-color-hover-for-edit-btn);
   }
 }
 
-#dark .edit-btn {
-  color: black;
-  background-color: rgb(59, 108, 213);
+#dark .edit-btn-for-edit-page {
+  color: var(--dark-color-for-edit-btn);
+  background-color: var(--dark-background-color-for-edit-btn);
 
   &:hover {
-    background-color: rgb(91, 150, 227);
-    color: black;
+    color: var(--dark-color-hover-for-edit-btn);
+    background-color: var(--dark-background-color-hover-for-edit-btn);
   }
 }

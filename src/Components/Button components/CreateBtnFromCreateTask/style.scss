@@ -1,4 +1,6 @@
-.create-btn-story {
+@import url("../../../Style/RootStyle/RootButton/RootCreateButton/RootCreateButton.css");
+
+.create-btn-story-for-story-page {
   width: 15%;
   padding: 11px;
   border-radius: 6px;
@@ -7,32 +9,27 @@
   font-size: 300;
   font-weight: bold;
 
-  color: white;
-  background-color: rgb(0, 0, 0);
-
   &:hover {
     cursor: pointer;
-    background-color: rgb(59, 213, 85);
-    color: rgb(255, 255, 255);
   }
 }
 
-#light .create-btn-story {
-  color: white;
-  background-color: rgb(0, 0, 0);
+#light .create-btn-story-for-story-page {
+  color: var(--light-color-for-create-btn);
+  background-color: var(--light-background-color-for-create-btn);
 
   &:hover {
-    background-color: rgb(39, 172, 61);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-create-btn);
+    background-color: var(--light-background-color-hover-for-create-btn);
   }
 }
 
-#dark .create-btn-story {
-  color: black;
-  background-color: rgb(39, 172, 61);
+#dark .create-btn-story-for-story-page {
+  color: var(--dark-color-for-create-btn);
+  background-color: var(--dark-background-color-for-create-btn);
 
   &:hover {
-    background-color: rgb(59, 213, 85);
-    color: black;
+    color: var(--dark-color-hover-for-create-btn);
+    background-color: var(--dark--background-color-hover-for-create-btn);
   }
 }

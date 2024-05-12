@@ -1,0 +1,18 @@
+/*Create-btn*/
+:root {
+  /*light*/
+  --light-color-for-create-btn: white;
+  --light-background-color-for-create-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-create-btn: white;
+  --light-background-color-hover-for-create-btn: rgb(39, 172, 61);
+
+  /*dark*/
+  --dark-color-for-create-btn: black;
+  --dark-background-color-for-create-btn: rgb(39, 172, 61);
+
+  /*dark-hover*/
+  --dark-color-hover-for-create-btn: black;
+  --dark--background-color-hover-for-create-btn: rgb(59, 213, 85);
+}

@@ -1,0 +1,14 @@
+/*Delete-icon*/
+:root {
+  /*light-hover*/
+  --light-color-hover-for-delete-i: black;
+
+  /*light-active*/
+  --light-color-active-for-delete-i: rgb(231, 40, 40);
+
+  /*dark-hover*/
+  --dark-color-hover-for-delete-i: rgb(231, 40, 40);
+
+  /*dark-active*/
+  --dark-color-active-for-delete-i: rgb(255, 48, 120);
+}

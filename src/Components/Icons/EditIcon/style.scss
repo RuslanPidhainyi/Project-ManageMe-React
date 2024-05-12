@@ -1,3 +1,5 @@
+@import url("../../../Style/RootStyle/RootIcon/RootEditIcon/RootEditIcon.css");
+
 .edit-icon-section {
   .icon {
     width: 25px;
@@ -15,22 +17,22 @@
 
 #light .edit-icon {
   &:hover {
-    color: black;
+    color: var(--light-color-hover-for-edit-i);
   }
 
   &:active {
-    color: rgb(48, 48, 172);
+    color: var(--light-color-active-for-edit-i);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }
 
 #dark .edit-icon {
   &:hover {
-    color: rgb(49, 130, 188);
+    color: var(--dark-color-hover-for-edit-i);
   }
 
   &:active {
-    color: rgb(60, 216, 237);
+    color: var(--dark-color-active-for-edit-i);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }

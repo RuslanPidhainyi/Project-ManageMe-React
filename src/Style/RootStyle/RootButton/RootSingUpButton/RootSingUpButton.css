@@ -1,0 +1,18 @@
+/*SingUp-btn*/
+:root {
+  /*light*/
+  --light-color-for-sing-up-btn: white;
+  --light-background-color-for-sing-up-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-sing-up-btn: white;
+  --light-background-color-hover-for-sing-up-btn: rgb(39, 172, 61);
+
+  /*dark*/
+  --dark-color-for-sing-up-btn: black;
+  --dark-background-color-for-sing-up-btn: rgb(39, 172, 61);
+
+  /*dark-hover*/
+  --dark-color-hover-for-sing-up-btn: black;
+  --dark--background-color-hover-for-sing-up-btn: rgb(59, 213, 85);
+}

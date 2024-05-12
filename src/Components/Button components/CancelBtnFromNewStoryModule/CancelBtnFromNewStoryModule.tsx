@@ -3,6 +3,6 @@ import "./style.scss"
 
 export const CancelBtnFromNewStoryModule = () => {
    return (
-      <button className='cancel-btn'>Cancel</button>
+      <button className='cancel-btn-for-new-story-model'>Cancel</button>
    )
 }

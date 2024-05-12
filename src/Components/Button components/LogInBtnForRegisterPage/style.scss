@@ -1,4 +1,6 @@
-.log-in-btn {
+@import url("../../../Style/RootStyle/RootButton/RootLogInButton/RootLogInButton.css");
+
+.log-in-btn-for-register-page {
   width: 10%;
   padding: 5px;
   border-radius: 6px;
@@ -12,22 +14,22 @@
   }
 }
 
-#light .log-in-btn {
-  color: white;
-  background-color: rgb(0, 0, 0);
+#light .log-in-btn-for-register-page {
+  color: var(--light-color-for-log-in-btn);
+  background-color: var(--light-background-color-for-log-in-btn);
 
   &:hover {
-    background-color: rgb(59, 108, 213);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-log-in-btn);
+    background-color: var(--light-background-color-hover-for-log-in-btn);
   }
 }
 
-#dark .log-in-btn {
-  color: black;
-  background-color: rgb(59, 108, 213);
+#dark .log-in-btn-for-register-page {
+  color: var(--dark-color-for-log-in-btn);
+  background-color: var(--dark-background-color-for-log-in-btn);
 
   &:hover {
-    background-color: rgb(91, 150, 227);
-    color: black;
+    color: var(--dark-color-hover-for-log-in-btn);
+    background-color: var(--dark-background-color-hover-for-log-in-btn);
   }
 }

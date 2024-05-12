@@ -1,3 +1,5 @@
+@import url("../../../Style/RootStyle/RootButton/RootConfirmButton/RootConfirmButton.css");
+
 .confirm-btn {
   width: 25%;
   padding: 6px;
@@ -7,32 +9,27 @@
   font-size: 100;
   font-weight: bold;
 
-  color: white;
-  background-color: rgb(0, 0, 0);
-
   &:hover {
     cursor: pointer;
-    background-color: rgb(59, 213, 85);
-    color: rgb(255, 255, 255);
   }
 }
 
 #light .confirm-btn {
-  color: white;
-  background-color: rgb(0, 0, 0);
+  color: var(--light-color-for-confirm-btn);
+  background-color: var(--light-background-color-for-confirm-btn);
 
   &:hover {
-    background-color: rgb(39, 172, 61);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-confirm-btn);
+    background-color: var(--light-background-color-hover-for-confirm-btn);
   }
 }
 
 #dark .confirm-btn {
-  color: black;
-  background-color: rgb(39, 172, 61);
+  color: var(--dark-color-for-confirm-btn);
+  background-color: var(--dark-background-color-for-confirm-btn);
 
   &:hover {
-    background-color: rgb(59, 213, 85);
-    color: black;
+    color: var(--dark-color-hover-for-confirm-btn);
+    background-color: var(--dark--background-color-hover-for-confirm-btn);
   }
 }

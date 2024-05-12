@@ -3,6 +3,6 @@ import "./style.scss"
 
 export const CreateBtnFromCreatePage = () => {
    return (
-      <button className='create-btn'>Create project</button>
+      <button className='create-btn-for-create-page'>Create project</button>
    )
 }

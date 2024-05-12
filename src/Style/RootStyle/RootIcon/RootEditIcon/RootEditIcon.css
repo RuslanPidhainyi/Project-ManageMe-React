@@ -1,0 +1,14 @@
+/*Edit-icon*/
+:root {
+  /*light-hover*/
+  --light-color-hover-for-edit-i: black;
+
+  /*light-active*/
+  --light-color-active-for-edit-i: rgb(48, 48, 172);
+
+  /*dark-hover*/
+  --dark-color-hover-for-edit-i: rgb(49, 130, 188);
+
+  /*dark-active*/
+  --dark-color-active-for-edit-i: rgb(60, 216, 237);
+}

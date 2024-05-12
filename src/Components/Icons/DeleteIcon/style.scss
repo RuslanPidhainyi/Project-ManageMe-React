@@ -1,3 +1,5 @@
+@import url("../../../Style/RootStyle/RootIcon/RootDeleteIcon/RootDeleteIcon.css");
+
 .delete-icon-section {
   .delete-icon {
     width: 25px;
@@ -15,22 +17,22 @@
 
 #light .delete-icon {
   &:hover {
-    color: black;
+    color: var(--light-color-hover-for-delete-i);
   }
 
   &:active {
-    color: rgb(231, 40, 40);
+    color: var(--light-color-active-for-delete-i);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }
 
 #dark .delete-icon {
   &:hover {
-    color: rgb(231, 40, 40);
+    color: var(--dark-color-hover-for-delete-i);
   }
 
   &:active {
-    color: rgb(255, 48, 120);
+    color: var(--dark-color-active-for-delete-i);
     transition: 0.4s ease, border-bottom 0ms, padding-top 0ms;
   }
 }
