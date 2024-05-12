@@ -1,10 +1,12 @@
+@import url("../../../Style/RootStyle/RootLayout/RootLayout.css");
+
 * {
   margin: 0;
   padding: 0;
 }
 
 .left-bar {
-  flex: 1.5; //2
+  flex: 1.5;
   position: sticky;
   top: 0px;
   height: calc(100vh - 0px);
@@ -29,29 +31,31 @@
 }
 
 #light .left-bar {
-  background-color: white;
+  background-color: var(--light-background-color-for-left-bar);
+
   .left-bar-link {
-    color: black;
+    color: var(--light-color-for-left-bar-link);
   }
 
   .link-hover {
     &:hover {
-      color: rgb(77, 77, 77);
+      color: var(--light-color-hover-for-left-bar);
       transition: 0s ease, border-bottom 0ms, padding-top 0ms;
     }
   }
 }
 
 #dark .left-bar {
-  background-color: black;
+  background-color: var(--dark-background-color-for-left-bar);
   box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
   .left-bar-link {
-    color: white;
+    color: var(--dark-color-for-left-bar-link);
   }
 
   .link-hover {
     &:hover {
-      color: rgb(171, 171, 171);
+      color: var(--dark-color-hover-for-left-bar);
       transition: 0s ease, border-bottom 0ms, padding-top 0ms;
     }
   }

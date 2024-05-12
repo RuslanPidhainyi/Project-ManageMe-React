@@ -1,0 +1,21 @@
+/*Layout*/
+:root {
+  /*left-bar*/
+
+  /*light*/
+  --light-background-color-for-left-bar: white;
+  --light-color-for-left-bar-link: black;
+
+  /*light-hover*/
+  --light-color-hover-for-left-bar: rgb(77, 77, 77);
+
+  /*dark*/
+  --dark-background-color-for-left-bar: black;
+  --dark-color-for-left-bar-link: white;
+
+  /*dark-hover*/
+  --dark-color-hover-for-left-bar: rgb(171, 171, 171);
+
+  /*left-bar-logo-section*/
+  --color-for-left-bar-logo-section: rgb(113, 113, 125);
+}
