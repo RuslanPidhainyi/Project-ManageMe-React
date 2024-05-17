@@ -1,10 +1,10 @@
+import './background-color.scss'
+import "../../Style/font.css"
 import { Create } from "../Create/Create"
 import { Edit } from '../Edit/Edit'
 import { NotFoundPage } from '../NotFoundPage/NotFoundPage'
 import { Settings } from '../Settings/Settings'
 import { Home } from "../Home/Home"
-import './background-color.scss'
-import "../../Style/font.css"
 import { Routes, Route } from "react-router-dom"
 import { LeftBar } from '../../Components/Layout/LeftBar/LeftBar'
 import { useEffect, useState } from "react"
@@ -16,6 +16,7 @@ import { UserService } from "../../Services/User.Service/User.Service"
 import { Task } from "../Task/Task"
 import Login from "../Login/Login"
 import Register from "../Register/Register"
+import { CreateTask } from "../CreateTask/CreateTask"
 
 function App() {
   const [displayMode, setDisplayMode] = useState("light");
@@ -56,7 +57,8 @@ function App() {
           <Route path='project/:projectId' element={<Story />} />
           <Route path="project/:projectId/add-story" element={<CreateStory />} />
           <Route path="project/:projectId/edit-story/:storyId" element={<EditStory />} />
-          <Route path="project/:projectId/:storyId" element={<Task />} />
+          <Route path="project/:projectId/task/:storyId" element={<Task />} />
+          <Route path="project/:projectId/task/:storyId/add-task" element={<CreateTask />} />
           <Route path='*' element={<NotFoundPage />} />
         </Route>
       </Routes >

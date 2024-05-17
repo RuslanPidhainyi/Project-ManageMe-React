@@ -10,6 +10,7 @@ export const ProjectModelService = {
     projectDesc: string
   ): ProjectModelType => {
     const projects = ProjectModelService.getProjects();
+
     const newProject: ProjectModelType = {
       projectId: ulid(), //uuid(),
       projectName,

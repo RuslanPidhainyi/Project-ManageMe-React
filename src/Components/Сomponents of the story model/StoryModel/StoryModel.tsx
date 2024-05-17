@@ -26,7 +26,7 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
             <div className="story-model-details-section-top">
                <div className="story-model-name-section">
                   {/*Temperetly */}
-                  <Link to={`asd`} className="single-story-model-link">
+                  <Link to={`task/${story.storyId}`} className="single-story-model-link">
                      <h2>{story.storyName}</h2>
                   </Link>
                </div>

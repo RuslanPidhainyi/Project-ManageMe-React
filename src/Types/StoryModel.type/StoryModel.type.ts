@@ -11,5 +11,4 @@ export type StoryModelType = {
   stroryDate: string;
   ownerId: string;
   tasks: TaskModelType[];
-  //userFullname:
 };
