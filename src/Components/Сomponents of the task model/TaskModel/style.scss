@@ -1,27 +1,50 @@
 .task-container {
   border-radius: 10px;
-  padding: 10px 25px;
+  padding: 20px 30px 20px 30px;
 
   .task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+
     .teg-task {
       h3 {
         text-align: center;
+        cursor: pointer;
       }
     }
-    .desc-task {
-      p {
-        text-align: center;
-        font-size: small;
+    .task-action-section {
+      margin: 3px 0 0 0;
+
+      .task-action-btn-edit {
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+      }
+      .task-invisible-button {
+        border: none;
+        background: none;
+        padding: 0;
+        cursor: pointer;
       }
     }
   }
 }
 
 #light .task-container {
+  background-color: #f3f0e8;
+  color: black;
+
   .task {
     .teg-task {
     }
-    .desc-task {
+    .task-action-section {
+      .task-action-btn-edit {
+      }
+      .task-invisible-button {
+      }
     }
   }
 }
@@ -32,7 +55,13 @@
   .task {
     .teg-task {
     }
-    .desc-task {
+    .task-action-section {
+      .task-action-btn-edit {
+        color: rgb(49, 130, 188);
+      }
+      .task-invisible-button {
+        color: rgb(231, 40, 40);
+      }
     }
   }
 }

@@ -1,0 +1,50 @@
+.task-dialog-container {
+  .task-dialog-title {
+  }
+  .task-dialog-form {
+    .task-dialog-desc {
+    }
+    .task-dialog-priority {
+    }
+    .task-dialog-status {
+    }
+  }
+  .task-dialog-action {
+  }
+}
+
+#light .task-dialog-container {
+  background-color: #f3f0e8;
+  color: black;
+
+  .task-dialog-title {
+  }
+  .task-dialog-form {
+    .task-dialog-desc {
+    }
+    .task-dialog-priority {
+    }
+    .task-dialog-status {
+    }
+  }
+  .task-dialog-action {
+  }
+}
+
+#dark .task-dialog-container {
+  background-color: #141414;
+  color: white;
+
+  .task-dialog-title {
+  }
+  .task-dialog-form {
+    .task-dialog-desc {
+    }
+    .task-dialog-priority {
+    }
+    .task-dialog-status {
+    }
+  }
+  .task-dialog-action {
+  }
+}
