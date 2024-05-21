@@ -6,7 +6,13 @@ import { Priority } from "../../Data/Enums/EnumPriority/Priority";
 import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
 //import { v4 as uuid } from "uuid"; // генеруємо новий UUID
 
+
+
 export const StoryModelService = {
+
+  LOCAL_STORAGE_KEY_FOR_STORIES: "stories", 
+
+
   //Create
   createStoryModel: (
     projectId: string,
@@ -37,6 +43,17 @@ export const StoryModelService = {
     }
   },
 
+  //Read
+  getStories(): StoryModelType[] {
+    const dbStoryModel = localStorage.getItem(StoryModelService.LOCAL_STORAGE_KEY_FOR_STORIES);
+    
+    if(dbStoryModel){
+      return JSON.parse(dbStoryModel) as StoryModelType[];
+    }
+    return[];
+  },
+
+  
   //Update
   updateStoryModel: (
     projectId: string,

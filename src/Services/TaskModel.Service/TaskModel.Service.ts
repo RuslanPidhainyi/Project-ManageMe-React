@@ -30,7 +30,7 @@ export const TaskModelService = {
         // taskStartDate,
         // taskEndDate,
         ownerId: fakeDbUser.userId,
-        storyId,
+        //storyId,
       };
 
       story.tasks.push(newTask);
@@ -42,6 +42,57 @@ export const TaskModelService = {
   },
 
   //Update
+  updateTaskModel: (
+    projectId: string, 
+    storyId: string,
+    updatedTask: TaskModelType
+  ): TaskModelType => { 
+
+    const story = StoryModelService.getStoryById(projectId, storyId);
+
+    if(story)
+    {
+      const updatedTasks = story.tasks.map((task) => task.taskId === updatedTask.taskId ? updatedTask : task);
+      
+      story.tasks = updatedTasks;
+      StoryModelService.updateStoryModel(projectId, story);
+      return updatedTask;
+    }
+    else{
+      throw new Error("Story not found");
+    }
+  },
+
+
   //Delete
+  deleteTaskModel:(projectId: string, storyId: string, taskId: string ): void => {
+    
+    const story = StoryModelService.getStoryById(projectId, storyId);
+
+    if(story)
+    {
+      story.tasks = story.tasks.filter((task) => task.taskId !== taskId);
+      StoryModelService.updateStoryModel(projectId, story);
+    }
+    else{
+     throw new Error ("Story not found");
+    }
+  },
+
+
+
   // Get task by ID
+  getTaskById: (
+    projectId: string, storyId: string, taskId: string
+  ): TaskModelType | undefined => {
+
+    const story = StoryModelService.getStoryById(projectId, storyId);
+
+
+    if (story) {
+      return story.tasks.find((task) => task.taskId === taskId);
+    } else {
+      throw new Error("Story not found");
+    }
+  },
 };

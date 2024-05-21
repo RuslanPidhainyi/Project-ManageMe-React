@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
-import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service"
 import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
 import { Status } from "../../../Data/Enums/EnumStatus/Status"
+import { ConfirmBtn } from "../../Button components/ConfirmBtn/ConfirmBtn"
 
 export const NewStoryModel = () => {
 
@@ -67,7 +67,7 @@ export const NewStoryModel = () => {
                         <option value="Done">Done</option>
                      </select>
                   </div>
-                  <ConfirmBtnFromNewStoryModule />
+                  <ConfirmBtn />
                </form>
             </main>
          </main>

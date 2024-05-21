@@ -1,4 +1,4 @@
-.edit-story-model-container {
+.edit-task-model-container {
   // margin-top: 10px; //Temporary
   // border-radius: 10px;
   // padding: 40px 0 40px 0;
@@ -7,9 +7,9 @@
   border-radius: 10px;
   padding: 35px 0 35px 0;
 
-  .common-card-edit-story-model-container {
-    .main-contener-edit-story-model-container {
-      .page-name-edit-story-model-container {
+  .common-card-edit-task-model-container {
+    .main-contener-edit-task-model-container {
+      .page-name-edit-task-model-container {
         text-align: center;
         margin: 0 0 25px 0;
 
@@ -23,7 +23,7 @@
         gap: 25px;
         margin: 0 18vw;
 
-        .form-name-story {
+        .form-name-task {
           label {
             font-weight: bold;
           }
@@ -34,7 +34,7 @@
             height: 25px;
           }
         }
-        .form-desc-story {
+        .form-desc-task {
           label {
             font-weight: bold;
           }
@@ -45,7 +45,7 @@
             border: none;
           }
         }
-        .form-priority-story {
+        .form-priority-task {
           label {
             font-weight: bold;
           }
@@ -59,7 +59,7 @@
             }
           }
         }
-        .form-status-story {
+        .form-status-task {
           label {
             font-weight: bold;
           }
@@ -78,26 +78,11 @@
           margin-left: 350px;
         }
       }
-
-      // .section-btns-edit-story-module {
-      //   margin: 50px 0 0 0;
-      //   display: flex;
-      //   align-items: center;
-      //   justify-content: center;
-
-      //   .confirm-btn-from-edit-story-module {
-      //     width: 100%;
-      //     padding-left: 215px;
-      //   }
-      //   .cancel-btn-from-edit-story-module {
-      //     width: 100%;
-      //   }
-      // }
     }
   }
 }
 
-#light .edit-story-model-container {
+#light .edit-task-model-container {
   color: black;
   background-color: white;
   border: 1px white solid;
@@ -113,7 +98,7 @@
   }
 }
 
-#dark .edit-story-model-container {
+#dark .edit-task-model-container {
   color: white;
   border: 1px rgba(255, 255, 255, 0.248) solid;
   background-color: black;

@@ -1,7 +1,7 @@
 import "../../../Style/font.css"
 import "./style.scss"
 
-export const ConfirmBtnFromNewStoryModule = () => {
+export const ConfirmBtn = () => {
    return (
       <button className='confirm-btn'>Confirm</button>
    )

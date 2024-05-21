@@ -12,10 +12,10 @@ interface StoryModelProps {
 }
 
 
-export const StoryModel = ({ story, projectId }: StoryModelProps) => {
+export const StoryModel = (props: StoryModelProps) => {
 
    const handleDelete = () => {
-      StoryModelService.deleteStoryModel(projectId, story.storyId);
+      StoryModelService.deleteStoryModel(props.projectId, props.story.storyId);
    };
 
    return (
@@ -25,14 +25,13 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
 
             <div className="story-model-details-section-top">
                <div className="story-model-name-section">
-                  {/*Temperetly */}
-                  <Link to={`task/${story.storyId}`} className="single-story-model-link">
-                     <h2>{story.storyName}</h2>
+                  <Link to={`story/${props.story.storyId}`} className="single-story-model-link">
+                     <h2>{props.story.storyName}</h2>
                   </Link>
                </div>
                <div className='story-model-action-section'>
 
-                  <NavLink to={`edit-story/${story.storyId}`} className="story-model-action-icon-link">
+                  <NavLink to={`edit-story/${props.story.storyId}`} className="story-model-action-icon-link">
                      <EditIcon />
                   </NavLink>
 
@@ -43,29 +42,29 @@ export const StoryModel = ({ story, projectId }: StoryModelProps) => {
             </div>
 
             <div className="story-model-story-id-section">
-               <span><b>ID: </b>{story.storyId}</span>
+               <span><b>ID: </b>{props.story.storyId}</span>
             </div>
 
             <div className="story-model-priority">
-               <span><b>Priority: </b>{story.storyPriority}</span>
+               <span><b>Priority: </b>{props.story.storyPriority}</span>
             </div>
 
 
             <div className="story-model-status">
-               <span><b>Status: </b>{story.storyStatus}</span>
+               <span><b>Status: </b>{props.story.storyStatus}</span>
             </div>
 
             <div className="story-model-owner-id-section">
-               <span><b>Owner Id: </b>{story.ownerId}</span>
+               <span><b>Owner Id: </b>{props.story.ownerId}</span>
             </div>
 
          </div>
          <div className="story-model-content-section">
-            <p>{story.storyDesc}</p>
+            <p>{props.story.storyDesc}</p>
          </div>
 
          <div className="story-model-date-of-creation-section">
-            <span>{story.stroryDate}</span>
+            <span>{props.story.stroryDate}</span>
          </div>
       </div >
    )

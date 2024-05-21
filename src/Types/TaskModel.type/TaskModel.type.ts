@@ -6,7 +6,7 @@ export interface TaskModelType {
   taskName: string;
   taskDesc: string;
   taskPriority: Priority;
-  storyId: string; //Historyjka do której przynależy zadanie
+  //storyId: string; //Historyjka do której przynależy zadanie
   //taskEstimatedFinishTime: string; //number; //Enum
   taskStatus: Status; //doing  -> czas startu oraz (przypisanego użytkownika) && //done -> datę zakończenia oraz (przypisanego użytkownika)
   //taskStartDate?: string; //Data dodania

@@ -1,10 +1,10 @@
 import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
-import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
 import { Status } from "../../../Data/Enums/EnumStatus/Status"
 import { TaskModelService } from "../../../Services/TaskModel.Service/TaskModel.Service"
+import { ConfirmBtn } from "../../Button components/ConfirmBtn/ConfirmBtn"
 
 export const NewTaskModel = () => {
 
@@ -67,7 +67,7 @@ export const NewTaskModel = () => {
                         <option value="Done">Done</option>
                      </select>
                   </div>
-                  <ConfirmBtnFromNewStoryModule />
+                  <ConfirmBtn />
                </form>
             </main>
          </main>

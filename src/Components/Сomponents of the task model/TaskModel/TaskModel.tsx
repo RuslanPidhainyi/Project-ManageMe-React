@@ -5,16 +5,19 @@ import { TaskModelType } from "../../../Types/TaskModel.type/TaskModel.type";
 import { TaskDialogModel } from '../TaskDialogModel/TaskDialogModel';
 import { DeleteIcon } from '../../Icons/DeleteIcon/DeleteIcon';
 import { EditIcon } from '../../Icons/EditIcon/EditIcon';
-import { EditTaskDialogModel } from '../EditTaskDialogModel/EditTaskDialogModel';
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { TaskModelService } from "../../../Services/TaskModel.Service/TaskModel.Service";
 
 interface TaskModelProps {
    task: TaskModelType;
+   projectId: string;
+   storyId: string;
 }
 
 export const TaskModel = (props: TaskModelProps) => {
    const [open, setOpen] = useState(false);//Dialogowe Okno
-   const [openEdit, setOpenEdit] = useState(false);//Edit Dialogowe Okno
+   //const [openEdit, setOpenEdit] = useState(false);//Edit Dialogowe Okno
 
    //Dialogowe Okno
    const handleClickOpen = () => {
@@ -25,14 +28,9 @@ export const TaskModel = (props: TaskModelProps) => {
       setOpen(false);
    };
 
-
-   //Edit Dialogowe Okno
-   const handleOpenEdit = () => {
-      setOpenEdit(true);
-   }
-
-   const handleCloseEdit = () => {
-      setOpenEdit(false);
+   //Delete
+   const handleDelete = () => {
+      TaskModelService.deleteTaskModel(props.projectId, props.storyId, props.task.taskId);
    }
 
    return (
@@ -44,17 +42,16 @@ export const TaskModel = (props: TaskModelProps) => {
             </div>
 
             <div className='task-action-section'>
-               <button className="task-action-btn-edit" onClick={handleOpenEdit}>
+               <NavLink to={`edit-task/${props.task.taskId}`} className="task-action-btn-edit">
                   <EditIcon />
-               </button>
-               <button className="task-invisible-button">
+               </NavLink>
+               <button onClick={handleDelete} className="task-invisible-button">
                   <DeleteIcon />
                </button>
             </div>
 
          </div>
          <TaskDialogModel open={open} handleClose={handleClose} task={props.task} />
-         <EditTaskDialogModel openEdit={openEdit} handleCloseEdit={handleCloseEdit} task={props.task} />
       </div>
    );
 };

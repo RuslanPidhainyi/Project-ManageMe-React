@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom"
 import "../../../Style/font.css"
-import { ConfirmBtnFromNewStoryModule } from "../../Button components/ConfirmBtnFromNewStoryModule/ConfirmBtnFromNewStoryModule"
 import "./style.scss"
 import React, { useEffect, useState } from "react"
 import { StoryModelType } from "../../../Types/StoryModel.type/StoryModel.type"
@@ -8,6 +7,7 @@ import { StoryModelService } from "../../../Services/StoryModel.Service/StoryMod
 import { ProjectModelService } from "../../../Services/ProjectModel.Service/ProjectModel.Service"
 import { Priority } from "../../../Data/Enums/EnumPriority/Priority"
 import { Status } from "../../../Data/Enums/EnumStatus/Status"
+import { ConfirmBtn } from "../../Button components/ConfirmBtn/ConfirmBtn"
 
 export const EditStoryModel = () => {
 
@@ -66,24 +66,23 @@ export const EditStoryModel = () => {
       } else {
          console.error("projectId is undefined");
       }
-
-
    }
+   
    return (
       <div className="edit-story-model-container">
          <main className="common-card-edit-story-model-container">
             <main className="main-contener-edit-story-model-container">
                <h2 className="page-name-edit-story-model-container">Edit story</h2>
                <form onSubmit={handleSubmit}>
-                  <div className="form-name-task">
+                  <div className="form-name-story">
                      <label htmlFor="name">Name:</label>
                      <input type="text" name="name" maxLength={51} value={name} onChange={handleNameChange} />
                   </div>
-                  <div className="form-desc-task">
+                  <div className="form-desc-story">
                      <label htmlFor="desc">Description:</label>
                      <input type="text" name="desc" maxLength={250} value={desc} onChange={handleDescChange} />
                   </div>
-                  <div className="form-priority-task">
+                  <div className="form-priority-story">
                      <label htmlFor="priority">Priority:</label>
                      <select id="priority" value={priority} onChange={handlePriorityChange}>
                         <option value={Priority.LOW}>{Priority.LOW}</option>
@@ -91,7 +90,7 @@ export const EditStoryModel = () => {
                         <option value={Priority.HIGH}>{Priority.HIGH}</option>
                      </select>
                   </div>
-                  <div className="form-status-task">
+                  <div className="form-status-story">
                      <label htmlFor="status">Status:</label>
                      <select id="status" value={status} onChange={handleStatusChange}>
                         <option value={Status.TODO}>{Status.TODO}</option>
@@ -99,7 +98,7 @@ export const EditStoryModel = () => {
                         <option value={Status.DONE}>{Status.DONE}</option>
                      </select>
                   </div>
-                  <ConfirmBtnFromNewStoryModule />
+                  <ConfirmBtn />
                </form>
             </main>
          </main>
