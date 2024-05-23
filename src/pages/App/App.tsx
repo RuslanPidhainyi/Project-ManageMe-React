@@ -48,7 +48,9 @@ function App() {
 
     /**************** URL ****************/
 
-    //project / story / task  
+    //register
+
+    //home / story / task  
 
     /**************** HOME czyli PROJECT ****************/
 
