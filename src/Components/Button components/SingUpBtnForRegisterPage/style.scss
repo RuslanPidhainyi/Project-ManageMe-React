@@ -1,4 +1,6 @@
-.sing-up-btn {
+@import url("../../../Style//RootStyle/RootButton/RootSingUpButton/RootSingUpButton.css");
+
+.sing-up-btn-for-register-page {
   width: 15%;
   padding: 8px;
   border-radius: 6px;
@@ -12,22 +14,22 @@
   }
 }
 
-#light .sing-up-btn {
-  color: white;
-  background-color: rgb(0, 0, 0);
+#light .sing-up-btn-for-register-page {
+  color: var(--light-color-for-sing-up-btn);
+  background-color: var(--light-background-color-for-sing-up-btn);
 
   &:hover {
-    background-color: rgb(39, 172, 61);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-sing-up-btn);
+    background-color: var(--light-background-color-hover-for-sing-up-btn);
   }
 }
 
-#dark .sing-up-btn {
-  color: black;
-  background-color: rgb(39, 172, 61);
+#dark .sing-up-btn-for-register-page {
+  color: var(--dark-color-for-sing-up-btn);
+  background-color: var(--dark-background-color-for-sing-up-btn);
 
   &:hover {
-    background-color: rgb(59, 213, 85);
-    color: black;
+    color: var(--dark-color-hover-for-sing-up-btn);
+    background-color: var(--dark--background-color-hover-for-sing-up-btn);
   }
 }

@@ -1,0 +1,10 @@
+/*DisplayModeSwitch*/
+:root {
+  /*light*/
+  --light-background-color-for-display-mode-button: rgb(184, 184, 184);
+  --light-background-color-for-display-mode-light-dark-flag: rgb(251, 251, 251);
+
+  /*dark*/
+  --dark-background-color-for-display-mode-button: rgb(251, 251, 251);
+  --dark-background-color-for-display-mode-light-dark-flag: rgb(37, 37, 37);
+}

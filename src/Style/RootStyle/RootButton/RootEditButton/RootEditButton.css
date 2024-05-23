@@ -1,0 +1,18 @@
+/*Edit-btn*/
+:root {
+  /*light*/
+  --light-color-for-edit-btn: white;
+  --light-background-color-for-edit-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-edit-btn: white;
+  --light-background-color-hover-for-edit-btn: rgb(59, 108, 213);
+
+  /*dark*/
+  --dark-color-for-edit-btn: black;
+  --dark-background-color-for-edit-btn: rgb(59, 108, 213);
+
+  /*dark-hover*/
+  --dark-color-hover-for-edit-btn: black;
+  --dark-background-color-hover-for-edit-btn: rgb(91, 150, 227);
+}

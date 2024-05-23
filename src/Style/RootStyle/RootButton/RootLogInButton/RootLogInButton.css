@@ -1,0 +1,18 @@
+/*LogIn-btn*/
+:root {
+  /*light*/
+  --light-color-for-log-in-btn: white;
+  --light-background-color-for-log-in-btn: black;
+
+  /*light-hover*/
+  --light-color-hover-for-log-in-btn: white;
+  --light-background-color-hover-for-log-in-btn: rgb(59, 108, 213);
+
+  /*dark*/
+  --dark-color-for-log-in-btn: black;
+  --dark-background-color-for-log-in-btn: rgb(59, 108, 213);
+
+  /*dark-hover*/
+  --dark-color-hover-for-log-in-btn: black;
+  --dark-background-color-hover-for-log-in-btn: rgb(91, 150, 227);
+}

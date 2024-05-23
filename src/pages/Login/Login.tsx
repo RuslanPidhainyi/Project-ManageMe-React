@@ -2,7 +2,7 @@ import "./style.scss"
 import "../../Style/font.css"
 import { Link } from 'react-router-dom'
 import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage"
-import { LoginBtnForLoginPage } from "../../Components/Button components/LoginBtnForLoginPage/LoginBtnForLoginPage"
+import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LogInBtnForLoginPage"
 
 
 
@@ -29,7 +29,7 @@ const Login = () => {
                <form>
                   <input type="text" placeholder='Surname' />
                   <input type="password" placeholder='Password' maxLength={30} />
-                  <LoginBtnForLoginPage />
+                  <LogInBtnForLoginPage />
                </form>
             </aside>
          </main>

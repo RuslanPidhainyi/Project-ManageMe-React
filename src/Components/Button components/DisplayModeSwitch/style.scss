@@ -1,3 +1,5 @@
+@import url("../../../Style/RootStyle/RootButton/RootDisplayModeSwitch/RootDisplayModeSwitch.css");
+
 .display-mode-button {
   width: 2.2rem;
   height: 1.2rem;
@@ -20,18 +22,22 @@
 }
 
 #light .display-mode-button {
-  background-color: rgb(184, 184, 184);
+  background-color: var(--light-background-color-for-display-mode-button);
 
   .light-dark-flag {
-    background-color: rgb(251, 251, 251);
+    background-color: var(
+      --light-background-color-for-display-mode-light-dark-flag
+    );
   }
 }
 
 #dark .display-mode-button {
-  background-color: rgb(251, 251, 251);
+  background-color: var(--dark-background-color-for-display-mode-button);
 
   .light-dark-flag {
-    background-color: rgb(37, 37, 37);
+    background-color: var(
+      --dark-background-color-for-display-mode-light-dark-flag
+    );
     transform: translate(0.9rem);
   }
 }

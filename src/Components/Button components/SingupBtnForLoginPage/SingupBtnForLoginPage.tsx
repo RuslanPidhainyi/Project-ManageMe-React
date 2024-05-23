@@ -1,6 +1,5 @@
 import "../../../Style/font.css"
 import "./style.scss"
-import React from 'react'
 
 export const SingupBtnForLoginPage = () => {
 

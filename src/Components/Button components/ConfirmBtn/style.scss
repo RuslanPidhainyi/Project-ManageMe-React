@@ -1,0 +1,35 @@
+@import url("../../../Style/RootStyle/RootButton/RootConfirmButton/RootConfirmButton.css");
+
+.confirm-btn {
+  width: 25%;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+  transition: 0.3s;
+  font-size: 100;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#light .confirm-btn {
+  color: var(--light-color-for-confirm-btn);
+  background-color: var(--light-background-color-for-confirm-btn);
+
+  &:hover {
+    color: var(--light-color-hover-for-confirm-btn);
+    background-color: var(--light-background-color-hover-for-confirm-btn);
+  }
+}
+
+#dark .confirm-btn {
+  color: var(--dark-color-for-confirm-btn);
+  background-color: var(--dark-background-color-for-confirm-btn);
+
+  &:hover {
+    color: var(--dark-color-hover-for-confirm-btn);
+    background-color: var(--dark--background-color-hover-for-confirm-btn);
+  }
+}

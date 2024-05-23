@@ -1,4 +1,6 @@
-.cancel-btn {
+@import url("../../../Style/RootStyle//RootButton/RootCancelButton/RootCancelButton.css");
+
+.cancel-btn-for-new-story-model {
   width: 20%;
   padding: 6px;
   border-radius: 6px;
@@ -7,32 +9,27 @@
   font-size: 100;
   font-weight: bold;
 
-  color: white;
-  background-color: rgb(0, 0, 0);
-
   &:hover {
     cursor: pointer;
-    background-color: rgb(59, 213, 85);
-    color: rgb(255, 255, 255);
   }
 }
 
-#light .cancel-btn {
-  color: white;
-  background-color: rgb(0, 0, 0);
+#light .cancel-btn-for-new-story-model {
+  color: var(--light-color-for-cancel-btn);
+  background-color: var(--light-background-color-for-cancel-btn);
 
   &:hover {
-    background-color: rgb(231, 40, 40);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-cancel-btn);
+    background-color: var(--light-background-color-hover-for-cancel-btn);
   }
 }
 
 #dark .cancel-btn {
-  color: black;
-  background-color: rgb(231, 40, 40);
+  color: var(--dark-color-for-cancel-btn);
+  background-color: var(--dark-background-color-for-cancel-btn);
 
   &:hover {
-    background-color: rgb(255, 48, 120);
-    color: black;
+    color: var(--dark-color-hover-for-cancel-btn);
+    background-color: var(--dark-background-color-hover-for-cancel-btn);
   }
 }

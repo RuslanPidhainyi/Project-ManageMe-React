@@ -3,6 +3,6 @@ import "./style.scss"
 
 export const SingUpBtnForRegisterPage = () => {
    return (
-      <button className='sing-up-btn'>Sing up</button>
+      <button className='sing-up-btn-for-register-page'>Sing up</button>
    )
 }

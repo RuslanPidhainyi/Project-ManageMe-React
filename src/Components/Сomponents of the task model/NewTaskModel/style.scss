@@ -1,0 +1,131 @@
+.new-story-model-container {
+  // margin-top: 10px; //Temporary
+  // border-radius: 10px;
+  // padding: 40px 0 40px 0;
+  width: 55vw;
+  margin: 100px 0 0 0;
+  border-radius: 10px;
+  padding: 35px 0 35px 0;
+
+  .common-card-new-story-model-container {
+    .main-contener-new-story-model-container {
+      .page-name-new-story-model-container {
+        text-align: center;
+        margin: 0 0 25px 0;
+
+        font-size: 35px;
+        font-weight: 750;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin: 0 18vw;
+
+        .form-name-task {
+          label {
+            font-weight: bold;
+          }
+          input {
+            margin: 0 0 0 69px; // margin: 0 0 0 62px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            border: none;
+            height: 25px;
+          }
+        }
+        .form-desc-task {
+          label {
+            font-weight: bold;
+          }
+          input {
+            margin: 0 0 0 25px; //margin: 0 0 0 25px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            height: 25px;
+            border: none;
+          }
+        }
+        .form-priority-task {
+          label {
+            font-weight: bold;
+          }
+          select {
+            margin: 0 0 0 58px; //margin: 0 0 0 56px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            border: none;
+            height: 25px;
+
+            option {
+            }
+          }
+        }
+        .form-status-task {
+          label {
+            font-weight: bold;
+          }
+          select {
+            margin: 0 0 0 66px; //margin: 0 0 0 61px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            height: 25px;
+            border: none;
+
+            option {
+            }
+          }
+        }
+
+        .confirm-btn {
+          margin-left: 350px;
+        }
+      }
+
+      // .section-btns-new-story-module {
+      //   margin: 50px 0 0 0;
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: center;
+
+      //   .confirm-btn-from-new-story-module {
+      //     width: 100%;
+      //     padding-left: 215px;
+      //   }
+      //   .cancel-btn-from-new-story-module {
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
+
+#light .new-story-model-container {
+  color: black;
+  background-color: white;
+  border: 1px white solid;
+
+  input {
+    color: black;
+    background-color: #f5f5f5;
+  }
+
+  select {
+    color: black;
+    background-color: #f5f5f5;
+  }
+}
+
+#dark .new-story-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+
+  input {
+    color: white;
+    background-color: #141414;
+  }
+
+  select {
+    color: white;
+    background-color: #141414;
+  }
+}

@@ -3,6 +3,6 @@ import "./style.scss"
 
 export const EditBtnFromEditPage = () => {
    return (
-      <button className='edit-btn'>Edit project</button>
+      <button className='edit-btn-for-edit-page'>Edit project</button>
    )
 }

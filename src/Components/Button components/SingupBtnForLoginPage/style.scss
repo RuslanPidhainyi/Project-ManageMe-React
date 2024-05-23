@@ -1,3 +1,5 @@
+@import url("../../../Style//RootStyle/RootButton/RootSingUpButton/RootSingUpButton.css");
+
 .sing-up-btn-for-login-page {
   width: 30%;
   padding: 10px;
@@ -11,21 +13,21 @@
 }
 
 #light .sing-up-btn-for-login-page {
-  color: white;
-  background-color: rgb(0, 0, 0);
+  color: var(--light-color-for-sing-up-btn);
+  background-color: var(--light-background-color-for-sing-up-btn);
 
   &:hover {
-    background-color: rgb(39, 172, 61);
-    color: rgb(255, 255, 255);
+    color: var(--light-color-hover-for-sing-up-btn);
+    background-color: var(--light-background-color-hover-for-sing-up-btn);
   }
 }
 
 #dark .sing-up-btn-for-login-page {
-  color: black;
-  background-color: rgb(39, 172, 61);
+  color: var(--dark-color-for-sing-up-btn);
+  background-color: var(--dark-background-color-for-sing-up-btn);
 
   &:hover {
-    background-color: rgb(59, 213, 85);
-    color: black;
+    color: var(--dark-color-hover-for-sing-up-btn);
+    background-color: var(--dark--background-color-hover-for-sing-up-btn);
   }
 }

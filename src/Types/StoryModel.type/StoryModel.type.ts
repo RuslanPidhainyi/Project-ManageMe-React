@@ -1,6 +1,6 @@
 import { Priority } from "../../Data/Enums/EnumPriority/Priority";
 import { Status } from "../../Data/Enums/EnumStatus/Status";
-//import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
+import { TaskModelType } from "../TaskModel.type/TaskModel.type";
 
 export type StoryModelType = {
   storyId: string;
@@ -10,5 +10,5 @@ export type StoryModelType = {
   storyStatus: Status;
   stroryDate: string;
   ownerId: string;
-  //userFullname:
+  tasks: TaskModelType[];
 };
