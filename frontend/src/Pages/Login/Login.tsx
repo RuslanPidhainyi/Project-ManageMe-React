@@ -27,7 +27,7 @@ const Login = () => {
             <aside className='right-side'>
                <h1>Log in</h1>
                <form>
-                  <input type="text" placeholder='Surname' />
+                  <input type="text" placeholder='Username' />
                   <input type="password" placeholder='Password' maxLength={30} />
                   <LogInBtnForLoginPage />
                </form>
