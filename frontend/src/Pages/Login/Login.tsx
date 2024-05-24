@@ -2,7 +2,7 @@ import "./style.scss"
 import "../../Style/font.css"
 import { Link } from 'react-router-dom'
 import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage"
-import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LogInBtnForLoginPage"
+import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LoginBtnForLoginPage"
 
 
 
