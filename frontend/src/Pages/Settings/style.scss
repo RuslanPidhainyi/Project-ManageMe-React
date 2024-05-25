@@ -1,3 +1,5 @@
+@import url("../../Style/RootStyle/RootSettings/RootSettings.css");
+
 .settings-page {
   display: flex;
   flex: 0.8;
@@ -11,7 +13,6 @@
     padding-top: 15vh;
     padding-bottom: 15vh;
     padding: 40px 0 40px 0;
-    background-color: white;
     border-radius: 10px;
 
     h2 {
@@ -43,17 +44,19 @@
 }
 
 #light .settings-page {
-  color: black;
+  color: var(--light-color-for-settings-page);
+  
   .settings-section {
-    background-color: white;
+    background-color: var(--light-background-color-for-settings-section);
   }
 }
 
 #dark .settings-page {
-  color: white;
+  color: var(--dark-color-for-settings-page);
+
   .settings-section {
+    background-color: var(--dark-background-color-for-settings-section);
     border: 1px rgba(255, 255, 255, 0.248) solid;
-    background-color: black;
     box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
   }
 }

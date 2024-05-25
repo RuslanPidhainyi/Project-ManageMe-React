@@ -1,0 +1,13 @@
+/*Settings*/
+:root {
+
+    /*light*/
+    --light-color-for-settings-page: black;
+
+    --light-background-color-for-settings-section: white;
+  
+    /*dark*/
+    --dark-color-for-settings-page: white;
+
+    --dark-background-color-for-settings-section: black;
+}

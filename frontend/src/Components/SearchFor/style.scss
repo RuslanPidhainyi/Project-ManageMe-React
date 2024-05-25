@@ -1,3 +1,5 @@
+@import url("../../Style/RootStyle/RootSearch/RootSearch.css");
+
 .container-​​search-for-a-project {
   display: flex;
   align-items: center;
@@ -56,25 +58,25 @@
 #light .container-​​search-for-a-project {
   //border: 1px solid rgb(42, 40, 40);
   //box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
-  background-color: white;
+  background-color: var(--light-background-color-for-search);
 
   .​​search-for-a-project {
-    border: 1px solid themed("border");
+    //border: 1px solid themed("border");
 
     input {
-      background-color: transparent;
+      background-color: var(--light-background-color-for-search);
 
       &:focus {
-        color: black;
+        color: var(--light-color-focus-for-search);
       }
     }
 
     .btn-add {
-      background-color: white;
+      background-color: var(--light-background-color-for-search);
 
       .material-symbols-rounded {
         &:hover {
-          color: rgb(80, 80, 80);
+          color: var(--light-color-hover-for-search);
         }
       }
     }
@@ -82,27 +84,27 @@
 }
 
 #dark .container-​​search-for-a-project {
-  border: 1px solid rgb(42, 40, 40);
   box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
-  background-color: rgb(42, 40, 40);
+  background-color: var(--dark-background-color-for-search);
+  border: 1px solid var(--dark-border-color-for-search);
 
   .​​search-for-a-project {
-    border: 1px solid themed("border");
+    //border: 1px solid themed("border");
 
     input {
-      background-color: transparent;
+      background-color: var(--dark-background-color-for-search);
 
       &:focus {
-        color: white;
+        color: var(--dark-color-for-search);
       }
     }
 
     .btn-add {
-      background-color: rgb(42, 40, 40);
+      background-color: var(--dark-background-color-for-search);
 
       .material-symbols-rounded {
         &:hover {
-          color: grey;
+          color: var(--dark-color-hover-for-search);
         }
       }
     }

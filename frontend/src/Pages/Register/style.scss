@@ -1,3 +1,5 @@
+@import url("../../Style/RootStyle/RootLogin&Register/RootLogin&Register.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -54,23 +56,23 @@
 }
 
 #light .register-page {
-  color: black;
-  background-color: rgb(255, 255, 255);
-
+  background-color: var(--light-background-color-for-login-And-register-page);
+  color: var(--light-color-for-login-And-register-page);
+  
   input {
-    color: black;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 1px solid lightgray;
+    background-color: var(--light-background-color-for-input);
+    color: var(--light-color-for-input);
+    border-bottom: 1px solid var(--light-color-for-border-bottom);
   }
 }
 
 #dark .register-page {
-  color: white;
-  background-color: rgb(13, 13, 13);
-
+  background-color: var(--dark-background-color-for-login-And-register-page);
+  color: var(--dark-color-for-login-And-register-page);
+  
   input {
-    color: white;
-    background-color: rgb(13, 13, 13);
-    border-bottom: 1px solid darkgray;
+    background-color: var(--dark-background-color-for-input);
+    color: var(--dark-color-for-input);
+    border-bottom: 1px solid var(--dark-color-for-border-bottom);
   }
 }

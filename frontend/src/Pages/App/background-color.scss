@@ -1,6 +1,8 @@
+@import url("../../Style/RootStyle/RootApp/RootApp.css");
+
 body {
   overflow-x: hidden;
-  background-color: rgb(232, 231, 231);
+  background-color: var(--body-background-color-for-app);
 }
 
 #light {
@@ -8,5 +10,5 @@ body {
 }
 
 #dark {
-  background-color: rgb(13, 13, 13);
+  background-color: var(--dark-background-color-for-app);
 }

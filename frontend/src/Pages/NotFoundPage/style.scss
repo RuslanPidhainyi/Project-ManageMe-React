@@ -1,3 +1,5 @@
+@import url("../../Style/RootStyle/RootNotFoundPage/RootNotFoundPage.css");
+
 .some-page {
   display: flex;
   justify-content: center;
@@ -15,18 +17,18 @@
 
 #light .some-page {
   h1 {
-    color: red;
+    color: var(--light-color-for-h1);
   }
   h2 {
-    color: black;
+    color: var(--light-color-for-h2);
   }
 }
 
 #dark .some-page {
   h1 {
-    color: red;
+    color: var(--dark-color-for-h1);
   }
   h2 {
-    color: white;
+    color: var(--dark-color-for-h2);
   }
 }
