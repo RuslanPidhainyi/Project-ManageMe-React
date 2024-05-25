@@ -21,6 +21,7 @@
     "@types/jsonwebtoken": "^9.0.2",
     "@types/node": "^18.19.33",
     "nodemon": "^2.0.19",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   }
 }
