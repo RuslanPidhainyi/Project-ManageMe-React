@@ -5,6 +5,8 @@ import { Status } from "../../Data/Enums/EnumStatus/Status";
 import { TaskModelType } from "../../Types/TaskModel.type/TaskModel.type";
 import { StoryModelService } from "../StoryModel.Service/StoryModel.Service";
 import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
+import { Role } from "../../Data/Enums/EnumRole/Role";
+import { Deadline } from "../../Data/Enums/EnumExecutionTime/Deadline";
 
 export const TaskModelService = {
   //Create
@@ -13,8 +15,10 @@ export const TaskModelService = {
     storyId: string,
     taskName: string,
     taskDesc: string,
+    taskRole: Role,
     taskPriority: Priority,
-    taskStatus: Status
+    taskStatus: Status,
+    taskDeadline: Deadline,
   ): TaskModelType => {
     const story = StoryModelService.getStoryById(projectId, storyId);
 
@@ -23,10 +27,11 @@ export const TaskModelService = {
         taskId: ulid(),
         taskName,
         taskDesc,
+        taskRole,
         taskPriority,
-        taskStatus,
-        // taskEstimatedFinishTime,
-        // taskCreationDate,
+        taskStatus: taskRole !== Role.NONE ? Status.DOING : taskStatus,
+        taskDeadline,
+        taskDate: new Date().toLocaleString(),
         // taskStartDate,
         // taskEndDate,
         ownerId: fakeDbUser.userId,

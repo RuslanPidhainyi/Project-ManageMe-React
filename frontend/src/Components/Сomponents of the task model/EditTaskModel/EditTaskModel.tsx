@@ -3,11 +3,13 @@ import "../../../Style/font.css"
 import "./style.scss"
 import { useEffect, useState } from "react";
 import { TaskModelType } from "../../../Types/TaskModel.type/TaskModel.type";
-import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service";
+//import { StoryModelService } from "../../../Services/StoryModel.Service/StoryModel.Service";
 import { Priority } from "../../../Data/Enums/EnumPriority/Priority";
 import { Status } from "../../../Data/Enums/EnumStatus/Status";
 import { TaskModelService } from "../../../Services/TaskModel.Service/TaskModel.Service";
 import { ConfirmBtn } from "../../Button components/ConfirmBtn/ConfirmBtn";
+import { Role } from "../../../Data/Enums/EnumRole/Role";
+import { Deadline } from "../../../Data/Enums/EnumExecutionTime/Deadline";
 
 
 export const EditTaskModel = () => {
@@ -18,29 +20,28 @@ export const EditTaskModel = () => {
    
    const [name, setName] = useState("");
    const [desc, setDesc] = useState("");
+   const [role, setRole] = useState<Role>(Role.NONE)
    const [priority, setPriority] = useState<Priority>(Priority.LOW)
    const [status, setStatus] = useState<Status>(Status.TODO)
+   const [deadline, setDeadline] = useState<Deadline>(Deadline.ZERO)
 
    const navigate = useNavigate();
 
    useEffect(() => {
-      if(storyId)
-      {
-         const stories = StoryModelService.getStories();
-         const currentStory = stories.find(story => story.storyId  === storyId);
+      if (projectId && storyId && taskId) {
+         const currentTask = TaskModelService.getTaskById(projectId, storyId, taskId);
          
-         if(currentStory)
-         {
-            const currentTask = currentStory.tasks.find(task => task.taskId === taskId);
-            
-            if(currentTask) {
-               setTask(currentTask)
-               setName(currentTask.taskName)
-               setDesc(currentTask.taskDesc)
-            }
+         if (currentTask) {
+            setTask(currentTask);
+            setName(currentTask.taskName);
+            setDesc(currentTask.taskDesc);
+            setRole(currentTask.taskRole);
+            setPriority(currentTask.taskPriority);
+            setStatus(currentTask.taskStatus);
+            setDeadline(currentTask.taskDeadline);
          }
       }
-   }, [storyId, taskId]);
+   }, [projectId, storyId, taskId]);
 
 
    const handleNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -51,6 +52,10 @@ export const EditTaskModel = () => {
       setDesc(event.target.value)
    }
 
+   const handleRoleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setRole(event.target.value as Role)
+   }
+
    const handlePriorityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setPriority(event.target.value as Priority)
    }
@@ -59,12 +64,16 @@ export const EditTaskModel = () => {
       setStatus(event.target.value as Status)
    }
 
+   const handleDeadlineChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setDeadline(event.target.value as Deadline)
+   }
+
    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (task && projectId && storyId) {
-         const updateTask = { ...task, taskName: name, taskDesc: desc, taskPriority: priority, taskStatus: status };
+         const updateTask = { ...task, taskName: name, taskDesc: desc, taskRole: role, taskPriority: priority, taskStatus: status, taskDeadline: deadline };
          TaskModelService.updateTaskModel(projectId, storyId, updateTask);
-         navigate(`/story/${storyId}`)//TEMPORARILY  story/:storyId
+         navigate(`/project/${projectId}/story/${storyId}`)
       } else {
          console.error("projectId is undefined");
       }
@@ -75,7 +84,7 @@ export const EditTaskModel = () => {
          <main className="common-card-edit-task-model-container">
             <main className="main-contener-edit-task-model-container">
                <h2 className="page-name-edit-task-model-container">Edit task</h2>
-               <form onClick={handleSubmit}>
+               <form onSubmit={handleSubmit}>
                   <div className="form-name-task">
                      <label htmlFor="name">Name:</label>
                      <input type="text" name="name" maxLength={53} value={name} onChange={handleNameChange} />
@@ -83,6 +92,14 @@ export const EditTaskModel = () => {
                   <div className="form-desc-task">
                      <label htmlFor="desc">Description:</label>
                      <input type="text" name="desc" maxLength={250} value={desc} onChange={handleDescChange}/>
+                  </div>
+                  <div className="form-role-task">
+                     <label htmlFor="role">Role:</label>
+                     <select id="role" value={role} onChange={handleRoleChange}>
+                     <option value={Role.NONE}>{Role.NONE}</option>
+                        <option value={Role.DEVELOPER}>{Role.DEVELOPER}</option>
+                        <option value={Role.DEVOPS}>{Role.DEVOPS}</option>
+                     </select>
                   </div>
                   <div className="form-priority-task">
                      <label htmlFor="priority">Priority:</label>
@@ -98,6 +115,20 @@ export const EditTaskModel = () => {
                         <option value={Status.TODO}>{Status.TODO}</option>
                         <option value={Status.DOING}>{Status.DOING}</option>
                         <option value={Status.DONE}>{Status.DONE}</option>
+                     </select>
+                  </div>
+                  <div className="form-deadline-task">
+                     <label htmlFor="deadline">Deadline:</label>
+                     <select id="deadline" value={deadline} onChange={handleDeadlineChange}>
+                        <option value={Deadline.ZERO}>{Deadline.ZERO}</option>
+                        <option value={Deadline.SIX}>{Deadline.SIX}</option>
+                        <option value={Deadline.EIGHT}>{Deadline.EIGHT}</option>
+                        <option value={Deadline.TWELVE}>{Deadline.TWELVE}</option>
+                        <option value={Deadline.TWENTY_FOUR}>{Deadline.TWENTY_FOUR}</option>
+                        <option value={Deadline.WEEK}>{Deadline.WEEK}</option>
+                        <option value={Deadline.TWO_WEEKS}>{Deadline.TWO_WEEKS}</option>
+                        <option value={Deadline.MONTH}>{Deadline.MONTH}</option>
+                        <option value={Deadline.THREE_MONTHS}>{Deadline.THREE_MONTHS}</option>
                      </select>
                   </div>
                   <ConfirmBtn />

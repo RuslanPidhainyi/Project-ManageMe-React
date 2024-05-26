@@ -66,7 +66,7 @@ function App() {
 
     /**************** TASK ****************/
 
-    //project/:projectId/story/:storyId - [page task], tasks
+    //project/:projectId/story/:storyId - [page task], TASKS  
     //project/:projectId/story/:storyId/add-task
     //project/:projectId/story/:storyId/edit-task/:taskId
 
@@ -78,6 +78,7 @@ function App() {
         <Route path='/' element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route path="/" element={<LeftBar profileUser={profileUser} />}>
+          
           <Route path="profile/:userFullname/:userId" element={<Profile />} />
           <Route path="/home" element={<Home />} />
           <Route path="create" element={<Create />} />

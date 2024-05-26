@@ -4,11 +4,16 @@
   .task-dialog-title {
     padding: 10px 190px 10px;
     font-weight: bold;
+    text-align: center;
   }
   .task-dialog-form {
     .task-dialog-desc {
       color: black;//TEMPORARILY
       padding: 10px 0 10px;
+    }
+    .task-dialog-role {
+      color: black;//TEMPORARILY
+      padding: 5px 0 5px;
     }
     .task-dialog-priority {
       color: black;//TEMPORARILY
@@ -17,6 +22,13 @@
     .task-dialog-status {
       color: black;//TEMPORARILY
       padding: 5px 0 5px;
+    }
+    .task-dialog-deadline {
+      color: black;//TEMPORARILY
+      padding: 5px 0 5px;
+    }
+    .task-dialog-date-of-creation-section {
+      text-align: end;
     }
   }
   .task-dialog-action {

@@ -22,11 +22,20 @@ export const TaskDialogModel = (props: TaskDialogModelProps) => {
             <DialogContentText className="task-dialog-desc">
                {props.task.taskDesc}
             </DialogContentText>
+            <DialogContentText className="task-dialog-role">
+               <b>Role:</b> {props.task.taskRole}
+            </DialogContentText>
             <DialogContentText className="task-dialog-priority">
                <b>Priority:</b> {props.task.taskPriority}
             </DialogContentText>
             <DialogContentText className="task-dialog-status">
                <b>Status:</b> {props.task.taskStatus}
+            </DialogContentText>
+            <DialogContentText className="task-dialog-deadline">
+               <b>Deadline:</b> {props.task.taskDeadline}
+            </DialogContentText>
+            <DialogContentText className="task-dialog-date-of-creation-section">
+            <span>{props.task.taskDate}</span>
             </DialogContentText>
             {/* <DialogContentText>
                <b>Estimated Finish Time:</b> {props.task.taskEstimatedFinishTime}

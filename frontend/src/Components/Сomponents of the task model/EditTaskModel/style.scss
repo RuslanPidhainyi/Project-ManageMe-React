@@ -45,6 +45,22 @@
             border: none;
           }
         }
+
+        .form-role-task {
+          label {
+            font-weight: bold;
+          }
+          select {
+            margin: 0 0 0 78px; //margin: 0 0 0 56px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            border: none;
+            height: 25px;
+
+            option {
+            }
+          }
+        }
+
         .form-priority-task {
           label {
             font-weight: bold;
@@ -65,6 +81,21 @@
           }
           select {
             margin: 0 0 0 66px; //margin: 0 0 0 61px; //if i dont use to  - font-weight: bold;
+            border-radius: 5px; //Temporary
+            height: 25px;
+            border: none;
+
+            option {
+            }
+          }
+        }
+
+        .form-deadline-task {
+          label {
+            font-weight: bold;
+          }
+          select {
+            margin: 0 0 0 49px; //margin: 0 0 0 61px; //if i dont use to  - font-weight: bold;
             border-radius: 5px; //Temporary
             height: 25px;
             border: none;
