@@ -12,8 +12,8 @@ const Register = () => {
             <main className='main-contener'>
                <h1 className='page-name'>Sing up</h1>
                <form>
-                  <input type="text" placeholder='Name' maxLength={30} />
-                  <input type="text" placeholder='Surname' maxLength={30} />
+                  <input type="text" placeholder='Username' maxLength={30} />
+                  {/* <input type="text" placeholder='Surname' maxLength={30} /> */}
                   <input type="email" placeholder='Email' maxLength={30} />
                   <input type="password" placeholder='Password' maxLength={30} />
                   <SingUpBtnForRegisterPage />
