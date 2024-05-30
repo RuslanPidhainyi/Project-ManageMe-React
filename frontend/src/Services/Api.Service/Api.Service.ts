@@ -16,6 +16,4 @@ export const ApiService = {
   getProjectModel() {
     return localStorage.getItem(LOCAL_STORAGE_KEY_FOR_PROJECT);
   },
-
-  //getStoryModel
 };

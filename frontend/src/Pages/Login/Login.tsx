@@ -1,12 +1,31 @@
 import "./style.scss"
 import "../../Style/font.css"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage"
 import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LoginBtnForLoginPage"
+//import { authService } from '../../Services/AuthService/authService';
+import { login } from '../../Services/AuthService/authService';
+import { useState } from "react"
 
 
 
 const Login = () => {
+
+   const navigate = useNavigate();
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+
+   const handleSubmit = async (event: React.FormEvent) => {
+      event.preventDefault();
+      try {
+        const result = await login(email, password);
+        console.log('Login successful:', result);
+        localStorage.setItem('token', result.token);
+        navigate('/home');
+      } catch (error) {
+        console.error('Login failed:', error);
+      }
+   };
 
    return (
       <div className='login-page'>
@@ -26,9 +45,24 @@ const Login = () => {
             </aside>
             <aside className='right-side'>
                <h1>Log in</h1>
-               <form>
-                  <input type="text" placeholder='Username' />
-                  <input type="password" placeholder='Password' maxLength={30} />
+               <form onSubmit={handleSubmit}>
+
+                  {/* <input type="text" placeholder='Username' /> */}
+                  <input
+                     type="email"
+                     value={email}
+                     onChange={(e) => setEmail(e.target.value)}
+                     placeholder="Email"
+                     required/>
+
+                  {/* <input type="password" placeholder='Password' maxLength={30} /> */}
+                  <input
+                     type="password"
+                     value={password}
+                     onChange={(e) => setPassword(e.target.value)}
+                     placeholder="Password"
+                     required/>
+
                   <LogInBtnForLoginPage />
                </form>
             </aside>
@@ -39,3 +73,49 @@ const Login = () => {
 
 export default Login;
 
+
+// import { useNavigate  } from 'react-router-dom'
+// import React, { useState } from 'react';
+// import { login } from '../../Services/AuthService/authService';
+
+//const Login = () => {
+
+//   const navigate = useNavigate();
+//   const [email, setEmail] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleSubmit = async (event: React.FormEvent) => {
+//     event.preventDefault();
+//     try {
+//       const result = await login(email, password);
+//       console.log('Login successful:', result);
+//       // Зберегти токен в локальне сховище або перенаправити користувача на головну сторінку
+//       localStorage.setItem('token', result.token);
+//       navigate('/home');
+//     } catch (error) {
+//       console.error('Login failed:', error);
+//     }
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input
+//         type="email"
+//         value={email}
+//         onChange={(e) => setEmail(e.target.value)}
+//         placeholder="Email"
+//         required
+//       />
+//       <input
+//         type="password"
+//         value={password}
+//         onChange={(e) => setPassword(e.target.value)}
+//         placeholder="Password"
+//         required
+//       />
+//       <button type="submit">Login</button>
+//     </form>
+//   );
+// };
+
+// export default Login;
