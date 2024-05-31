@@ -11,8 +11,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding-top: 15vh;
-  padding-bottom: 19.3vh; //5vh;;
+  padding-top: 10vh;
+  padding-bottom: 11.7vh; //5vh;;
 
   .common-card {
     display: flex;
@@ -42,6 +42,19 @@
             outline: none;
           }
         }
+
+        select {
+          border: none;
+          padding: 20px 10px;
+          
+          option {
+          }
+
+          &:focus {
+            outline: none;
+          }
+        }
+
       }
       span {
         font-size: 16px;
@@ -64,6 +77,18 @@
     color: var(--light-color-for-input);
     border-bottom: 1px solid var(--light-color-for-border-bottom);
   }
+
+  select {
+    background-color: var(--light-background-color-for-input);
+    color: var(--dark-color-for-select);
+    border-bottom: 1px solid var(--light-color-for-border-bottom);
+
+    option {
+      background-color: var(--light-background-color-for-input);
+      color: var(--dark-color-for-option);
+      border-bottom: 1px solid var(--light-color-for-border-bottom);
+    }
+  }
 }
 
 #dark .register-page {
@@ -74,5 +99,17 @@
     background-color: var(--dark-background-color-for-input);
     color: var(--dark-color-for-input);
     border-bottom: 1px solid var(--dark-color-for-border-bottom);
+  }
+
+  select {
+    background-color: var(--dark-background-color-for-input);
+    color: var(--dark-color-for-select);
+    border-bottom: 1px solid var(--dark-color-for-border-bottom);
+
+    option {
+      background-color: var(--dark-background-color-for-input);
+      color: var(--dark-color-for-option);
+      border-bottom: 1px solid var(--dark-color-for-border-bottom);
+    }
   }
 }

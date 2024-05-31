@@ -20,6 +20,7 @@ const Login = () => {
       try {
         const result = await login(email, password);
         console.log('Login successful:', result);
+
         localStorage.setItem('token', result.token);
         navigate('/home');
       } catch (error) {

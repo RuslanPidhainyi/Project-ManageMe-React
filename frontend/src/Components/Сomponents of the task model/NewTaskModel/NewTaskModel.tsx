@@ -60,7 +60,7 @@ export const NewTaskModel = () => {
                   <div className="form-role-task">
                      <label htmlFor="role">Role:</label>
                      <select id="role">
-                     <option value="NONE">NONE</option>
+                        <option value="NONE">NONE</option>
                         <option value="Developer">Developer</option>
                         <option value="Devops">Devops</option>
                      </select>

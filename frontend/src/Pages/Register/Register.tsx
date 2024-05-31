@@ -14,12 +14,14 @@ const Register = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [name, setName] = useState('');
+   const [role, setRole] = useState('Developer');
+   
 
 
    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-        const result = await register(email, password, name);
+        const result = await register(email, password, name, role);
         console.log('Registration successful:', result);
         navigate('/');
       } catch (error) {
@@ -48,6 +50,12 @@ const Register = () => {
                      onChange={(e) => setEmail(e.target.value)}
                      placeholder="Email"
                      required/>
+
+                     <select id="role" onChange={(e) => setRole(e.target.value)}>
+                        <option value="Developer">Developer</option>
+                        <option value="Devops">Devops</option>
+                        <option value="Admin">Admin</option>
+                     </select>
 
                   <input
                      type="password"

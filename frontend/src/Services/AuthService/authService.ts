@@ -1,10 +1,10 @@
-export const register = async (email: string, password: string, name: string) => {
+export const register = async (email: string, password: string, name: string, role: string) => {
   const response = await fetch('http://localhost:3000/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ email, password, name }),
+    body: JSON.stringify({ email, password, name, role }),
   });
   if (!response.ok) {
     const errorText = await response.text();
@@ -30,5 +30,4 @@ export const login = async (email: string, password: string) => {
 
 export const logout = () => {
   localStorage.removeItem('token');
-  //window.location.href = '/login'; // Перенаправити користувача на сторінку логіну після вилогування
 };

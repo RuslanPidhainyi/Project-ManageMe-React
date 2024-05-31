@@ -121,34 +121,36 @@ import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import { UserType } from '../Type/User.type';
+import { Role } from '../Enum/EnumRole/Role';
 
-
-//Ініціалізація додатку
 const app = express();
 const port = 3000;
-const SECRET_KEY = 'your_secret_key';
+const SECRET_KEY = 'your_secret_key'; // Змініть на ваш секретний ключ
 
 app.use(cors());
 app.use(bodyParser.json());
 
-interface User {
-  id: string;
-  email: string;
-  password: string;
-  name: string;
-}
 
-const users = new Map<string, User>();
+const users = new Map<string, UserType>();
+
+app.get('/', (req, res) => {
+  res.send('Hello World - simple api with JWT!') 
+})
+
 
 app.post('/register', async (req, res) => {
-  const { email, password, name } = req.body;
-  if (!email || !password || !name) {
+  const { email, password, name, role } = req.body;
+  if (!email || !password || !name || !role) {
     return res.status(400).send('All fields are required');
+  }
+  if (!Object.values(Role).includes(role)) {
+    return res.status(400).send('Invalid role');
   }
   const hashedPassword = await bcrypt.hash(password, 10);
   const id = uuidv4();
-  users.set(id, { id, email, password: hashedPassword, name });
-  res.status(201).send({ id, email, name });
+  users.set(id, { id, email, password: hashedPassword, name, role });
+  res.status(201).send({ id, email, name, role });
 });
 
 app.post('/login', async (req, res) => {
@@ -162,7 +164,7 @@ app.post('/login', async (req, res) => {
     return res.status(401).send('Invalid email or password');
   }
   const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
-  res.status(200).send({ token, email: user.email, name: user.name });
+  res.status(200).send({ token, email: user.email, name: user.name, role: user.role });
 });
 
 app.listen(port, () => {
