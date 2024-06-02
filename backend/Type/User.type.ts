@@ -1,4 +1,4 @@
-import { Role } from "../Enum/EnumRole/Role";
+import { Role } from "../Enum/Role";
 
 export interface UserType {
     id: string;
