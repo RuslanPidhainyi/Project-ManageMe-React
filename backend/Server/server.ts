@@ -113,8 +113,6 @@
 //  дозволяючи захищати маршрути та оновлювати токени за допомогою рефреш-токенів.
 //  */
 
-
-
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
@@ -122,7 +120,7 @@ import { v4 as uuidv4 } from 'uuid';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { UserType } from '../Type/User.type';
-import { Role } from '../Enum/EnumRole/Role';
+import { Role } from '../Enum/Role';
 
 const app = express();
 const port = 3000;
@@ -131,13 +129,11 @@ const SECRET_KEY = 'your_secret_key'; // Змініть на ваш секрет
 app.use(cors());
 app.use(bodyParser.json());
 
-
 const users = new Map<string, UserType>();
 
 app.get('/', (req, res) => {
   res.send('Hello World - simple api with JWT!') 
-})
-
+});
 
 app.post('/register', async (req, res) => {
   const { email, password, name, role } = req.body;
