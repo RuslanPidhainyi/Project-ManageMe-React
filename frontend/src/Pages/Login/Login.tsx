@@ -6,6 +6,7 @@ import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBt
 //import { authService } from '../../Services/AuthService/authService';
 import { login } from '../../Services/AuthService/authService';
 import { useState } from "react"
+import { UserType } from "../../Types/User.type/User.type"
 
 
 
@@ -22,6 +23,17 @@ const Login = () => {
         console.log('Login successful:', result);
 
         localStorage.setItem('token', result.token);
+
+         // Отримуємо користувача з таблиці Local Storage
+         const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
+         const user = users.find((user: UserType) => user.email === email);
+
+         if (user) {
+            localStorage.setItem('currentUser', JSON.stringify(user));
+         } else {
+            console.error('User not found');
+         }
+
         navigate('/home');
       } catch (error) {
         console.error('Login failed:', error);

@@ -14,5 +14,5 @@ export interface TaskModelType {
   taskDate: string;
   //taskStartDate?: string; //Data dodania
   //taskEndDate?: string; //Data startu (stan zmieniony na doing)
-  ownerId: string; //Data zakończenia (stan zmieniony na done)
+  //ownerId: string; //Data zakończenia (stan zmieniony na done)
 }

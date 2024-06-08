@@ -4,7 +4,7 @@ import { Priority } from "../../Data/Enums/EnumPriority/Priority";
 import { Status } from "../../Data/Enums/EnumStatus/Status";
 import { TaskModelType } from "../../Types/TaskModel.type/TaskModel.type";
 import { StoryModelService } from "../StoryModel.Service/StoryModel.Service";
-import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
+//import { fakeDbUser } from "../../Data/FakeDataUser/FakeDataUser";
 import { Role } from "../../Data/Enums/EnumRole/Role";
 import { Deadline } from "../../Data/Enums/EnumExecutionTime/Deadline";
 
@@ -34,7 +34,7 @@ export const TaskModelService = {
         taskDate: new Date().toLocaleString(),
         // taskStartDate,
         // taskEndDate,
-        ownerId: fakeDbUser.userId,
+        //ownerId: fakeDbUser.userId,
         //storyId,
       };
 

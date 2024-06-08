@@ -7,6 +7,8 @@ import { LogInBtnForRegisterPage } from "../../Components/Button components/LogI
 import { register } from '../../Services/AuthService/authService';
 import { useState } from "react"
 
+import { UserType } from '../../Types/User.type/User.type'; // Імпортуємо тип користувача
+
 
 const Register = () => {
 
@@ -21,8 +23,22 @@ const Register = () => {
    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-        const result = await register(email, password, name, role);
+        const result = await register(email, password, name, role); 
         console.log('Registration successful:', result);
+
+        // Зберігаємо дані користувача у таблицю Local Storage
+        const newUser: UserType = {
+         id: result.id,
+         email: result.email,
+         name: result.name,
+         role: result.role,
+         password: '' // Ми не зберігаємо пароль у Local Storage з міркувань безпеки
+      };
+
+      const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
         navigate('/');
       } catch (error) {
         console.error('Registration failed:', error);
