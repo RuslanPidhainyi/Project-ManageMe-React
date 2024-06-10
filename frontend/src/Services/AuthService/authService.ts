@@ -1,33 +1,29 @@
-export const register = async (email: string, password: string, name: string, role: string) => {
-  const response = await fetch('http://localhost:3000/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password, name, role }),
+// authService.ts
+
+interface LoginResponse {
+  token: string;
+  refreshToken?: string;
+  // інші поля, якщо потрібно
+}
+
+export const login = async (login: string, password: string): Promise<LoginResponse> => {
+  const response = await fetch('http://localhost:3000/api/login', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ login, password }),
   });
   if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText);
+      throw new Error('Login failed');
   }
   return response.json();
 };
 
-export const login = async (email: string, password: string) => {
-  const response = await fetch('http://localhost:3000/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
-  });
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText);
-  }
-  return response.json();
-};
-
-export const logout = () => {
+// Додавання функції logout
+export const logout = (): void => {
   localStorage.removeItem('token');
+  localStorage.removeItem('refreshToken');
+  localStorage.removeItem('currentUser');
 };
+  

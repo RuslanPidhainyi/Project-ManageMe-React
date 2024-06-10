@@ -12,7 +12,7 @@ import { Profile } from "../Profile/Profile"
 import { Story } from "../Story/Story"
 import { CreateStory } from "../CreateStory/CreateStory"
 import { EditStory } from "../EditStory/EditStory"
-import { UserService } from "../../Services/User.Service/User.Service"
+//import { UserService } from "../../Services/User.Service/User.Service"
 import { Task } from "../Task/Task"
 import Login from "../Login/Login"
 import Register from "../Register/Register"
@@ -42,7 +42,7 @@ function App() {
     setDisplayMode(newMode);
   }
 
-  const profileUser = UserService.getUserById();
+  //const profileUser = UserService.getUserById();
 
   return (
 
@@ -77,7 +77,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='register' element={<Register />} />
-        <Route path="/" element={<LeftBar profileUser={profileUser} />}>
+        <Route path="/" element={<LeftBar/>}>
           
           <Route path="profile/:userFullname/:userId" element={<Profile />} />
           <Route path="/home" element={<Home />} />

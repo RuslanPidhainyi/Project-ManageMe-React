@@ -4,10 +4,10 @@ import { Link, useNavigate  } from 'react-router-dom'
 import { SingUpBtnForRegisterPage } from "../../Components/Button components/SingUpBtnForRegisterPage/SingUpBtnForRegisterPage"
 import { LogInBtnForRegisterPage } from "../../Components/Button components/LogInBtnForRegisterPage/LogInBtnForRegisterPage"
 //import { authService } from '../../Services/AuthService/authService';
-import { register } from '../../Services/AuthService/authService';
+//import { register } from '../../Services/AuthService/authService';
 import { useState } from "react"
 
-import { UserType } from '../../Types/User.type/User.type'; // Імпортуємо тип користувача
+//import { UserType } from '../../Types/User.type/User.type'; // Імпортуємо тип користувача
 
 
 const Register = () => {
@@ -16,28 +16,28 @@ const Register = () => {
    const [email, setEmail] = useState('');
    const [password, setPassword] = useState('');
    const [name, setName] = useState('');
-   const [role, setRole] = useState('Developer');
+   //const [role, setRole] = useState('Developer');
    
 
 
    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-        const result = await register(email, password, name, role); 
-        console.log('Registration successful:', result);
+      //   const result = await register(email, password, name, role); 
+      //   console.log('Registration successful:', result);
 
-        // Зберігаємо дані користувача у таблицю Local Storage
-        const newUser: UserType = {
-         id: result.id,
-         email: result.email,
-         name: result.name,
-         role: result.role,
-         password: '' // Ми не зберігаємо пароль у Local Storage з міркувань безпеки
-      };
+      //   // Зберігаємо дані користувача у таблицю Local Storage
+      //   const newUser: UserType = {
+      //    id: result.id,
+      //    email: result.email,
+      //    name: result.name,
+      //    role: result.role,
+      //    password: '' // Ми не зберігаємо пароль у Local Storage з міркувань безпеки
+      // };
 
-      const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
-      users.push(newUser);
-      localStorage.setItem('users', JSON.stringify(users));
+      // const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
+      // users.push(newUser);
+      // localStorage.setItem('users', JSON.stringify(users));
 
         navigate('/');
       } catch (error) {
@@ -67,7 +67,13 @@ const Register = () => {
                      placeholder="Email"
                      required/>
 
-                     <select id="role" onChange={(e) => setRole(e.target.value)}>
+                     {/* <select id="role" onChange={(e) => setRole(e.target.value)}>
+                        <option value="Developer">Developer</option>
+                        <option value="Devops">Devops</option>
+                        <option value="Admin">Admin</option>
+                     </select> */}
+
+                     <select id="role">
                         <option value="Developer">Developer</option>
                         <option value="Devops">Devops</option>
                         <option value="Admin">Admin</option>

@@ -1,32 +1,28 @@
-import "./style.scss"
-import "../../Style/font.css"
-import { Link, useNavigate  } from 'react-router-dom'
-import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage"
-import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LoginBtnForLoginPage"
-//import { authService } from '../../Services/AuthService/authService';
+import "./style.scss";
+import "../../Style/font.css";
+import { Link, useNavigate } from 'react-router-dom';
+import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage";
+import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LoginBtnForLoginPage";
 import { login } from '../../Services/AuthService/authService';
-import { useState } from "react"
-import { UserType } from "../../Types/User.type/User.type"
-
-
+import { useState } from "react";
+import { UserType } from "../../Types/User.type/User.type";
 
 const Login = () => {
-
+   
    const navigate = useNavigate();
-   const [email, setEmail] = useState('');
+   const [userLogin, setUserLogin] = useState('');
    const [password, setPassword] = useState('');
 
    const handleSubmit = async (event: React.FormEvent) => {
       event.preventDefault();
       try {
-        const result = await login(email, password);
+        const result = await login(userLogin, password);
         console.log('Login successful:', result);
 
         localStorage.setItem('token', result.token);
 
-         // Отримуємо користувача з таблиці Local Storage
-         const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
-         const user = users.find((user: UserType) => user.email === email);
+        const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
+        const user = users.find((user: UserType) => user.login === userLogin);
 
          if (user) {
             localStorage.setItem('currentUser', JSON.stringify(user));
@@ -59,16 +55,13 @@ const Login = () => {
             <aside className='right-side'>
                <h1>Log in</h1>
                <form onSubmit={handleSubmit}>
-
-                  {/* <input type="text" placeholder='Username' /> */}
                   <input
-                     type="email"
-                     value={email}
-                     onChange={(e) => setEmail(e.target.value)}
-                     placeholder="Email"
+                     type="text"
+                     value={userLogin}
+                     onChange={(e) => setUserLogin(e.target.value)}
+                     placeholder="Login"
                      required/>
 
-                  {/* <input type="password" placeholder='Password' maxLength={30} /> */}
                   <input
                      type="password"
                      value={password}
@@ -81,8 +74,8 @@ const Login = () => {
             </aside>
          </main>
       </div>
-   )
-}
+   );
+};
 
 export default Login;
 

@@ -10,6 +10,6 @@ export interface UserType {
   id: string;
   email: string;
   password: string;
-  name: string;
+  login: string;
   role?: Role;
 }

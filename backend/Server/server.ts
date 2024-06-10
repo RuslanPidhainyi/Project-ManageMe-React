@@ -113,56 +113,53 @@
 //  дозволяючи захищати маршрути та оновлювати токени за допомогою рефреш-токенів.
 //  */
 
-import express from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import { v4 as uuidv4 } from 'uuid';
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload, VerifyErrors } from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { UserType } from '../Type/User.type';
 import { Role } from '../Enum/Role';
+import { users } from '../Data/FakeDataUser/FakeDataUser';
 
 const app = express();
 const port = 3000;
-const SECRET_KEY = 'your_secret_key'; // Змініть на ваш секретний ключ
+
+const SECRET_KEY = 'your_secret_key';
+const REFRESH_SECRET_KEY = 'your_refresh_secret_key';
 
 app.use(cors());
 app.use(bodyParser.json());
 
-const users = new Map<string, UserType>();
-
-app.get('/', (req, res) => {
-  res.send('Hello World - simple api with JWT!') 
+app.get('/', (req: Request, res: Response) => {
+  res.send('Hello World - simple api with JWT!');
 });
 
-app.post('/register', async (req, res) => {
-  const { email, password, name, role } = req.body;
-  if (!email || !password || !name || !role) {
-    return res.status(400).send('All fields are required');
+app.post('/api/login', (req: Request, res: Response) => {
+  const { login, password } = req.body;
+  const user = users.find(u => u.login === login && u.password === password);
+  if (user) {
+      const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY, { expiresIn: '1h' });
+      const refreshToken = jwt.sign({ id: user.id }, REFRESH_SECRET_KEY, { expiresIn: '7d' });
+      res.json({ token, refreshToken });
+  } else {
+      res.status(401).json({ message: 'Invalid login or password' });
   }
-  if (!Object.values(Role).includes(role)) {
-    return res.status(400).send('Invalid role');
-  }
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const id = uuidv4();
-  users.set(id, { id, email, password: hashedPassword, name, role });
-  res.status(201).send({ id, email, name, role });
 });
 
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  const user = Array.from(users.values()).find(user => user.email === email);
-  if (!user) {
-    return res.status(401).send('Invalid email or password');
-  }
-  const isPasswordValid = await bcrypt.compare(password, user.password);
-  if (!isPasswordValid) {
-    return res.status(401).send('Invalid email or password');
-  }
-  const token = jwt.sign({ id: user.id, email: user.email }, SECRET_KEY, { expiresIn: '1h' });
-  res.status(200).send({ token, email: user.email, name: user.name, role: user.role });
+app.post('/api/refresh-token', (req: Request, res: Response) => {
+  const { refreshToken } = req.body;
+  if (!refreshToken) return res.status(401).json({ message: 'No refresh token provided' });
+  jwt.verify(refreshToken, REFRESH_SECRET_KEY, (err: VerifyErrors | null, decoded: any) => {
+      if (err || !decoded) return res.status(403).json({ message: 'Invalid refresh token' });
+      const newToken = jwt.sign({ id: decoded.id, role: decoded.role }, SECRET_KEY, { expiresIn: '1h' });
+      res.json({ token: newToken });
+  });
 });
 
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
+
+

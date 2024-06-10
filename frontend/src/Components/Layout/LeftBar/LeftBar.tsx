@@ -5,14 +5,14 @@ import { LogoSection } from "../LeftBarSections/LogoSection/LogoSection"
 import { HomeSection } from "../LeftBarSections/ItemsSections/HomeSection/HomeSection"
 import { CreateSection } from "../LeftBarSections/ItemsSections/CreateSection/CreateSection"
 import { SettingsSection } from "../LeftBarSections/ItemsSections/SettingsSection/SettingsSection"
-import { ProfileSection } from "../LeftBarSections/ItemsSections/ProfileSection/ProfileSection"
-import { UserType } from "../../../Types/User.type/User.type"
+//import { ProfileSection } from "../LeftBarSections/ItemsSections/ProfileSection/ProfileSection"
+//import { UserType } from "../../../Types/User.type/User.type"
 import { LogoutSection } from "../LeftBarSections/ItemsSections/LogoutSection/LogoutSection"
 
-interface LeftBarProps {
-   profileUser: UserType;
-}
-export const LeftBar = (props: LeftBarProps) => {
+// interface LeftBarProps {
+//    profileUser: UserType;
+// }
+export const LeftBar = () => {
    return (
       <div style={{ display: "flex" }}>
          <>
@@ -24,9 +24,9 @@ export const LeftBar = (props: LeftBarProps) => {
                         <LogoSection />
                      </NavLink>
 
-                     <NavLink to={`/profile/${props.profileUser.userFullname}/${props.profileUser.userId}`} className="left-bar-link link-hover">
+                     {/* <NavLink to={`/profile/${props.profileUser.userFullname}/${props.profileUser.userId}`} className="left-bar-link link-hover">
                         <ProfileSection />
-                     </NavLink>
+                     </NavLink> */}
 
                      <NavLink to={"/home"} className="left-bar-link link-hover">
                         <HomeSection />
