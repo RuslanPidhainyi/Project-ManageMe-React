@@ -7,6 +7,7 @@ interface LoginResponse {
 }
 
 export const login = async (login: string, password: string): Promise<LoginResponse> => {
+  console.log('Attempting login with:', { login, password })
   const response = await fetch('http://localhost:3000/api/login', {
       method: 'POST',
       headers: {
@@ -15,6 +16,7 @@ export const login = async (login: string, password: string): Promise<LoginRespo
       body: JSON.stringify({ login, password }),
   });
   if (!response.ok) {
+    console.error('Login failed with status:', response.status);
       throw new Error('Login failed');
   }
   return response.json();

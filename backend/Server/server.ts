@@ -138,6 +138,7 @@ app.get('/', (req: Request, res: Response) => {
 
 app.post('/api/login', (req: Request, res: Response) => {
   const { login, password } = req.body;
+  console.log('Login attempt:', login, password);
   const user = users.find(u => u.login === login && u.password === password);
   if (user) {
       const token = jwt.sign({ id: user.id, role: user.role }, SECRET_KEY, { expiresIn: '1h' });
