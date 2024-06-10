@@ -14,27 +14,59 @@ const Login = () => {
    const [password, setPassword] = useState('');
 
    const handleSubmit = async (event: React.FormEvent) => {
+
       event.preventDefault();
-      try {
-        const result = await login(userLogin, password);
-        console.log('Login successful:', result);
+      
+      const loginPayload = {
+         login: this.username,
+         password: this.password
+       };
+   
+       this.http.post<{ token: string, refreshToken: string }>('http://localhost:3000/token', loginPayload)
+         .subscribe({
+           next: (response) => {
+             const decodedToken: any = jwtDecode(response.token);
+             this.authService.setCurrentUser(decodedToken.user);
+   
+             this.router.navigateByUrl('/');
+           },
+           error: (err) => {
+             console.error('Login error:', err);
+           }
+         });
 
-        localStorage.setItem('token', result.token);
+         navigate('/home');
 
-        const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
-        const user = users.find((user: UserType) => user.login === userLogin);
 
-         if (user) {
-            localStorage.setItem('currentUser', JSON.stringify(user));
-         } else {
-            console.error('User not found');
-         }
+      // event.preventDefault();
+      // try {
+      //   const result = await login(userLogin, password);
+      //   console.log('Login successful:', result);
 
-        navigate('/home');
-      } catch (error) {
-        console.error('Login failed:', error);
-      }
+      //   localStorage.setItem('token', result.token);
+
+      //   const users: UserType[] = JSON.parse(localStorage.getItem('users') || '[]');
+      //   const user = users.find((user: UserType) => user.login === userLogin);
+
+      //    if (user) {
+      //       localStorage.setItem('currentUser', JSON.stringify(user));
+      //    } else {
+      //       console.error('User not found');
+      //    }
+
+      //   navigate('/home');
+      // } catch (error) {
+      //   console.error('Login failed:', error);
+      // }
+
    };
+
+
+
+
+
+
+
 
    return (
       <div className='login-page'>
