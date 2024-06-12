@@ -38,7 +38,7 @@ const Login = () => {
     try {
       const user = await authService.login(userLogin, password);
       setUser(user);
-      navigate('/home'); // Przekierowanie po pomyślnym logowaniu
+      navigate('/'); // Przekierowanie po pomyślnym logowaniu
     } catch (error) {
       setMessage('Login failed. Please check your credentials.');
     }

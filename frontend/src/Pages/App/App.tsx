@@ -60,12 +60,12 @@ function App() {
   return (
     <main className="App" id={displayMode}>
       <Routes>
-        <Route path='/' element={user ? <Navigate to="/home" /> : <Login />} />
+        <Route path=' ' element={user ? <Navigate to="/" /> : <Login />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
         <Route path="/" element={<LeftBar />}>
           <Route path="profile/:userFullname/:userId" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
-          <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+          <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="create" element={<ProtectedRoute><Create /></ProtectedRoute>} />
           <Route path='edit/:projectId' element={<ProtectedRoute><Edit /></ProtectedRoute>} />
           <Route path='settings' element={<ProtectedRoute><Settings displayModeSwitch={displayModeSwitch} /></ProtectedRoute>} />

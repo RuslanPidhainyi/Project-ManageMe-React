@@ -14,7 +14,7 @@ export const NewProjectModel = () => {
          ProjectModelService.createProjectModel(name, desc);
       }
 
-      navigate(`/home`)
+      navigate(`/`)
    }
 
    const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {

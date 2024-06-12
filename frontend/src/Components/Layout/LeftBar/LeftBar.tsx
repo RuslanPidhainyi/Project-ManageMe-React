@@ -20,7 +20,7 @@ export const LeftBar = () => {
                <div className="container">
                   <div className="menu">
 
-                     <NavLink to={"/home"} className="left-bar-link">
+                     <NavLink to={"/"} className="left-bar-link">
                         <LogoSection />
                      </NavLink>
 
@@ -28,7 +28,7 @@ export const LeftBar = () => {
                         <ProfileSection />
                      </NavLink> */}
 
-                     <NavLink to={"/home"} className="left-bar-link link-hover">
+                     <NavLink to={"/"} className="left-bar-link link-hover">
                         <HomeSection />
                      </NavLink>
 
@@ -40,7 +40,7 @@ export const LeftBar = () => {
                         <SettingsSection />
                      </NavLink>
 
-                     <NavLink to={"/"} className="left-bar-link link-hover">
+                     <NavLink to={"login"} className="left-bar-link link-hover">
                         <LogoutSection />
                      </NavLink>
 
