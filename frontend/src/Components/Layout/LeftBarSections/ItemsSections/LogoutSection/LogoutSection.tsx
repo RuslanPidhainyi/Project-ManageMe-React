@@ -1,6 +1,6 @@
 import LogoutRoundedIcon from '@mui/icons-material/LogoutRounded';
 //import { logout } from '../../../../../Services/AuthService/authService';
-import authService from '../../../../../Services/AuthService/authService';
+import authService from '../../../../../Auth/AuthService/authService';
 import "../CommonStyle/style.scss"
 import "../../../../../Style/font.css"
 

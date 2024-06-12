@@ -13,20 +13,31 @@ const login = async (login: string, password: string) => {
     if (response.data.accessToken) {
       const decodedToken = jwtDecode(response.data.accessToken);
       localStorage.setItem('user', JSON.stringify(decodedToken));
+      localStorage.setItem('accessToken', response.data.accessToken);//dodawem
     }
     
     return response.data;
   } catch (error) {
     console.error("Login error:", error);
-    throw error; // або обробіть помилку відповідним чином
+    throw error; 
   }
+};
+
+const logout = () => {
+  localStorage.removeItem('user');
+  localStorage.removeItem('accessToken');
+};
+
+const getCurrentUser = () => {
+  const userStr = localStorage.getItem('user');
+  if (userStr) return JSON.parse(userStr);
+  return null;
 };
 
 const authService = {
   login,
-  logout: () => {
-    localStorage.removeItem('user');
-  }
+  logout,
+  getCurrentUser,//dodawem
 };
 
 export default authService;

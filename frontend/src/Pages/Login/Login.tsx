@@ -3,26 +3,49 @@ import "../../Style/font.css";
 import { Link, useNavigate } from 'react-router-dom';
 import { SingupBtnForLoginPage } from "../../Components/Button components/SingupBtnForLoginPage/SingupBtnForLoginPage";
 import { LogInBtnForLoginPage } from "../../Components/Button components/LogInBtnForLoginPage/LoginBtnForLoginPage";
-import authService from '../../Services/AuthService/authService'; // переконайтеся, що шлях правильний
-import { useState } from "react";
+import authService from '../../Auth/AuthService/authService'; // переконайтеся, що шлях правильний
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Auth/AuthContext/AuthContext ";
 
 const Login = () => {
+   // const navigate = useNavigate();
+   // const [userLogin, setUserLogin] = useState('');
+   // const [password, setPassword] = useState('');
+   // const [message, setMessage] = useState('');
+
+   // const handleSubmit = async (event: React.FormEvent) => {
+   //    event.preventDefault();
+   //    setMessage('');
+
+   //    try {
+   //        await authService.login(userLogin, password);
+   //        navigate('/Home'); // Перенаправлення після успішного входу
+   //    } catch (error) {
+   //        setMessage('Login failed. Please check your credentials.');
+   //    }
+   // };
+
    const navigate = useNavigate();
-   const [userLogin, setUserLogin] = useState('');
-   const [password, setPassword] = useState('');
-   const [message, setMessage] = useState('');
+  const { setUser } = useContext(AuthContext)!;
+  const [userLogin, setUserLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
 
-   const handleSubmit = async (event: React.FormEvent) => {
-      event.preventDefault();
-      setMessage('');
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    setMessage('');
 
-      try {
-          await authService.login(userLogin, password);
-          navigate('/Home'); // Перенаправлення після успішного входу
-      } catch (error) {
-          setMessage('Login failed. Please check your credentials.');
-      }
-   };
+    try {
+      const user = await authService.login(userLogin, password);
+      setUser(user);
+      navigate('/home'); // Przekierowanie po pomyślnym logowaniu
+    } catch (error) {
+      setMessage('Login failed. Please check your credentials.');
+    }
+  };
+
+
+
    return (
       <div className='login-page'>
          <main className='common-card'>
