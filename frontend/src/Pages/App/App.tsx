@@ -61,8 +61,8 @@ function App() {
     <main className="App" id={displayMode}>
       <Routes>
         <Route path=' ' element={user ? <Navigate to="/" /> : <Login />} />
-        <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
+        <Route path='login' element={<Login />} />
         <Route path="/" element={<LeftBar />}>
           <Route path="profile/:userFullname/:userId" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
