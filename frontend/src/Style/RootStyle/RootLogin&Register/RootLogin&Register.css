@@ -1,0 +1,34 @@
+/*Login&Register*/
+:root {
+
+    /*light*/
+    --light-background-color-for-login-And-register-page: white;
+
+    --light-color-for-login-And-register-page: black;
+
+    --light-background-color-for-input: white;
+
+    --light-color-for-input: black;
+
+    --light-color-for-select: black;
+    
+    --light-color-for-option: lightgray;
+
+    --light-color-for-border-bottom: lightgray;
+  
+    /*dark*/
+    --dark-background-color-for-login-And-register-page: rgb(13, 13, 13);
+
+    --dark-color-for-login-And-register-page: white;
+
+    --dark-background-color-for-input: rgb(13, 13, 13);
+
+    --dark-color-for-input: white;
+
+    --dark-color-for-select: white;
+    
+    --dark-color-for-option: darkgray;
+
+    --dark-color-for-border-bottom: darkgray;
+  
+  }

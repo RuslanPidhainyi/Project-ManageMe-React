@@ -1,0 +1,22 @@
+/*Search*/
+:root {
+
+  /*light*/
+  --light-background-color-for-search: white;
+
+  /*focus*/
+  --light-color-focus-for-search: black;
+
+  /*hover*/
+  --light-color-hover-for-search: rgb(80, 80, 80);
+
+
+  /*dark*/
+  --dark-background-color-for-search: rgb(42, 40, 40);
+  --dark-color-for-search: white;
+
+  --dark-border-color-for-search: rgb(42, 40, 40);
+
+  /*dark-hover*/
+  --dark-color-hover-for-search: grey;
+}

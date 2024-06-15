@@ -1,0 +1,14 @@
+@import url("../../Style/RootStyle/RootApp/RootApp.css");
+
+body {
+  overflow-x: hidden;
+  background-color: var(--body-background-color-for-app);
+}
+
+#light {
+  background-color: transparent;
+}
+
+#dark {
+  background-color: var(--dark-background-color-for-app);
+}

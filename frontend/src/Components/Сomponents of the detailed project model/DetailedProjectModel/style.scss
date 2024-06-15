@@ -1,0 +1,66 @@
+.base-project-model-container {
+  border-radius: 10px;
+  margin: 80px 0 20px 0;
+
+  .base-project-model-task {
+    .base-project-model-details-section {
+      margin: 10px;
+
+      .base-project-model-details-section-top {
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+
+        .base-project-model-name-section {
+          //width: 520px;
+          margin-top: 20px;
+          text-align: center;
+
+          // h1 {
+          //   font-size: larger;
+          //   font-weight: bold;
+          // }
+        }
+      }
+
+      .base-project-model-id-section {
+        //width: 580px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    }
+
+    .base-project-model-content-section {
+      margin: 20px;
+      // width: 580px;
+      text-align: left;
+    }
+
+    //border-bottom: 1px solid lightgray;
+  }
+
+  .base-project-model-subtask {
+    // p {
+    //   text-align: center;
+    // }
+    form {
+      text-align: center;
+    }
+    .base-project-model-subtask-section {
+    }
+    margin-bottom: 30px;
+  }
+}
+
+#light .base-project-model-container {
+  color: black;
+  background-color: white;
+  border: 1px white solid;
+}
+
+#dark .base-project-model-container {
+  color: white;
+  border: 1px rgba(255, 255, 255, 0.248) solid;
+  background-color: black;
+  box-shadow: 0px 0px 22px -12px rgb(255, 255, 255);
+}

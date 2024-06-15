@@ -1,0 +1,112 @@
+@import url("../../Style/RootStyle/RootSearch/RootSearch.css");
+
+.container-​​search-for-a-project {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  //border: 1px solid rgb(42, 40, 40);
+  border-radius: 20px;
+  //box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
+  //background-color: rgb(42, 40, 40);
+  max-width: 99vw;
+  max-height: 40vh;
+  //padding: 6px; //Temporarily
+
+  .​​search-for-a-project {
+    display: flex;
+    gap: 55vw; //gap: 10px; //Temporarily
+    //border: 1px solid themed("border");
+    border-radius: 5px;
+    padding: 5px;
+
+    input {
+      padding: 2px 17px 0 0;
+      border: none;
+      width: 100%;
+      height: 30px;
+      //background-color: transparent;
+
+      &:focus {
+        outline: none;
+        //color: white;
+      }
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+      font-size: 25px;
+      line-height: 4;
+    }
+
+    .btn-add {
+      border: none;
+      //background-color: rgb(42, 40, 40);
+
+      .material-symbols-rounded {
+        transition: 0.2s;
+        scale: 160%;
+
+        &:hover {
+          cursor: pointer;
+          //color: grey;
+        }
+      }
+    }
+  }
+}
+
+#light .container-​​search-for-a-project {
+  //border: 1px solid rgb(42, 40, 40);
+  //box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
+  background-color: var(--light-background-color-for-search);
+
+  .​​search-for-a-project {
+    //border: 1px solid themed("border");
+
+    input {
+      background-color: var(--light-background-color-for-search);
+
+      &:focus {
+        color: var(--light-color-focus-for-search);
+      }
+    }
+
+    .btn-add {
+      background-color: var(--light-background-color-for-search);
+
+      .material-symbols-rounded {
+        &:hover {
+          color: var(--light-color-hover-for-search);
+        }
+      }
+    }
+  }
+}
+
+#dark .container-​​search-for-a-project {
+  box-shadow: 0px 2px 7px -1px rgba(0, 0, 0, 0.19);
+  background-color: var(--dark-background-color-for-search);
+  border: 1px solid var(--dark-border-color-for-search);
+
+  .​​search-for-a-project {
+    //border: 1px solid themed("border");
+
+    input {
+      background-color: var(--dark-background-color-for-search);
+
+      &:focus {
+        color: var(--dark-color-for-search);
+      }
+    }
+
+    .btn-add {
+      background-color: var(--dark-background-color-for-search);
+
+      .material-symbols-rounded {
+        &:hover {
+          color: var(--dark-color-hover-for-search);
+        }
+      }
+    }
+  }
+}

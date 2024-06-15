@@ -1,0 +1,9 @@
+/*App*/
+:root {
+
+  /*light*/
+  --body-background-color-for-app: rgb(232, 231, 231);
+
+  /*dark*/
+  --dark-background-color-for-app: rgb(13, 13, 13);
+}

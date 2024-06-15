@@ -1,0 +1,34 @@
+@import url("../../Style/RootStyle/RootNotFoundPage/RootNotFoundPage.css");
+
+.some-page {
+  display: flex;
+  justify-content: center;
+  margin-top: 15vh;
+
+  h1 {
+    text-align: center;
+    margin-bottom: 5vh;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}
+
+#light .some-page {
+  h1 {
+    color: var(--light-color-for-h1);
+  }
+  h2 {
+    color: var(--light-color-for-h2);
+  }
+}
+
+#dark .some-page {
+  h1 {
+    color: var(--dark-color-for-h1);
+  }
+  h2 {
+    color: var(--dark-color-for-h2);
+  }
+}

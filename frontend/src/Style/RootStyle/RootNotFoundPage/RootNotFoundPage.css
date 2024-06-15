@@ -1,0 +1,13 @@
+/*Login*/
+:root {
+
+    /*light*/
+    --light-color-for-h1: red;
+
+    --light-color-for-h2: black;
+  
+    /*dark*/
+    --dark-color-for-h1: red;
+
+    --dark-color-for-h2: white;  
+  }
